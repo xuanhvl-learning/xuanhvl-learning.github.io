@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Huỳnh Phú Xuân - Portfolio</title>
+    <title> Huỳnh Phú Xuân - Portfolio & Blog</title>
     <style>
         * {
             margin: 0;
@@ -15,185 +15,453 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            background: #f8f9fa;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: #2c3e50;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: #ecf0f1;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: #3498db;
+        }
+
+        /* Mobile menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #ecf0f1;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 60px 0;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #ff6b6b, #feca57);
-            margin: 0 auto 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: white;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 30px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            padding: 12px 24px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .social-links a:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
+        /* Sections */
         .section {
-            background: white;
-            margin-bottom: 30px;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            padding: 80px 0;
+            display: none;
         }
 
-        .section:hover {
-            transform: translateY(-5px);
+        .section.active {
+            display: block;
         }
 
         .section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 2rem;
-            position: relative;
-            padding-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #2c3e50;
         }
 
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .skill-item {
+        /* Home Section */
+        .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 20px;
-            border-radius: 10px;
             text-align: center;
+            padding: 120px 0;
+            margin-top: -80px;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-content .description {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            opacity: 0.8;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn.primary {
+            background: #3498db;
+            border: 1px solid #3498db;
+        }
+
+        .btn.primary:hover {
+            background: #2980b9;
+        }
+
+        /* CV Section */
+        .cv-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .cv-sidebar {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .cv-main {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .cv-section {
+            margin-bottom: 2rem;
+        }
+
+        .cv-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
             font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .item-date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .item-company {
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #3498db;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Blog Section */
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: white;
+            border: 2px solid #3498db;
+            color: #3498db;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: #3498db;
+            color: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
 
-        .skill-item:hover {
-            transform: scale(1.05);
+        .blog-card:hover {
+            transform: translateY(-5px);
         }
 
-        .project {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border-left: 4px solid #667eea;
+        .blog-card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
         }
 
-        .project h3 {
-            color: #667eea;
-            margin-bottom: 10px;
+        .blog-category {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-date {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .blog-card-body {
+            padding: 1.5rem;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
         }
 
         .contact-item {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
         }
 
-        .contact-item h3 {
-            margin-bottom: 10px;
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            width: 30px;
         }
 
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            color: white;
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            margin-top: 30px;
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            h1 {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: #2c3e50;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
                 font-size: 2rem;
             }
-            
-            .container {
-                padding: 10px;
+
+            .section h2 {
+                font-size: 2rem;
             }
-            
-            .section {
-                padding: 20px;
-            }
-            
-            .social-links {
+
+            .blog-filters {
                 flex-direction: column;
                 align-items: center;
             }
@@ -201,104 +469,427 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="profile-img">XH</div>
-            <h1>Huỳnh Phú Xuân</h1>
-            <p class="subtitle"> Marketing research | Project Manager </p>
-            <div class="social-links">
-                <a href="mailto:your-email@gmail.com">📧 Email</a>
-                <a href="https://github.com/xuanhvl-learning">💻 GitHub</a>
-                <a href="https://linkedin.com/in/yourprofile">💼 LinkedIn</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Xuân Hoàng</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Trang chủ</a></li>
+                <li><a href="#cv" class="nav-link">CV</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </header>
+        </div>
+    </nav>
 
-        <section class="section">
-            <h2>🙋‍♂️ Giới thiệu</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8;">
-                Xin chào! Tôi là Huỳnh Phú Xuân, chưa biết viết gì tiếp.
-            </p>
-        </section>
-
-        <section class="section">
-            <h2>🛠️ Kỹ năng</h2>
-            <div class="skills-grid">
-                <div class="skill-item">HTML & CSS</div>
-                <div class="skill-item">JavaScript</div>
-                <div class="skill-item">Python</div>
-                <div class="skill-item">Git & GitHub</div>
-                <div class="skill-item">React</div>
-                <div class="skill-item">Node.js</div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>🚀 Dự án</h2>
-            <div class="project">
-                <h3>Website Cá nhân</h3>
-                <p>Website portfolio đầu tiên được xây dựng bằng HTML, CSS và JavaScript. 
-                Responsive design và tối ưu cho mọi thiết bị.</p>
-            </div>
-            <div class="project">
-                <h3>Ứng dụng Todo List</h3>
-                <p>Ứng dụng quản lý công việc đơn giản với JavaScript, 
-                có tính năng thêm, sửa, xóa và lọc task.</p>
-            </div>
-            <div class="project">
-                <h3>Blog cá nhân</h3>
-                <p>Blog chia sẻ kiến thức lập trình và những điều học được trong quá trình học tập.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>📞 Liên hệ</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>📧 Email</h3>
-                    <p>your-email@gmail.com</p>
-                </div>
-                <div class="contact-item">
-                    <h3>💻 GitHub</h3>
-                    <p>github.com/xuanhvl-learning</p>
-                </div>
-                <div class="contact-item">
-                    <h3>📱 Phone</h3>
-                    <p>+84 xxx xxx xxx</p>
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Xuân Hoàng</h1>
+                        <p class="subtitle">Developer | Writer | Economic Enthusiast</p>
+                        <p class="description">
+                            Chào mừng bạn đến với không gian cá nhân của tôi. Tôi là một lập trình viên 
+                            đam mê công nghệ, đồng thời có sở thích viết blog về kinh tế, chính trị và 
+                            những chủ đề xã hội thú vị.
+                        </p>
+                        <div class="btn-group">
+                            <a href="#cv" class="btn primary nav-link">Xem CV</a>
+                            <a href="#blog" class="btn nav-link">Đọc Blog</a>
+                            <a href="#contact" class="btn nav-link">Liên hệ</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <footer>
-            <p>&copy; 2024 Xuân Hoàng. Made with ❤️ and GitHub Pages</p>
-        </footer>
-    </div>
+        <!-- CV Section -->
+        <section id="cv" class="section">
+            <div class="container">
+                <h2>Hồ Sơ & Kinh Nghiệm</h2>
+                <div class="cv-container">
+                    <div class="cv-sidebar">
+                        <div class="cv-section">
+                            <h3>Thông tin liên hệ</h3>
+                            <p><strong>Email:</strong> your-email@gmail.com</p>
+                            <p><strong>Điện thoại:</strong> +84 xxx xxx xxx</p>
+                            <p><strong>Địa chỉ:</strong> TP.HCM, Việt Nam</p>
+                            <p><strong>GitHub:</strong> github.com/xuanhvl-learning</p>
+                            <p><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</p>
+                        </div>
+
+                        <div class="cv-section">
+                            <h3>Kỹ năng</h3>
+                            <div class="skill-list">
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">MongoDB</span>
+                            </div>
+                        </div>
+
+                        <div class="cv-section">
+                            <h3>Ngôn ngữ</h3>
+                            <p><strong>Tiếng Việt:</strong> Bản ngữ</p>
+                            <p><strong>Tiếng Anh:</strong> Giao tiếp tốt</p>
+                        </div>
+
+                        <div class="cv-section">
+                            <h3>Sở thích</h3>
+                            <ul>
+                                <li>Viết blog về kinh tế</li>
+                                <li>Phân tích chính trị</li>
+                                <li>Đọc sách</li>
+                                <li>Code side projects</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cv-main">
+                        <div class="cv-section">
+                            <h3>Mục tiêu nghề nghiệp</h3>
+                            <p>Tìm kiếm vị trí Full-stack Developer tại một công ty công nghệ, nơi tôi có thể áp dụng kỹ năng lập trình và đam mê học hỏi để đóng góp vào các dự án có ý nghĩa. Song song với đó, tôi muốn phát triển kênh blog cá nhân về các chủ đề kinh tế - xã hội.</p>
+                        </div>
+
+                        <div class="cv-section">
+                            <h3>Kinh nghiệm làm việc</h3>
+                            <div class="experience-item">
+                                <div class="item-header">
+                                    <div>
+                                        <div class="item-title">Junior Developer</div>
+                                        <div class="item-company">ABC Technology Company</div>
+                                    </div>
+                                    <div class="item-date">01/2023 - Hiện tại</div>
+                                </div>
+                                <ul>
+                                    <li>Phát triển và bảo trì website công ty sử dụng React.js</li>
+                                    <li>Tham gia xây dựng API backend với Node.js và Express</li>
+                                    <li>Collaboration với team design để implement UI/UX</li>
+                                    <li>Debug và optimize performance cho web application</li>
+                                </ul>
+                            </div>
+
+                            <div class="experience-item">
+                                <div class="item-header">
+                                    <div>
+                                        <div class="item-title">Freelance Web Developer</div>
+                                        <div class="item-company">Các dự án cá nhân</div>
+                                    </div>
+                                    <div class="item-date">06/2022 - 12/2022</div>
+                                </div>
+                                <ul>
+                                    <li>Thiết kế và phát triển website cho các SME</li>
+                                    <li>Customize WordPress themes theo yêu cầu khách hàng</li>
+                                    <li>Tối ưu SEO và tốc độ load website</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="cv-section">
+                            <h3>Học vấn</h3>
+                            <div class="education-item">
+                                <div class="item-header">
+                                    <div>
+                                        <div class="item-title">Cử nhân Công nghệ Thông tin</div>
+                                        <div class="item-company">Đại học ABC</div>
+                                    </div>
+                                    <div class="item-date">2019 - 2023</div>
+                                </div>
+                                <p>GPA: 3.4/4.0 - Chuyên ngành: Kỹ thuật phần mềm</p>
+                            </div>
+                        </div>
+
+                        <div class="cv-section">
+                            <h3>Dự án nổi bật</h3>
+                            <div class="experience-item">
+                                <div class="item-header">
+                                    <div>
+                                        <div class="item-title">Blog cá nhân về Kinh tế</div>
+                                        <div class="item-company">Personal Project</div>
+                                    </div>
+                                    <div class="item-date">2023 - Hiện tại</div>
+                                </div>
+                                <ul>
+                                    <li>Xây dựng platform blog với Next.js và Markdown</li>
+                                    <li>Viết 50+ bài phân tích về kinh tế vĩ mô và chính sách</li>
+                                    <li>Đạt 10,000+ lượt đọc hàng tháng</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section">
+            <div class="container">
+                <h2>Blog & Chia sẻ</h2>
+                
+                <div class="blog-filters">
+                    <button class="filter-btn active" data-filter="all">Tất cả</button>
+                    <button class="filter-btn" data-filter="economics">Kinh tế</button>
+                    <button class="filter-btn" data-filter="politics">Chính trị</button>
+                    <button class="filter-btn" data-filter="tech">Công nghệ</button>
+                    <button class="filter-btn" data-filter="personal">Cá nhân</button>
+                </div>
+
+                <div class="blog-grid">
+                    <article class="blog-card" data-category="economics">
+                        <div class="blog-card-header">
+                            <span class="blog-category">Kinh tế</span>
+                            <h3 class="blog-title">Lạm phát và tác động đến người tiêu dùng Việt Nam</h3>
+                            <p class="blog-date">25 tháng 9, 2024</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt">
+                                Phân tích về tình trạng lạm phát hiện tại, nguyên nhân và cách thức ảnh hưởng 
+                                đến đời sống người dân. Từ giá xăng dầu đến hàng tiêu dùng thiết yếu...
+                            </p>
+                            <a href="#" class="read-more">Đọc tiếp →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="politics">
+                        <div class="blog-card-header">
+                            <span class="blog-category">Chính trị</span>
+                            <h3 class="blog-title">Xu hướng chính trị toàn cầu trong năm 2024</h3>
+                            <p class="blog-date">20 tháng 9, 2024</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt">
+                                Nhìn lại những sự kiện chính trị quan trọng năm 2024, từ các cuộc bầu cử 
+                                đến các chính sách mới và tác động đến cục diện thế giới...
+                            </p>
+                            <a href="#" class="read-more">Đọc tiếp →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="tech">
+                        <div class="blog-card-header">
+                            <span class="blog-category">Công nghệ</span>
+                            <h3 class="blog-title">AI và tương lai của ngành phát triển web</h3>
+                            <p class="blog-date">15 tháng 9, 2024</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt">
+                                Trí tuệ nhân tạo đang thay đổi cách chúng ta viết code như thế nào? 
+                                Những tool AI nào đang hữu ích cho developer hiện tại...
+                            </p>
+                            <a href="#" class="read-more">Đọc tiếp →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="economics">
+                        <div class="blog-card-header">
+                            <span class="blog-category">Kinh tế</span>
+                            <h3 class="blog-title">Cryptocurrency: Cơ hội hay rủi ro cho nhà đầu tư Việt?</h3>
+                            <p class="blog-date">10 tháng 9, 2024</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt">
+                                Tìm hiểu về thị trường tiền điện tử, các rủi ro tiềm ẩn và cơ hội đầu tư 
+                                trong bối cảnh pháp lý chưa rõ ràng tại Việt Nam...
+                            </p>
+                            <a href="#" class="read-more">Đọc tiếp →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="personal">
+                        <div class="blog-card-header">
+                            <span class="blog-category">Cá nhân</span>
+                            <h3 class="blog-title">Làm thế nào để cân bằng coding và viết blog?</h3>
+                            <p class="blog-date">5 tháng 9, 2024</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt">
+                                Chia sẻ kinh nghiệm cá nhân về việc kết hợp passion cho lập trình và 
+                                viết lách. Làm sao để duy trì đều đặn cả hai hoạt động...
+                            </p>
+                            <a href="#" class="read-more">Đọc tiếp →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="politics">
+                        <div class="blog-card-header">
+                            <span class="blog-category">Chính trị</span>
+                            <h3 class="blog-title">Ảnh hưởng của mạng xã hội đến dư luận chính trị</h3>
+                            <p class="blog-date">1 tháng 9, 2024</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt">
+                                Phân tích về vai trò của các nền tảng mạng xã hội trong việc định hình 
+                                dư luận và ảnh hưởng đến các quyết định chính trị...
+                            </p>
+                            <a href="#" class="read-more">Đọc tiếp →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Liên hệ với tôi</h2>
+                <div class="contact-container">
+                    <div class="contact-form">
+                        <h3>Gửi tin nhắn</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Họ và tên</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Chủ đề</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Nội dung</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary">Gửi tin nhắn</button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <h3>Thông tin liên hệ</h3>
+                        <div class="contact-item">
+                            <i>📧</i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>your-email@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i>📱</i>
+                            <div>
+                                <h4>Điện thoại</h4>
+                                <p>+84 xxx xxx xxx</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i>📍</i>
+                            <div>
+                                <h4>Địa chỉ</h4>
+                                <p>TP. Hồ Chí Minh, Việt Nam</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i>💻</i>
+                            <div>
+                                <h4>GitHub</h4>
+                                <p>github.com/xuanhvl-learning</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i>💼</i>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p>linkedin.com/in/yourprofile</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                            <h4>Kết nối với tôi</h4>
+                            <p>Rất mong được thảo luận về công nghệ, kinh tế, hoặc bất kỳ chủ đề thú vị nào khác!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script>
-        // Thêm hiệu ứng smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        // Switch between sections
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+                
+                // Remove active class from all links and sections
+                navLinks.forEach(l => l.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Show corresponding section
+                const targetId = link.getAttribute('href').substring(1);
+                document.getElementById(targetId).classList.add('active');
+                
+                // Close mobile menu
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Mobile menu toggle
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Blog filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all filter buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                blogCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
                 });
             });
         });
 
-        // Thêm hiệu ứng fade in khi scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
+        // Form submission (you'll need to implement backend)
+        const contactForm = document.querySelector('#contact form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã gửi tin nhắn! Tôi sẽ phản hồi sớm nhất có thể.');
         });
 
-        document.querySelectorAll('.section').forEach((section) => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>
