@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Huỳnh Phú Xuân - Portfolio & Blog</title>
+    <title>Xuân Hoàng - Portfolio & Blog</title>
     <style>
         * {
             margin: 0;
@@ -60,6 +60,31 @@
 
         .nav-menu a:hover, .nav-menu a.active {
             color: #3498db;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            background: rgba(255,255,255,0.1);
+            color: #ecf0f1;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: #3498db;
+            color: white;
+            transform: translateY(-1px);
         }
 
         /* Mobile menu */
@@ -474,11 +499,15 @@
         <div class="nav-container">
             <a href="#" class="logo">Huỳnh Phú Xuân</a>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Trang chủ</a></li>
-                <li><a href="#cv" class="nav-link">CV</a></li>
-                <li><a href="#blog" class="nav-link">Blog</a></li>
-                <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+                <li><a href="#home" class="nav-link active" data-vi="Trang chủ" data-en="Home">Trang chủ</a></li>
+                <li><a href="#cv" class="nav-link" data-vi="CV" data-en="CV">CV</a></li>
+                <li><a href="#blog" class="nav-link" data-vi="Blog" data-en="Blog">Blog</a></li>
+                <li><a href="#contact" class="nav-link" data-vi="Liên hệ" data-en="Contact">Liên hệ</a></li>
             </ul>
+            <div class="language-switcher">
+                <a href="#" class="lang-btn active" data-lang="vi">🇻🇳 VI</a>
+                <a href="#" class="lang-btn" data-lang="en">🇺🇸 EN</a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -494,17 +523,17 @@
             <div class="hero">
                 <div class="container">
                     <div class="hero-content">
-                        <h1>Huỳnh Phú Xuân</h1>
-                        <p class="subtitle">Developer | Writer | Economic Enthusiast</p>
-                        <p class="description">
+                        <h1 data-vi="Huỳnh Phú Xuân" data-en="Huynh Phu Xuan">Huỳnh Phú Xuân</h1>
+                        <p class="subtitle" data-vi="Developer | Writer | Economic Enthusiast" data-en="Developer | Writer | Economic Enthusiast">Developer | Writer | Economic Enthusiast</p>
+                        <p class="description" data-vi="Chào mừng bạn đến với không gian cá nhân của tôi. Tôi là một lập trình viên đam mê công nghệ, đồng thời có sở thích viết blog về kinh tế, chính trị và những chủ đề xã hội thú vị." data-en="Welcome to my personal space. I am a passionate developer who loves technology, and I also enjoy writing blogs about economics, politics, and interesting social topics.">
                             Chào mừng bạn đến với không gian cá nhân của tôi. Tôi là một lập trình viên 
                             đam mê công nghệ, đồng thời có sở thích viết blog về kinh tế, chính trị và 
                             những chủ đề xã hội thú vị.
                         </p>
                         <div class="btn-group">
-                            <a href="#cv" class="btn primary nav-link">Xem CV</a>
-                            <a href="#blog" class="btn nav-link">Đọc Blog</a>
-                            <a href="#contact" class="btn nav-link">Liên hệ</a>
+                            <a href="#cv" class="btn primary nav-link" data-vi="Xem CV" data-en="View CV">Xem CV</a>
+                            <a href="#blog" class="btn nav-link" data-vi="Đọc Blog" data-en="Read Blog">Đọc Blog</a>
+                            <a href="#contact" class="btn nav-link" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
                         </div>
                     </div>
                 </div>
@@ -514,16 +543,16 @@
         <!-- CV Section -->
         <section id="cv" class="section">
             <div class="container">
-                <h2>Hồ Sơ & Kinh Nghiệm</h2>
+                <h2 data-vi="Hồ Sơ & Kinh Nghiệm" data-en="Profile & Experience">Hồ Sơ & Kinh Nghiệm</h2>
                 <div class="cv-container">
                     <div class="cv-sidebar">
                         <div class="cv-section">
-                            <h3>Thông tin liên hệ</h3>
-                            <p><strong>Email:</strong> hpxuan.khtn@gmail.com</p>
-                            <p><strong>Điện thoại:</strong> +84 xxx xxx xxx</p>
-                            <p><strong>Địa chỉ:</strong> TP.HCM, Việt Nam</p>
-                            <p><strong>GitHub:</strong> github.com/xuanhvl-learning</p>
-                            <p><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</p>
+                            <h3 data-vi="Thông tin liên hệ" data-en="Contact Information">Thông tin liên hệ</h3>
+                            <p><strong>Email:</strong> huynhphuxuan@gmail.com</p>
+                            <p><strong data-vi="Điện thoại" data-en="Phone">Điện thoại:</strong> +84 xxx xxx xxx</p>
+                            <p><strong data-vi="Địa chỉ" data-en="Address">Địa chỉ:</strong> TP.HCM, Việt Nam</p>
+                            <p><strong>GitHub:</strong> github.com/huynhphuxuan</p>
+                            <p><strong>LinkedIn:</strong> linkedin.com/in/huynhphuxuan</p>
                         </div>
 
                         <div class="cv-section">
@@ -743,7 +772,7 @@
         <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="container">
-                <h2>Liên hệ với tôi</h2>
+                <h2 data-vi="Liên hệ với tôi" data-en="Contact Me">Liên hệ với tôi</h2>
                 <div class="contact-container">
                     <div class="contact-form">
                         <h3>Gửi tin nhắn</h3>
@@ -774,7 +803,7 @@
                             <i>📧</i>
                             <div>
                                 <h4>Email</h4>
-                                <p>hpxuan.khtn@gmail.com</p>
+                                <p>your-email@gmail.com</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -890,6 +919,50 @@
                     });
                 }
             });
+        });
+
+        // Language switching functionality
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const elementsWithTranslations = document.querySelectorAll('[data-vi][data-en]');
+
+        // Set default language
+        let currentLanguage = 'vi';
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all language buttons
+                langButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Get selected language
+                const selectedLang = btn.getAttribute('data-lang');
+                currentLanguage = selectedLang;
+                
+                // Update all elements with translations
+                elementsWithTranslations.forEach(element => {
+                    const translation = element.getAttribute(`data-${selectedLang}`);
+                    if (translation) {
+                        element.textContent = translation;
+                    }
+                });
+                
+                // Save language preference
+                localStorage.setItem('preferred-language', selectedLang);
+            });
+        });
+
+        // Load saved language preference on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred-language');
+            if (savedLang && savedLang !== 'vi') {
+                // Find and click the corresponding language button
+                const targetBtn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
+                if (targetBtn) {
+                    targetBtn.click();
+                }
+            }
         });
     </script>
 </body>
