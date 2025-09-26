@@ -164,17 +164,45 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-rows: 1fr 1fr;
+            gap: 3rem;
             align-items: center;
             width: 100%;
             padding: 0 20px;
+            min-height: 70vh;
         }
 
-        .hero-left {
+        /* Góc 1: Trái trên - Tên & mô tả ngắn */
+        .hero-name {
+            grid-column: 1;
+            grid-row: 1;
             text-align: left;
+            align-self: end;
+            padding-bottom: 2rem;
         }
 
-        .hero-right {
+        /* Góc 2: Phải trên - Bức tranh yêu thích */
+        .hero-artwork {
+            grid-column: 2;
+            grid-row: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Góc 3: Phải dưới - Dòng intro */
+        .hero-intro {
+            grid-column: 2;
+            grid-row: 2;
+            text-align: left;
+            align-self: start;
+            padding-top: 2rem;
+        }
+
+        /* Góc 4: Trái dưới - Ảnh profile */
+        .hero-profile {
+            grid-column: 1;
+            grid-row: 2;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -262,32 +290,15 @@
 
         .hero-content .subtitle {
             font-size: 1.3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0;
             color: #6c757d;
             font-weight: 400;
             animation: fadeInUp 1s ease-out 0.3s both;
         }
 
-        .hero-content .year-info {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            color: #6c757d;
-            animation: fadeInUp 1s ease-out 0.5s both;
-        }
-
-        .hero-content .studio-info {
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            color: #495057;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
         .hero-content .description {
             font-size: 1.1rem;
-            margin-bottom: 3rem;
+            margin-bottom: 0;
             color: #495057;
             line-height: 1.7;
             animation: fadeInUp 1s ease-out 0.8s both;
@@ -686,12 +697,36 @@
             /* Hero responsive */
             .hero-content {
                 grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto;
                 gap: 2rem;
                 text-align: center;
+                min-height: auto;
             }
 
-            .hero-left {
+            .hero-name {
+                grid-column: 1;
+                grid-row: 1;
                 text-align: center;
+                align-self: auto;
+                padding-bottom: 0;
+            }
+
+            .hero-profile {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .hero-artwork {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            .hero-intro {
+                grid-column: 1;
+                grid-row: 4;
+                text-align: center;
+                align-self: auto;
+                padding-top: 0;
             }
 
             .hero-content h1 {
@@ -702,7 +737,7 @@
             .profile-image {
                 width: 200px;
                 height: 200px;
-                margin: 0 auto 2rem;
+                margin: 0 auto;
             }
 
             .favorite-artwork {
@@ -796,18 +831,29 @@
             <div class="hero">
                 <div class="container">
                     <div class="hero-content">
-                        <div class="hero-left">
-                            <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/main/porfolio-image.jpg" alt="Huỳnh Phú Xuân" class="profile-image">
+                        <!-- Góc 1: Trái trên - Tên & mô tả ngắn -->
+                        <div class="hero-name">
                             <h1 class="name-font" data-vi="Huỳnh Phú Xuân" data-en="Huynh Phu Xuan">Huỳnh Phú Xuân</h1>
-                            <p class="studio-info" data-vi="Developer | Writer | Economic Enthusiast" data-en="Developer | Writer | Economic Enthusiast">Developer | Writer | Economic Enthusiast</p>
+                            <p class="subtitle" data-vi="Developer | Writer | Economic Enthusiast" data-en="Developer | Writer | Economic Enthusiast">Developer | Writer | Economic Enthusiast</p>
+                        </div>
+
+                        <!-- Góc 2: Phải trên - Bức tranh yêu thích -->
+                        <div class="hero-artwork">
+                            <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/main/fav-artwork.jpg" alt="Bức tranh yêu thích" class="favorite-artwork">
+                        </div>
+
+                        <!-- Góc 3: Phải dưới - Dòng intro -->
+                        <div class="hero-intro">
                             <p class="description" data-vi="Chào mừng bạn đến với không gian cá nhân của tôi. Tôi là một lập trình viên đam mê công nghệ, đồng thời có sở thích viết blog về kinh tế, chính trị và những chủ đề xã hội thú vị." data-en="Welcome to my personal space. I am a passionate developer who loves technology, and I also enjoy writing blogs about economics, politics, and interesting social topics.">
                                 Chào mừng bạn đến với không gian cá nhân của tôi. Tôi là một lập trình viên 
                                 đam mê công nghệ, đồng thời có sở thích viết blog về kinh tế, chính trị và 
                                 những chủ đề xã hội thú vị.
                             </p>
                         </div>
-                        <div class="hero-right">
-                            <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/main/fav-artwork.jpg" alt="Bức tranh yêu thích" class="favorite-artwork">
+
+                        <!-- Góc 4: Trái dưới - Ảnh profile -->
+                        <div class="hero-profile">
+                            <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/main/porfolio-image.jpg" alt="Huỳnh Phú Xuân" class="profile-image">
                         </div>
                     </div>
                 </div>
