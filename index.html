@@ -176,10 +176,18 @@
         .hero-name {
             grid-column: 1;
             grid-row: 1;
-            text-align: left;
+            text-align: center;
             align-self: end;
-            padding-bottom: 2rem;
+            padding: 2rem;
             max-width: 350px;
+            height: 200px;
+            border: 2px solid #e0d9cf;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Góc 2: Phải trên - Bức tranh yêu thích */
@@ -196,11 +204,19 @@
         .hero-intro {
             grid-column: 2;
             grid-row: 2;
-            text-align: left;
+            text-align: center;
             align-self: start;
-            padding-top: 2rem;
+            padding: 2rem;
             max-width: 350px;
+            height: 200px;
             margin-left: auto;
+            border: 2px solid #e0d9cf;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Góc 4: Trái dưới - Ảnh profile */
@@ -286,28 +302,32 @@
         }
 
         .hero-content h1 {
-            font-size: 3.8rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
             font-weight: 500;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
             animation: fadeInUp 1s ease-out;
-            text-align: left;
+            text-align: center;
+            line-height: 1.1;
         }
 
         .hero-content .subtitle {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-bottom: 0;
             color: #6c757d;
             font-weight: 400;
             animation: fadeInUp 1s ease-out 0.3s both;
+            text-align: center;
+            line-height: 1.3;
         }
 
         .hero-content .description {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 0;
             color: #495057;
-            line-height: 1.7;
+            line-height: 1.5;
             animation: fadeInUp 1s ease-out 0.8s both;
+            text-align: center;
         }
 
         .btn-group {
