@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -177,13 +178,8 @@
             grid-column: 1;
             grid-row: 1;
             text-align: center;
-            align-self: end;
-            padding: 2rem;
-            max-width: 350px;
-            height: 200px;
-            border: 2px solid #e0d9cf;
-            border-radius: 12px;
-            background: rgba(255,255,255,0.5);
+            align-self: center;
+            max-width: 300px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -196,27 +192,20 @@
             grid-row: 1;
             display: flex;
             justify-content: end;
-            align-items: end;
-            padding-bottom: 2rem;
+            align-items: center;
         }
 
         /* Góc 3: Phải dưới - Dòng intro */
         .hero-intro {
             grid-column: 2;
             grid-row: 2;
-            text-align: center;
-            align-self: start;
-            padding: 2rem;
-            max-width: 350px;
-            height: 200px;
+            text-align: left;
+            align-self: center;
+            max-width: 450px;
             margin-left: auto;
-            border: 2px solid #e0d9cf;
-            border-radius: 12px;
-            background: rgba(255,255,255,0.5);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
         }
 
         /* Góc 4: Trái dưới - Ảnh profile */
@@ -225,8 +214,7 @@
             grid-row: 2;
             display: flex;
             justify-content: start;
-            align-items: start;
-            padding-top: 2rem;
+            align-items: center;
         }
 
         .profile-image {
@@ -302,13 +290,22 @@
         }
 
         .hero-content h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
-            font-weight: 500;
-            letter-spacing: -0.5px;
+            font-weight: 400;
+            letter-spacing: 0.1rem;
             animation: fadeInUp 1s ease-out;
             text-align: center;
-            line-height: 1.1;
+            line-height: 1.2;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .hero-content h1 .last-name {
+            display: block;
+            letter-spacing: 0.8rem;
+            font-weight: 600;
+            font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+            font-size: 3.2rem;
         }
 
         .hero-content .subtitle {
@@ -322,12 +319,12 @@
         }
 
         .hero-content .description {
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 0;
             color: #495057;
-            line-height: 1.5;
+            line-height: 1.7;
             animation: fadeInUp 1s ease-out 0.8s both;
-            text-align: center;
+            text-align: left;
         }
 
         .btn-group {
@@ -859,8 +856,8 @@
                     <div class="hero-content">
                         <!-- Góc 1: Trái trên - Tên & mô tả ngắn -->
                         <div class="hero-name">
-                            <h1 class="name-font" data-vi="Huỳnh Phú Xuân" data-en="Huynh Phu Xuan">Huỳnh Phú Xuân</h1>
-                            <p class="subtitle" data-vi="Developer | Writer | Economic Enthusiast" data-en="Developer | Writer | Economic Enthusiast">Developer | Writer | Economic Enthusiast</p>
+                            <h1 class="name-font">Huỳnh Phú<br><span class="last-name">XUÂN</span></h1>
+                            <p class="subtitle">Behavioral Economist | Market Research | Consumer Insight | Social Analyst</p>
                         </div>
 
                         <!-- Góc 2: Phải trên - Bức tranh yêu thích -->
@@ -870,10 +867,16 @@
 
                         <!-- Góc 3: Phải dưới - Dòng intro -->
                         <div class="hero-intro">
-                            <p class="description" data-vi="Chào mừng bạn đến với không gian cá nhân của tôi. Tôi là một lập trình viên đam mê công nghệ, đồng thời có sở thích viết blog về kinh tế, chính trị và những chủ đề xã hội thú vị." data-en="Welcome to my personal space. I am a passionate developer who loves technology, and I also enjoy writing blogs about economics, politics, and interesting social topics.">
-                                Chào mừng bạn đến với không gian cá nhân của tôi. Tôi là một lập trình viên 
-                                đam mê công nghệ, đồng thời có sở thích viết blog về kinh tế, chính trị và 
-                                những chủ đề xã hội thú vị.
+                            <p class="description">
+                                Có lần một người bạn hỏi tôi: "Tại sao mày nhìn gì cũng thấy kinh tế học vậy?"
+                                <br><br>
+                                Câu trả lời đơn giản: Vì nó ở khắp mọi nơi! Từ lý do tại sao quán cà phê góc phố luôn đông khách, đến việc vì sao bạn vẫn dành 3 tiếng mỗi ngày lướt TikTok dù biết rằng mình đang "lãng phí thời gian" - tất cả đều có thể được giải thích bằng các nguyên lý kinh tế cơ bản.
+                                <br><br>
+                                Với 10+ năm kinh nghiệm nghiên cứu hành vi người tiêu dùng và kinh tế hành vi, tôi đã học được rằng con người chúng ta thú vị hơn bất kỳ mô hình kinh tế nào có thể dự đoán - nhưng đồng thời, chúng ta cũng đáng ngạc nhiên là... có thể dự đoán.
+                                <br><br>
+                                Website này là nơi tôi thỏa sức "mổ xẻ" các hiện tượng xã hội, văn hóa, lịch sử qua góc nhìn kinh tế học - theo tinh thần của Gary Becker, người đã chứng minh rằng không có gì là nằm ngoài tầm phân tích của kinh tế học. Nhưng đừng lo, tôi sẽ cố gắng ít dùng thuật ngữ hàn lâm và nhiều ví dụ đời thường hơn.
+                                <br><br>
+                                Nếu bạn tò mò muốn biết "Tại sao?" đằng sau những thói quen, xu hướng và quyết định của con người - chào mừng bạn đến đúng nơi rồi đấy!
                             </p>
                         </div>
 
