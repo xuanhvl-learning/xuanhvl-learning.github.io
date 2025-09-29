@@ -162,6 +162,59 @@
             align-items: center;
         }
 
+        /* Grid overlay for reference */
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .grid-lines {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 900px;
+            height: 800px;
+            background-image: 
+                linear-gradient(rgba(200, 168, 130, 0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(200, 168, 130, 0.2) 1px, transparent 1px);
+            background-size: 50px 50px;
+            border: 2px solid rgba(200, 168, 130, 0.5);
+        }
+
+        .grid-labels {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 900px;
+            height: 800px;
+            font-size: 10px;
+            color: #c8a882;
+            font-weight: 600;
+        }
+
+        .grid-label-x, .grid-label-y {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+
+        .grid-coord {
+            position: absolute;
+            font-size: 8px;
+            color: rgba(200, 168, 130, 0.6);
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1px 3px;
+            border-radius: 2px;
+        }
+
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
@@ -230,27 +283,15 @@
 
         .profile-image {
             width: 100%;
-            max-width: 320px;
+            max-width: 450px;
             height: auto;
-            aspect-ratio: 1/1;
+            aspect-ratio: 3/4;
             border-radius: 12px;
             margin: 0;
             object-fit: cover;
             border: 4px solid #c8a882;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .favorite-artwork {
-            width: 100%;
-            max-width: 380px;
-            height: auto;
-            aspect-ratio: 1/1;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
             animation: fadeInUp 1s ease-out 0.4s both;
-            object-fit: cover;
-            border: 4px solid #c8a882;
         }
 
         /* My Works Section */
@@ -305,12 +346,12 @@
         }
 
         .hero-content h1 {
-            font-size: 2.6rem;
-            margin-bottom: 0.5rem;
+            font-size: 3rem;
+            margin-bottom: 1rem;
             font-weight: 400;
             letter-spacing: 0.1rem;
             animation: fadeInUp 1s ease-out;
-            text-align: center;
+            text-align: right;
             line-height: 1.2;
             font-family: 'Raleway', sans-serif;
         }
@@ -320,28 +361,27 @@
             letter-spacing: 0.8rem;
             font-weight: 600;
             font-family: 'Bebas Neue', 'Arial Black', sans-serif;
-            font-size: 3.2rem;
+            font-size: 3.8rem;
         }
 
         .hero-content .subtitle {
-            font-size: 0.85rem;
-            margin-bottom: 0;
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
             color: #6c757d;
             font-weight: 400;
             animation: fadeInUp 1s ease-out 0.3s both;
-            text-align: center;
-            line-height: 1.4;
+            text-align: right;
+            line-height: 1.5;
             width: 100%;
         }
 
         .hero-content .description {
-            font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+            font-size: 1rem;
             margin-bottom: 0;
             color: #495057;
-            line-height: 1.7;
+            line-height: 1.8;
             animation: fadeInUp 1s ease-out 0.8s both;
-            text-align: justify;
-            width: 100%;
+            text-align: left;
         }
 
         .btn-group {
@@ -871,18 +911,18 @@
             <div class="hero">
                 <div class="container">
                     <div class="hero-content">
-                        <!-- Góc 1: Trái trên - Tên & mô tả ngắn -->
+                        <!-- Cột trái - Tên & tagline -->
                         <div class="hero-name">
                             <h1 class="name-font">Huỳnh Phú<br><span class="last-name">XUÂN</span></h1>
                             <p class="subtitle">Behavioral Economist | Market Research | Social Analyst</p>
                         </div>
 
-                        <!-- Góc 2: Phải trên - Bức tranh yêu thích -->
-                        <div class="hero-artwork">
-                            <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/main/fav-artwork.jpg" alt="Bức tranh yêu thích" class="favorite-artwork">
+                        <!-- Cột giữa - Ảnh profile -->
+                        <div class="hero-profile">
+                            <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/main/porfolio-image.jpg" alt="Huỳnh Phú Xuân" class="profile-image">
                         </div>
 
-                        <!-- Góc 3: Phải dưới - Dòng intro -->
+                        <!-- Cột phải - Intro text -->
                         <div class="hero-intro">
                             <p class="description">
                                 Có lần một người bạn hỏi tôi: "Tại sao mày nhìn gì cũng thấy kinh tế học vậy?"
@@ -895,11 +935,6 @@
                                 <br><br>
                                 Nếu bạn tò mò muốn biết "Tại sao?" đằng sau những thói quen, xu hướng và quyết định của con người - chào mừng bạn đến đúng nơi rồi đấy!
                             </p>
-                        </div>
-
-                        <!-- Góc 4: Trái dưới - Ảnh profile -->
-                        <div class="hero-profile">
-                            <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/main/porfolio-image.jpg" alt="Huỳnh Phú Xuân" class="profile-image">
                         </div>
                     </div>
                 </div>
