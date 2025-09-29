@@ -174,8 +174,7 @@
             width: 100%;
             padding: 0 20px;
             min-height: 70vh;
-            border: 1px solid #e0d9cf;
-            background: #fefdfb;
+            background: transparent;
         }
 
         /* Góc 1: Trái trên - Tên & mô tả ngắn */
@@ -230,8 +229,10 @@
         }
 
         .profile-image {
-            width: 350px;
-            height: 350px;
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            aspect-ratio: 1/1;
             border-radius: 12px;
             margin: 0;
             object-fit: cover;
@@ -241,8 +242,10 @@
         }
 
         .favorite-artwork {
-            width: 350px;
-            height: 350px;
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            aspect-ratio: 1/1;
             border-radius: 12px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.1);
             animation: fadeInUp 1s ease-out 0.4s both;
@@ -332,7 +335,7 @@
         }
 
         .hero-content .description {
-            font-size: 0.95rem;
+            font-size: clamp(0.85rem, 1.5vw, 0.95rem);
             margin-bottom: 0;
             color: #495057;
             line-height: 1.7;
@@ -871,7 +874,7 @@
                         <!-- Góc 1: Trái trên - Tên & mô tả ngắn -->
                         <div class="hero-name">
                             <h1 class="name-font">Huỳnh Phú<br><span class="last-name">XUÂN</span></h1>
-                            <p class="subtitle">Behavioral Economist | Market Research | Consumer Insight | Social Analyst</p>
+                            <p class="subtitle">Behavioral Economist | Market Research | Social Analyst</p>
                         </div>
 
                         <!-- Góc 2: Phải trên - Bức tranh yêu thích -->
