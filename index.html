@@ -142,7 +142,7 @@
             letter-spacing: -1px;
         }
 
-        /* Home Section - New Design */
+        /* Home Section */
         .hero {
             background: #fefdfb;
             color: #2c3e50;
@@ -155,9 +155,9 @@
 
         .hero-content {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
-            align-items: start;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -167,62 +167,31 @@
         }
 
         .hero-left h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 400;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
             letter-spacing: -1px;
             line-height: 1.2;
         }
 
-        .hero-left h1 .highlight {
-            font-weight: 700;
-            font-size: 4rem;
-        }
-
         .hero-left .subtitle {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
             color: #6c757d;
             font-weight: 500;
-            border-bottom: 2px solid #f0ede6;
-            padding-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
-        .hero-illustration {
-            margin-top: 2rem;
+        .hero-right {
+            animation: fadeInRight 1s ease-out;
+            text-align: center;
         }
 
-        .hero-illustration img {
+        .hero-right img {
             width: 100%;
-            max-width: 450px;
+            max-width: 500px;
             height: auto;
             display: block;
-        }
-
-        .hero-text {
-            animation: fadeInRight 1s ease-out;
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: #6c757d;
-            font-weight: 500;
-            border-bottom: 2px solid #f0ede6;
-            padding-bottom: 1.5rem;
-        }
-
-        .intro-paragraph {
-            font-size: 1.05rem;
-            margin-bottom: 1.5rem;
-            color: #2c3e50;
-            line-height: 1.8;
-            text-align: justify;
-        }
-
-        .intro-paragraph:first-of-type {
-            font-weight: 500;
-            color: #495057;
+            margin: 0 auto;
         }
 
         .btn {
@@ -610,25 +579,16 @@
                 gap: 2rem;
             }
 
-            .hero-illustration img {
-                max-width: 350px;
-            }
-
             .hero-left h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-left h1 .highlight {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
 
             .hero-left .subtitle {
                 font-size: 1rem;
             }
 
-            .intro-paragraph {
-                font-size: 0.95rem;
-                text-align: left;
+            .hero-right img {
+                max-width: 350px;
             }
 
             .section h2 {
@@ -654,16 +614,12 @@
         }
 
         @media (max-width: 480px) {
-            .hero-illustration img {
+            .hero-right img {
                 max-width: 280px;
             }
 
             .hero-left h1 {
-                font-size: 2rem;
-            }
-
-            .hero-left h1 .highlight {
-                font-size: 2.4rem;
+                font-size: 2.2rem;
             }
 
             .section h2 {
@@ -705,37 +661,15 @@
                 <div class="container">
                     <div class="hero-content">
                         <div class="hero-left">
-                            <h1 class="name-font">
-                                <span data-vi="Huỳnh Phú" data-en="Huynh Phu">Huỳnh Phú</span> 
-                                <span class="highlight" data-vi="XUÂN" data-en="XUAN">XUÂN</span>
+                            <h1 class="name-font" data-vi="Huỳnh Phú Xuân" data-en="Huynh Phu Xuan">
+                                Huỳnh Phú Xuân
                             </h1>
                             <p class="subtitle" data-vi="Behavioral Economist | Market Research | Social Analyst" data-en="Behavioral Economist | Market Research | Social Analyst">
                                 Behavioral Economist | Market Research | Social Analyst
                             </p>
-                            <div class="hero-illustration">
-                                <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/324b6d1ffd6c035028fc9f9bda8c0c09f872a239/porfolio-image.jpg" alt="Illustration" />
-                            </div>
                         </div>
-                        <div class="hero-text">
-                            <p class="intro-paragraph" data-vi='Có lần một người bạn hỏi tôi: "Tại sao mày nhìn gì cũng thấy kinh tế học vậy?"' data-en='Once a friend asked me: "Why do you see economics in everything?"'>
-                                Có lần một người bạn hỏi tôi: "Tại sao mày nhìn gì cũng thấy kinh tế học vậy?"
-                            </p>
-                            
-                            <p class="intro-paragraph" data-vi='Câu trả lời đơn giản: Vì nó ở khắp mọi nơi! Từ lý do tại sao mô hình kinh tế nghèo như "cà phê đu mục" luôn đông khách, đến chính phủ tặng người dân 100k để chọi lễ là một phép thử tài khóa khéo léo - tất cả đều có thể được giải thích bằng các nguyên lý kinh tế cơ bản.' data-en='The simple answer: Because it is everywhere! From the reason why poor economic models like "watered-down coffee" are always crowded with customers, to the government giving people 100k to spend on holidays as a clever fiscal test - everything can be explained by basic economic principles.'>
-                                Câu trả lời đơn giản: Vì nó ở khắp mọi nơi! Từ lý do tại sao mô hình kinh tế nghèo như "cà phê đu mục" luôn đông khách, đến chính phủ tặng người dân 100k để chọi lễ là một phép thử tài khóa khéo léo - tất cả đều có thể được giải thích bằng các nguyên lý kinh tế cơ bản.
-                            </p>
-                            
-                            <p class="intro-paragraph" data-vi='Với 10+ năm kinh nghiệm nghiên cứu hành vi người tiêu dùng và kinh tế hành vi, tôi đã học được rằng con người chúng ta thú vị hơn bất kỳ mô hình kinh tế nào có thể dự đoán - nhưng đồng thời, chúng ta cũng đáng ngạc nhiên là... có thể dự đoán.' data-en='With 10+ years of experience researching consumer behavior and behavioral economics, I have learned that we humans are more interesting than any economic model can predict - but at the same time, we are also surprisingly... predictable.'>
-                                Với 10+ năm kinh nghiệm nghiên cứu hành vi người tiêu dùng và kinh tế hành vi, tôi đã học được rằng con người chúng ta thú vị hơn bất kỳ mô hình kinh tế nào có thể dự đoán - nhưng đồng thời, chúng ta cũng đáng ngạc nhiên là... có thể dự đoán.
-                            </p>
-                            
-                            <p class="intro-paragraph" data-vi='Website này là nơi tôi thỏa sức "mổ xẻ" các hiện tượng xã hội, văn hóa, lịch sử qua góc nhìn kinh tế học - theo tinh thần của Gary Becker, người đã chứng minh rằng không có gì là nằm ngoài tầm phân tích của kinh tế học. Nhưng đừng lo, tôi sẽ cố gắng ít dùng thuật ngữ hàn lâm và nhiều ví dụ đời thường hơn.' data-en='This website is where I freely "dissect" social phenomena, culture, and history through the lens of economics - in the spirit of Gary Becker, who proved that nothing is beyond the reach of economic analysis. But do not worry, I will try to use less academic terminology and more everyday examples.'>
-                                Website này là nơi tôi thỏa sức "mổ xẻ" các hiện tượng xã hội, văn hóa, lịch sử qua góc nhìn kinh tế học - theo tinh thần của Gary Becker, người đã chứng minh rằng không có gì là nằm ngoài tầm phân tích của kinh tế học. Nhưng đừng lo, tôi sẽ cố gắng ít dùng thuật ngữ hàn lâm và nhiều ví dụ đời thường hơn.
-                            </p>
-                            
-                            <p class="intro-paragraph" data-vi='Nếu bạn tò mò muốn biết "Tại sao?" đằng sau những thói quen, xu hướng và quyết định của con người - chào mừng bạn đến đúng nơi rồi đấy!' data-en='If you are curious to know "Why?" behind human habits, trends and decisions - welcome to the right place!'>
-                                Nếu bạn tò mò muốn biết "Tại sao?" đằng sau những thói quen, xu hướng và quyết định của con người - chào mừng bạn đến đúng nơi rồi đấy!
-                            </p>
+                        <div class="hero-right">
+                            <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/324b6d1ffd6c035028fc9f9bda8c0c09f872a239/porfolio-image.jpg" alt="Illustration" />
                         </div>
                     </div>
                 </div>
