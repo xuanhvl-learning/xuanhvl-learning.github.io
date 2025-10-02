@@ -22,7 +22,6 @@
             background: #f5f2eb;
         }
 
-        /* Name Font - Playfair Display */
         .name-font {
             font-family: 'Playfair Display', serif;
             font-weight: 500;
@@ -75,7 +74,6 @@
             color: #c8a882;
         }
 
-        /* Language Switcher */
         .language-switcher {
             display: flex;
             align-items: center;
@@ -101,7 +99,6 @@
             border-color: #c8a882;
         }
 
-        /* Mobile menu */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -116,7 +113,6 @@
             transition: 0.3s;
         }
 
-        /* Main Content */
         main {
             margin-top: 80px;
             min-height: calc(100vh - 80px);
@@ -128,7 +124,6 @@
             padding: 0 20px;
         }
 
-        /* Sections */
         .section {
             padding: 80px 0;
             display: none;
@@ -147,52 +142,82 @@
             letter-spacing: -1px;
         }
 
-        /* Home Section */
+        /* Home Section - New Design */
         .hero {
-            background: linear-gradient(135deg, #f5f2eb 0%, #f0ede6 100%);
+            background: #fefdfb;
             color: #2c3e50;
-            padding: 120px 0;
+            padding: 80px 0 100px;
             margin-top: -80px;
-            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
 
         .hero-content {
-            max-width: 800px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
         }
 
-        .hero-content h1 {
-            font-size: 3.8rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
+        .hero-illustration {
+            position: relative;
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .hero-illustration img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+        }
+
+        .hero-text {
+            animation: fadeInRight 1s ease-out;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
             letter-spacing: -1px;
-            animation: fadeInUp 1s ease-out;
+            line-height: 1.2;
         }
 
-        .hero-content .subtitle {
-            font-size: 1.3rem;
+        .hero-text h1 .highlight {
+            font-weight: 700;
+            font-size: 4rem;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             color: #6c757d;
-            font-weight: 400;
-            animation: fadeInUp 1s ease-out 0.3s both;
+            font-weight: 500;
+            border-bottom: 2px solid #f0ede6;
+            padding-bottom: 1.5rem;
         }
 
-        .hero-content .description {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 3rem;
+        .hero-text .intro-paragraph {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .hero-text .intro-paragraph:first-of-type {
+            font-weight: 500;
             color: #495057;
-            line-height: 1.7;
-            animation: fadeInUp 1s ease-out 0.6s both;
         }
 
         .btn-group {
             display: flex;
             gap: 1rem;
-            justify-content: center;
+            margin-top: 2.5rem;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.9s both;
         }
 
         .btn {
@@ -224,6 +249,39 @@
         .btn.primary:hover {
             background: #b69671;
             border-color: #b69671;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Cards */
@@ -514,18 +572,6 @@
             margin: 0;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .hamburger {
@@ -554,8 +600,34 @@
                 margin-right: 1rem;
             }
 
-            .hero-content h1 {
-                font-size: 2.8rem;
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-illustration {
+                text-align: center;
+            }
+
+            .hero-illustration img {
+                max-width: 350px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text h1 .highlight {
+                font-size: 3rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-text .intro-paragraph {
+                font-size: 0.95rem;
+                text-align: left;
             }
 
             .section h2 {
@@ -581,8 +653,16 @@
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
+            .hero-illustration img {
+                max-width: 280px;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text h1 .highlight {
+                font-size: 2.4rem;
             }
 
             .section h2 {
@@ -597,15 +677,14 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo name-font">Huỳnh Phú Xuân</a>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active" data-vi="Home" data-en="Home">Trang chủ</a></li>
-                <li><a href="#cv" class="nav-link" data-vi="Resume" data-en="Resume">CV</a></li>
-                <li><a href="#blog" class="nav-link" data-vi="Blogs" data-en="Blogs">Blog</a></li>
-                <li><a href="#contact" class="nav-link" data-vi="Contact" data-en="Contact">Liên hệ</a></li>
+                <li><a href="#home" class="nav-link active" data-vi="Trang chủ" data-en="Home">Trang chủ</a></li>
+                <li><a href="#cv" class="nav-link" data-vi="CV" data-en="Resume">CV</a></li>
+                <li><a href="#blog" class="nav-link" data-vi="Blog" data-en="Blogs">Blog</a></li>
+                <li><a href="#contact" class="nav-link" data-vi="Liên hệ" data-en="Contact">Liên hệ</a></li>
             </ul>
             <div class="language-switcher">
                 <a href="#" class="lang-btn active" data-lang="vi">🇻🇳 VI</a>
@@ -619,31 +698,54 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main>
-        <!-- Home Section -->
         <section id="home" class="section active">
             <div class="hero">
                 <div class="container">
                     <div class="hero-content">
-                        <h1 class="name-font" data-vi="Huỳnh Phú Xuân" data-en="Huynh Phu Xuan">Huỳnh Phú Xuân</h1>
-                        <p class="subtitle" data-vi="Developer | Writer | Economic Enthusiast" data-en="Developer | Writer | Economic Enthusiast">Developer | Writer | Economic Enthusiast</p>
-                        <p class="description" data-vi="Chào mừng bạn đến với không gian cá nhân của tôi. Tôi là một lập trình viên đam mê công nghệ, đồng thời có sở thích viết blog về kinh tế, chính trị và những chủ đề xã hội thú vị." data-en="Welcome to my personal space. I am a passionate developer who loves technology, and I also enjoy writing blogs about economics, politics, and interesting social topics.">
-                            Chào mừng bạn đến với không gian cá nhân của tôi. Tôi là một lập trình viên 
-                            đam mê công nghệ, đồng thời có sở thích viết blog về kinh tế, chính trị và 
-                            những chủ đề xã hội thú vị.
-                        </p>
-                        <div class="btn-group">
-                            <a href="#cv" class="btn primary nav-link" data-vi="Resume" data-en="Resume">Resume</a>
-                            <a href="#blog" class="btn nav-link" data-vi="Blogs" data-en="Blogs">Blogs</a>
-                            <a href="#contact" class="btn nav-link" data-vi="Contact" data-en="Contact">Contact</a>
+                        <div class="hero-illustration">
+                            <img src="hero-illustration.png" alt="Illustration" />
+                        </div>
+                        <div class="hero-text">
+                            <h1 class="name-font">
+                                <span data-vi="Huỳnh Phú" data-en="Huynh Phu">Huỳnh Phú</span> 
+                                <span class="highlight" data-vi="XUÂN" data-en="XUAN">XUÂN</span>
+                            </h1>
+                            <p class="subtitle" data-vi="Behavioral Economist | Market Research | Social Analyst" data-en="Behavioral Economist | Market Research | Social Analyst">
+                                Behavioral Economist | Market Research | Social Analyst
+                            </p>
+                            
+                            <p class="intro-paragraph" data-vi='Có lần một người bạn hỏi tôi: "Tại sao mày nhìn gì cũng thấy kinh tế học vậy?"' data-en='Once a friend asked me: "Why do you see economics in everything?"'>
+                                Có lần một người bạn hỏi tôi: "Tại sao mày nhìn gì cũng thấy kinh tế học vậy?"
+                            </p>
+                            
+                            <p class="intro-paragraph" data-vi='Câu trả lời đơn giản: Vì nó ở khắp mọi nơi! Từ lý do tại sao mô hình kinh tế nghèo như "cà phê đu mục" luôn đông khách, đến chính phủ tặng người dân 100k để chọi lễ là một phép thử tài khóa khéo léo - tất cả đều có thể được giải thích bằng các nguyên lý kinh tế cơ bản.' data-en='The simple answer: Because it is everywhere! From the reason why poor economic models like "watered-down coffee" are always crowded with customers, to the government giving people 100k to spend on holidays as a clever fiscal test - everything can be explained by basic economic principles.'>
+                                Câu trả lời đơn giản: Vì nó ở khắp mọi nơi! Từ lý do tại sao mô hình kinh tế nghèo như "cà phê đu mục" luôn đông khách, đến chính phủ tặng người dân 100k để chọi lễ là một phép thử tài khóa khéo léo - tất cả đều có thể được giải thích bằng các nguyên lý kinh tế cơ bản.
+                            </p>
+                            
+                            <p class="intro-paragraph" data-vi='Với 10+ năm kinh nghiệm nghiên cứu hành vi người tiêu dùng và kinh tế hành vi, tôi đã học được rằng con người chúng ta thú vị hơn bất kỳ mô hình kinh tế nào có thể dự đoán - nhưng đồng thời, chúng ta cũng đáng ngạc nhiên là... có thể dự đoán.' data-en='With 10+ years of experience researching consumer behavior and behavioral economics, I have learned that we humans are more interesting than any economic model can predict - but at the same time, we are also surprisingly... predictable.'>
+                                Với 10+ năm kinh nghiệm nghiên cứu hành vi người tiêu dùng và kinh tế hành vi, tôi đã học được rằng con người chúng ta thú vị hơn bất kỳ mô hình kinh tế nào có thể dự đoán - nhưng đồng thời, chúng ta cũng đáng ngạc nhiên là... có thể dự đoán.
+                            </p>
+                            
+                            <p class="intro-paragraph" data-vi='Website này là nơi tôi thỏa sức "mổ xẻ" các hiện tượng xã hội, văn hóa, lịch sử qua góc nhìn kinh tế học - theo tinh thần của Gary Becker, người đã chứng minh rằng không có gì là nằm ngoài tầm phân tích của kinh tế học. Nhưng đừng lo, tôi sẽ cố gắng ít dùng thuật ngữ hàn lâm và nhiều ví dụ đời thường hơn.' data-en='This website is where I freely "dissect" social phenomena, culture, and history through the lens of economics - in the spirit of Gary Becker, who proved that nothing is beyond the reach of economic analysis. But do not worry, I will try to use less academic terminology and more everyday examples.'>
+                                Website này là nơi tôi thỏa sức "mổ xẻ" các hiện tượng xã hội, văn hóa, lịch sử qua góc nhìn kinh tế học - theo tinh thần của Gary Becker, người đã chứng minh rằng không có gì là nằm ngoài tầm phân tích của kinh tế học. Nhưng đừng lo, tôi sẽ cố gắng ít dùng thuật ngữ hàn lâm và nhiều ví dụ đời thường hơn.
+                            </p>
+                            
+                            <p class="intro-paragraph" data-vi='Nếu bạn tò mò muốn biết "Tại sao?" đằng sau những thói quen, xu hướng và quyết định của con người - chào mừng bạn đến đúng nơi rồi đấy!' data-en='If you are curious to know "Why?" behind human habits, trends and decisions - welcome to the right place!'>
+                                Nếu bạn tò mò muốn biết "Tại sao?" đằng sau những thói quen, xu hướng và quyết định của con người - chào mừng bạn đến đúng nơi rồi đấy!
+                            </p>
+                            
+                            <div class="btn-group">
+                                <a href="#cv" class="btn primary nav-link" data-vi="Resume" data-en="Resume">Resume</a>
+                                <a href="#blog" class="btn nav-link" data-vi="Blogs" data-en="Blogs">Blogs</a>
+                                <a href="#contact" class="btn nav-link" data-vi="Contact" data-en="Contact">Contact</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CV Section -->
         <section id="cv" class="section">
             <div class="container">
                 <h2 data-vi="Hồ Sơ & Kinh Nghiệm" data-en="Profile & Experience">Hồ Sơ & Kinh Nghiệm</h2>
@@ -767,7 +869,6 @@
             </div>
         </section>
 
-        <!-- Blog Section -->
         <section id="blog" class="section">
             <div class="container">
                 <h2 data-vi="Blog & Chia sẻ" data-en="Blog & Sharing">Blog & Chia sẻ</h2>
@@ -874,7 +975,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="container">
                 <h2 data-vi="Liên hệ với tôi" data-en="Contact Me">Liên hệ với tôi</h2>
@@ -951,50 +1051,35 @@
     </main>
 
     <script>
-        // Navigation functionality
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('.section');
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
 
-        // Switch between sections
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                
-                // Remove active class from all links and sections
                 navLinks.forEach(l => l.classList.remove('active'));
                 sections.forEach(s => s.classList.remove('active'));
-                
-                // Add active class to clicked link
                 link.classList.add('active');
-                
-                // Show corresponding section
                 const targetId = link.getAttribute('href').substring(1);
                 document.getElementById(targetId).classList.add('active');
-                
-                // Close mobile menu
                 navMenu.classList.remove('active');
             });
         });
 
-        // Mobile menu toggle
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
 
-        // Blog filter functionality
         const filterBtns = document.querySelectorAll('.filter-btn');
         const blogCards = document.querySelectorAll('.blog-card');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all filter buttons
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                
                 const filter = btn.getAttribute('data-filter');
-                
                 blogCards.forEach(card => {
                     if (filter === 'all' || card.getAttribute('data-category') === filter) {
                         card.style.display = 'block';
@@ -1005,69 +1090,41 @@
             });
         });
 
-        // Form submission
         const contactForm = document.querySelector('#contact form');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Cảm ơn bạn đã gửi tin nhắn! Tôi sẽ phản hồi sớm nhất có thể.');
         });
 
-        // Language switching functionality
         const langButtons = document.querySelectorAll('.lang-btn');
         const elementsWithTranslations = document.querySelectorAll('[data-vi][data-en]');
-
-        // Set default language
         let currentLanguage = 'vi';
 
         langButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                
-                // Remove active class from all language buttons
                 langButtons.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                
-                // Get selected language
                 const selectedLang = btn.getAttribute('data-lang');
                 currentLanguage = selectedLang;
-                
-                // Update all elements with translations
                 elementsWithTranslations.forEach(element => {
                     const translation = element.getAttribute(`data-${selectedLang}`);
                     if (translation) {
                         element.textContent = translation;
                     }
                 });
-                
-                // Save language preference
                 localStorage.setItem('preferred-language', selectedLang);
             });
         });
 
-        // Load saved language preference on page load
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferred-language');
             if (savedLang && savedLang !== 'vi') {
-                // Find and click the corresponding language button
                 const targetBtn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
                 if (targetBtn) {
                     targetBtn.click();
                 }
             }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
         });
     </script>
 </body>
