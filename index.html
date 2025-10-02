@@ -1,1 +1,1090 @@
 Behavioral Economist | Market Research | Social Analyst
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huỳnh Phú Xuân - Portfolio & Blogs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f5f2eb;
+        }
+
+        .name-font {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: #fefdfb;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-bottom: 1px solid #ebe8e1;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: #6c757d;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: #c8a882;
+        }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            background: #f0ede6;
+            color: #6c757d;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: 1px solid #ebe8e1;
+            font-weight: 500;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: #c8a882;
+            color: white;
+            border-color: #c8a882;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #2c3e50;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #2c3e50;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        /* Home Section */
+        .hero {
+            background: #fefdfb;
+            color: #2c3e50;
+            padding: 80px 0 100px;
+            margin-top: -80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-left {
+            animation: fadeInLeft 1s ease-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-left h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .hero-left .subtitle {
+            font-size: 1.2rem;
+            color: #6c757d;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .hero-right {
+            animation: fadeInRight 1s ease-out;
+            text-align: center;
+        }
+
+        .hero-right img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: transparent;
+            color: #c8a882;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 2px solid #c8a882;
+            font-weight: 500;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-width: 140px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #c8a882;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .btn.primary {
+            background: #c8a882;
+            color: white;
+        }
+
+        .btn.primary:hover {
+            background: #b69671;
+            border-color: #b69671;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: #fefdfb;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid #ebe8e1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        /* CV Section */
+        .cv-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .cv-sidebar {
+            background: #fefefe;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #f5f2eb;
+            height: fit-content;
+        }
+
+        .cv-main {
+            background: #fefefe;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #f5f2eb;
+        }
+
+        .cv-section {
+            margin-bottom: 2rem;
+        }
+
+        .cv-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0ede7;
+            font-weight: 500;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f5f2eb;
+        }
+
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .item-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .item-company {
+            color: #4a90e2;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #f5f2eb;
+            color: #495057;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid #f0ede7;
+            font-weight: 500;
+        }
+
+        /* Blog Section */
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            background: #fefefe;
+            border: 2px solid #f0ede7;
+            color: #6c757d;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: #d4a574;
+            color: white;
+            border-color: #d4a574;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: #fefefe;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #f5f2eb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .blog-card-header {
+            background: #f5f2eb;
+            color: #2c3e50;
+            padding: 1.5rem;
+            border-bottom: 1px solid #f0ede7;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: #f0e7d6;
+            color: #b8956b;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .blog-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .blog-card-body {
+            padding: 1.5rem;
+        }
+
+        .blog-excerpt {
+            color: #495057;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #d4a574;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #c19660;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-form {
+            background: #fefefe;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #f5f2eb;
+        }
+
+        .contact-info {
+            background: #fefefe;
+            color: #2c3e50;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #f5f2eb;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #f0ede7;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+            background: #fefefe;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4a574;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f5f2eb;
+            border-radius: 8px;
+            border: 1px solid #f0ede7;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            width: 30px;
+        }
+
+        .contact-item h4 {
+            margin-bottom: 0.25rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            color: #6c757d;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: #fefdfb;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .language-switcher {
+                margin-left: 0;
+                margin-right: 1rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-left h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-left .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-right img {
+                max-width: 350px;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-right img {
+                max-width: 280px;
+            }
+
+            .hero-left h1 {
+                font-size: 2.2rem;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+
+            .blog-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo name-font">Huỳnh Phú Xuân</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#cv" class="nav-link">Resume</a></li>
+                <li><a href="#blog" class="nav-link">Blogs</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="language-switcher">
+                <a href="#" class="lang-btn active" data-lang="vi">🇻🇳 VI</a>
+                <a href="#" class="lang-btn" data-lang="en">🇺🇸 EN</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-left">
+                            <h1 class="name-font" data-vi="Huỳnh Phú Xuân" data-en="Huynh Phu Xuan">
+                                Huỳnh Phú Xuân
+                            </h1>
+                            <p class="subtitle" data-vi="Behavioral Economist | Market Research | Social Analyst" data-en="Behavioral Economist | Market Research | Social Analyst">
+                                Behavioral Economist | Market Research | Social Analyst
+                            </p>
+                        </div>
+                        <div class="hero-right">
+                            <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/324b6d1ffd6c035028fc9f9bda8c0c09f872a239/fav-artwork.jpg" alt="Illustration" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cv" class="section">
+            <div class="container">
+                <h2 data-vi="Hồ Sơ & Kinh Nghiệm" data-en="Profile & Experience">Hồ Sơ & Kinh Nghiệm</h2>
+                <div class="cv-container">
+                    <div class="cv-sidebar">
+                        <div class="cv-section">
+                            <h3 data-vi="Thông tin liên hệ" data-en="Contact Information">Thông tin liên hệ</h3>
+                            <p><strong>Email:</strong> huynhphuxuan@gmail.com</p>
+                            <p><strong data-vi="Điện thoại" data-en="Phone">Điện thoại:</strong> +84 xxx xxx xxx</p>
+                            <p><strong data-vi="Địa chỉ" data-en="Address">Địa chỉ:</strong> TP.HCM, Việt Nam</p>
+                            <p><strong>GitHub:</strong> github.com/huynhphuxuan</p>
+                            <p><strong>LinkedIn:</strong> linkedin.com/in/huynhphuxuan</p>
+                        </div>
+
+                        <div class="cv-section">
+                            <h3 data-vi="Kỹ năng" data-en="Skills">Kỹ năng</h3>
+                            <div class="skill-list">
+                                <span class="skill-tag">SPSS</span>
+                                <span class="skill-tag">R</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Excel</span>
+                                <span class="skill-tag">Survey Design</span>
+                                <span class="skill-tag">Qualitative Research</span>
+                                <span class="skill-tag">Quantitative Analysis</span>
+                                <span class="skill-tag">Data Visualization</span>
+                            </div>
+                        </div>
+
+                        <div class="cv-section">
+                            <h3 data-vi="Ngôn ngữ" data-en="Languages">Ngôn ngữ</h3>
+                            <p><strong data-vi="Tiếng Việt" data-en="Vietnamese">Tiếng Việt:</strong> <span data-vi="Bản ngữ" data-en="Native">Bản ngữ</span></p>
+                            <p><strong data-vi="Tiếng Anh" data-en="English">Tiếng Anh:</strong> <span data-vi="Giao tiếp tốt" data-en="Fluent">Giao tiếp tốt</span></p>
+                        </div>
+
+                        <div class="cv-section">
+                            <h3 data-vi="Sở thích" data-en="Interests">Sở thích</h3>
+                            <ul>
+                                <li data-vi="Viết blog về kinh tế hành vi" data-en="Writing behavioral economics blogs">Viết blog về kinh tế hành vi</li>
+                                <li data-vi="Phân tích xu hướng tiêu dùng" data-en="Analyzing consumer trends">Phân tích xu hướng tiêu dùng</li>
+                                <li data-vi="Đọc sách kinh tế - tâm lý học" data-en="Reading economics & psychology">Đọc sách kinh tế - tâm lý học</li>
+                                <li data-vi="Nghiên cứu chính sách công" data-en="Public policy research">Nghiên cứu chính sách công</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cv-main">
+                        <div class="cv-section">
+                            <h3 data-vi="Mục tiêu nghề nghiệp" data-en="Career Objective">Mục tiêu nghề nghiệp</h3>
+                            <p data-vi="Tìm kiếm vị trí Senior Market Research Analyst hoặc Behavioral Economist tại các tổ chức nghiên cứu, công ty tư vấn hoặc doanh nghiệp, nơi tôi có thể ứng dụng kiến thức về kinh tế học hành vi và kỹ năng phân tích dữ liệu để hiểu sâu hơn về hành vi người tiêu dùng và đưa ra các khuyến nghị chiến lược dựa trên nghiên cứu. Song song, tôi muốn phát triển kênh blog cá nhân để phổ biến kiến thức kinh tế học đến công chúng." data-en="Seeking a Senior Market Research Analyst or Behavioral Economist position at research organizations, consulting firms, or enterprises where I can apply behavioral economics knowledge and data analysis skills to gain deeper insights into consumer behavior and provide research-based strategic recommendations. In parallel, I want to develop my personal blog to disseminate economic knowledge to the public.">
+                                Tìm kiếm vị trí Senior Market Research Analyst hoặc Behavioral Economist tại các tổ chức nghiên cứu, công ty tư vấn hoặc doanh nghiệp, nơi tôi có thể ứng dụng kiến thức về kinh tế học hành vi và kỹ năng phân tích dữ liệu để hiểu sâu hơn về hành vi người tiêu dùng và đưa ra các khuyến nghị chiến lược dựa trên nghiên cứu. Song song, tôi muốn phát triển kênh blog cá nhân để phổ biến kiến thức kinh tế học đến công chúng.
+                            </p>
+                        </div>
+
+                        <div class="cv-section">
+                            <h3 data-vi="Kinh nghiệm làm việc" data-en="Work Experience">Kinh nghiệm làm việc</h3>
+                            <div class="experience-item">
+                                <div class="item-header">
+                                    <div>
+                                        <div class="item-title">Senior Market Research Analyst</div>
+                                        <div class="item-company">ABC Research & Consulting</div>
+                                    </div>
+                                    <div class="item-date">01/2020 - <span data-vi="Hiện tại" data-en="Present">Hiện tại</span></div>
+                                </div>
+                                <ul>
+                                    <li data-vi="Thiết kế và thực hiện các nghiên cứu định lượng và định tính về hành vi người tiêu dùng" data-en="Design and conduct quantitative and qualitative research on consumer behavior">Thiết kế và thực hiện các nghiên cứu định lượng và định tính về hành vi người tiêu dùng</li>
+                                    <li data-vi="Phân tích dữ liệu thị trường sử dụng SPSS, R và Python" data-en="Analyze market data using SPSS, R and Python">Phân tích dữ liệu thị trường sử dụng SPSS, R và Python</li>
+                                    <li data-vi="Tư vấn chiến lược cho khách hàng dựa trên insights từ behavioral economics" data-en="Advise clients on strategy based on behavioral economics insights">Tư vấn chiến lược cho khách hàng dựa trên insights từ behavioral economics</li>
+                                    <li data-vi="Quản lý team nghiên cứu với 5 thành viên" data-en="Manage research team of 5 members">Quản lý team nghiên cứu với 5 thành viên</li>
+                                </ul>
+                            </div>
+
+                            <div class="experience-item">
+                                <div class="item-header">
+                                    <div>
+                                        <div class="item-title">Market Research Associate</div>
+                                        <div class="item-company" data-vi="XYZ Consumer Insights" data-en="XYZ Consumer Insights">XYZ Consumer Insights</div>
+                                    </div>
+                                    <div class="item-date">06/2017 - 12/2019</div>
+                                </div>
+                                <ul>
+                                    <li data-vi="Thực hiện khảo sát và phỏng vấn sâu với người tiêu dùng" data-en="Conduct surveys and in-depth interviews with consumers">Thực hiện khảo sát và phỏng vấn sâu với người tiêu dùng</li>
+                                    <li data-vi="Phân tích xu hướng thị trường và hành vi mua sắm" data-en="Analyze market trends and shopping behavior">Phân tích xu hướng thị trường và hành vi mua sắm</li>
+                                    <li data-vi="Xây dựng báo cáo insights cho khách hàng trong ngành FMCG" data-en="Develop insight reports for clients in FMCG industry">Xây dựng báo cáo insights cho khách hàng trong ngành FMCG</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="cv-section">
+                            <h3 data-vi="Học vấn" data-en="Education">Học vấn</h3>
+                            <div class="education-item">
+                                <div class="item-header">
+                                    <div>
+                                        <div class="item-title" data-vi="Thạc sĩ Kinh tế học" data-en="Master of Economics">Thạc sĩ Kinh tế học</div>
+                                        <div class="item-company" data-vi="Đại học Kinh tế TP.HCM" data-en="University of Economics HCMC">Đại học Kinh tế TP.HCM</div>
+                                    </div>
+                                    <div class="item-date">2015 - 2017</div>
+                                </div>
+                                <p data-vi="Chuyên ngành: Kinh tế học vi mô và Hành vi người tiêu dùng" data-en="Major: Microeconomics and Consumer Behavior">Chuyên ngành: Kinh tế học vi mô và Hành vi người tiêu dùng</p>
+                            </div>
+                            <div class="education-item">
+                                <div class="item-header">
+                                    <div>
+                                        <div class="item-title" data-vi="Cử nhân Kinh tế" data-en="Bachelor of Economics">Cử nhân Kinh tế</div>
+                                        <div class="item-company" data-vi="Đại học Kinh tế Quốc dân" data-en="National Economics University">Đại học Kinh tế Quốc dân</div>
+                                    </div>
+                                    <div class="item-date">2011 - 2015</div>
+                                </div>
+                                <p>GPA: 3.6/4.0</p>
+                            </div>
+                        </div>
+
+                        <div class="cv-section">
+                            <h3 data-vi="Dự án nghiên cứu nổi bật" data-en="Featured Research Projects">Dự án nghiên cứu nổi bật</h3>
+                            <div class="experience-item">
+                                <div class="item-header">
+                                    <div>
+                                        <div class="item-title" data-vi="Nghiên cứu Hành vi Tiêu dùng Thế hệ Z tại Việt Nam" data-en="Gen Z Consumer Behavior Study in Vietnam">Nghiên cứu Hành vi Tiêu dùng Thế hệ Z tại Việt Nam</div>
+                                        <div class="item-company">Research Project</div>
+                                    </div>
+                                    <div class="item-date">2023 - <span data-vi="Hiện tại" data-en="Present">Hiện tại</span></div>
+                                </div>
+                                <ul>
+                                    <li data-vi="Phân tích hành vi mua sắm online của 2000+ người tiêu dùng Gen Z" data-en="Analyzed online shopping behavior of 2000+ Gen Z consumers">Phân tích hành vi mua sắm online của 2000+ người tiêu dùng Gen Z</li>
+                                    <li data-vi="Ứng dụng lý thuyết Nudge và Behavioral Economics để giải thích quyết định mua hàng" data-en="Applied Nudge theory and Behavioral Economics to explain purchase decisions">Ứng dụng lý thuyết Nudge và Behavioral Economics để giải thích quyết định mua hàng</li>
+                                    <li data-vi="Kết quả được công bố trên blog cá nhân và tạp chí kinh tế" data-en="Results published on personal blog and economics journals">Kết quả được công bố trên blog cá nhân và tạp chí kinh tế</li>
+                                </ul>
+                            </div>
+                            <div class="experience-item">
+                                <div class="item-header">
+                                    <div>
+                                        <div class="item-title" data-vi="Blog Kinh tế Học Hành vi" data-en="Behavioral Economics Blog">Blog Kinh tế Học Hành vi</div>
+                                        <div class="item-company">Personal Project</div>
+                                    </div>
+                                    <div class="item-date">2020 - <span data-vi="Hiện tại" data-en="Present">Hiện tại</span></div>
+                                </div>
+                                <ul>
+                                    <li data-vi="Viết 100+ bài phân tích về kinh tế hành vi, chính sách công và xu hướng tiêu dùng" data-en="Wrote 100+ analysis articles on behavioral economics, public policy and consumer trends">Viết 100+ bài phân tích về kinh tế hành vi, chính sách công và xu hướng tiêu dùng</li>
+                                    <li data-vi="Đạt 50,000+ lượt đọc hàng tháng" data-en="Achieved 50,000+ monthly readers">Đạt 50,000+ lượt đọc hàng tháng</li>
+                                    <li data-vi="Xây dựng cộng đồng độc giả quan tâm đến kinh tế học ứng dụng" data-en="Built a community of readers interested in applied economics">Xây dựng cộng đồng độc giả quan tâm đến kinh tế học ứng dụng</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="section">
+            <div class="container">
+                <h2 data-vi="Blog & Chia sẻ" data-en="Blog & Sharing">Blog & Chia sẻ</h2>
+                
+                <div class="blog-filters">
+                    <button class="filter-btn active" data-filter="all" data-vi="Tất cả" data-en="All">Tất cả</button>
+                    <button class="filter-btn" data-filter="economics" data-vi="Kinh tế" data-en="Economics">Kinh tế</button>
+                    <button class="filter-btn" data-filter="politics" data-vi="Chính trị" data-en="Politics">Chính trị</button>
+                    <button class="filter-btn" data-filter="tech" data-vi="Công nghệ" data-en="Technology">Công nghệ</button>
+                    <button class="filter-btn" data-filter="personal" data-vi="Cá nhân" data-en="Personal">Cá nhân</button>
+                </div>
+
+                <div class="blog-grid">
+                    <article class="blog-card" data-category="economics">
+                        <div class="blog-card-header">
+                            <span class="blog-category" data-vi="Kinh tế" data-en="Economics">Kinh tế</span>
+                            <h3 class="blog-title" data-vi="Lạm phát và tác động đến người tiêu dùng Việt Nam" data-en="Inflation and its Impact on Vietnamese Consumers">Lạm phát và tác động đến người tiêu dùng Việt Nam</h3>
+                            <p class="blog-date">25 tháng 9, 2024</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt" data-vi="Phân tích về tình trạng lạm phát hiện tại, nguyên nhân và cách thức ảnh hưởng đến đời sống người dân. Từ giá xăng dầu đến hàng tiêu dùng thiết yếu..." data-en="Analysis of the current inflation situation, causes and how it affects people's lives. From fuel prices to essential consumer goods...">
+                                Phân tích về tình trạng lạm phát hiện tại, nguyên nhân và cách thức ảnh hưởng 
+                                đến đời sống người dân. Từ giá xăng dầu đến hàng tiêu dùng thiết yếu...
+                            </p>
+                            <a href="#" class="read-more" data-vi="Đọc tiếp →" data-en="Read more →">Đọc tiếp →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="politics">
+                        <div class="blog-card-header">
+                            <span class="blog-category" data-vi="Chính trị" data-en="Politics">Chính trị</span>
+                            <h3 class="blog-title" data-vi="Xu hướng chính trị toàn cầu trong năm 2024" data-en="Global Political Trends in 2024">Xu hướng chính trị toàn cầu trong năm 2024</h3>
+                            <p class="blog-date">20 tháng 9, 2024</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt" data-vi="Nhìn lại những sự kiện chính trị quan trọng năm 2024, từ các cuộc bầu cử đến các chính sách mới và tác động đến cục diện thế giới..." data-en="Looking back at important political events in 2024, from elections to new policies and their impact on the global situation...">
+                                Nhìn lại những sự kiện chính trị quan trọng năm 2024, từ các cuộc bầu cử 
+                                đến các chính sách mới và tác động đến cục diện thế giới...
+                            </p>
+                            <a href="#" class="read-more" data-vi="Đọc tiếp →" data-en="Read more →">Đọc tiếp →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="tech">
+                        <div class="blog-card-header">
+                            <span class="blog-category" data-vi="Công nghệ" data-en="Technology">Công nghệ</span>
+                            <h3 class="blog-title" data-vi="AI và tương lai của ngành phát triển web" data-en="AI and the Future of Web Development">AI và tương lai của ngành phát triển web</h3>
+                            <p class="blog-date">15 tháng 9, 2024</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt" data-vi="Trí tuệ nhân tạo đang thay đổi cách chúng ta viết code như thế nào? Những tool AI nào đang hữu ích cho developer hiện tại..." data-en="How is artificial intelligence changing the way we write code? What AI tools are currently useful for developers...">
+                                Trí tuệ nhân tạo đang thay đổi cách chúng ta viết code như thế nào? 
+                                Những tool AI nào đang hữu ích cho developer hiện tại...
+                            </p>
+                            <a href="#" class="read-more" data-vi="Đọc tiếp →" data-en="Read more →">Đọc tiếp →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="economics">
+                        <div class="blog-card-header">
+                            <span class="blog-category" data-vi="Kinh tế" data-en="Economics">Kinh tế</span>
+                            <h3 class="blog-title" data-vi="Cryptocurrency: Cơ hội hay rủi ro cho nhà đầu tư Việt?" data-en="Cryptocurrency: Opportunity or Risk for Vietnamese Investors?">Cryptocurrency: Cơ hội hay rủi ro cho nhà đầu tư Việt?</h3>
+                            <p class="blog-date">10 tháng 9, 2024</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt" data-vi="Tìm hiểu về thị trường tiền điện tử, các rủi ro tiềm ẩn và cơ hội đầu tư trong bối cảnh pháp lý chưa rõ ràng tại Việt Nam..." data-en="Learn about the cryptocurrency market, potential risks and investment opportunities in the context of unclear legal framework in Vietnam...">
+                                Tìm hiểu về thị trường tiền điện tử, các rủi ro tiềm ẩn và cơ hội đầu tư 
+                                trong bối cảnh pháp lý chưa rõ ràng tại Việt Nam...
+                            </p>
+                            <a href="#" class="read-more" data-vi="Đọc tiếp →" data-en="Read more →">Đọc tiếp →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="personal">
+                        <div class="blog-card-header">
+                            <span class="blog-category" data-vi="Cá nhân" data-en="Personal">Cá nhân</span>
+                            <h3 class="blog-title" data-vi="Làm thế nào để cân bằng coding và viết blog?" data-en="How to Balance Coding and Blog Writing?">Làm thế nào để cân bằng coding và viết blog?</h3>
+                            <p class="blog-date">5 tháng 9, 2024</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt" data-vi="Chia sẻ kinh nghiệm cá nhân về việc kết hợp passion cho lập trình và viết lách. Làm sao để duy trì đều đặn cả hai hoạt động..." data-en="Sharing personal experience in combining passion for programming and writing. How to maintain both activities regularly...">
+                                Chia sẻ kinh nghiệm cá nhân về việc kết hợp passion cho lập trình và 
+                                viết lách. Làm sao để duy trì đều đặn cả hai hoạt động...
+                            </p>
+                            <a href="#" class="read-more" data-vi="Đọc tiếp →" data-en="Read more →">Đọc tiếp →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="politics">
+                        <div class="blog-card-header">
+                            <span class="blog-category" data-vi="Chính trị" data-en="Politics">Chính trị</span>
+                            <h3 class="blog-title" data-vi="Ảnh hưởng của mạng xã hội đến dư luận chính trị" data-en="The Impact of Social Media on Political Opinion">Ảnh hưởng của mạng xã hội đến dư luận chính trị</h3>
+                            <p class="blog-date">1 tháng 9, 2024</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt" data-vi="Phân tích về vai trò của các nền tảng mạng xã hội trong việc định hình dư luận và ảnh hưởng đến các quyết định chính trị..." data-en="Analysis of the role of social media platforms in shaping public opinion and influencing political decisions...">
+                                Phân tích về vai trò của các nền tảng mạng xã hội trong việc định hình 
+                                dư luận và ảnh hưởng đến các quyết định chính trị...
+                            </p>
+                            <a href="#" class="read-more" data-vi="Đọc tiếp →" data-en="Read more →">Đọc tiếp →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 data-vi="Liên hệ với tôi" data-en="Contact Me">Liên hệ với tôi</h2>
+                <div class="contact-container">
+                    <div class="contact-form">
+                        <h3 data-vi="Gửi tin nhắn" data-en="Send Message">Gửi tin nhắn</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="name" data-vi="Họ và tên" data-en="Full Name">Họ và tên</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" data-vi="Chủ đề" data-en="Subject">Chủ đề</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-vi="Nội dung" data-en="Message">Nội dung</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary" data-vi="Gửi tin nhắn" data-en="Send Message">Gửi tin nhắn</button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <h3 data-vi="Thông tin liên hệ" data-en="Contact Information">Thông tin liên hệ</h3>
+                        <div class="contact-item">
+                            <i>📧</i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>huynhphuxuan@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i>📱</i>
+                            <div>
+                                <h4 data-vi="Điện thoại" data-en="Phone">Điện thoại</h4>
+                                <p>+84 xxx xxx xxx</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i>📍</i>
+                            <div>
+                                <h4 data-vi="Địa chỉ" data-en="Address">Địa chỉ</h4>
+                                <p>TP. Hồ Chí Minh, Việt Nam</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i>💻</i>
+                            <div>
+                                <h4>GitHub</h4>
+                                <p>github.com/huynhphuxuan</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i>💼</i>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p>linkedin.com/in/huynhphuxuan</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e9ecef;">
+                            <h4 data-vi="Kết nối với tôi" data-en="Connect with me">Kết nối với tôi</h4>
+                            <p data-vi="Rất mong được thảo luận về công nghệ, kinh tế, hoặc bất kỳ chủ đề thú vị nào khác!" data-en="I look forward to discussing technology, economics, or any other interesting topics!">Rất mong được thảo luận về công nghệ, kinh tế, hoặc bất kỳ chủ đề thú vị nào khác!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                navLinks.forEach(l => l.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+                link.classList.add('active');
+                const targetId = link.getAttribute('href').substring(1);
+                document.getElementById(targetId).classList.add('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                blogCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        const contactForm = document.querySelector('#contact form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã gửi tin nhắn! Tôi sẽ phản hồi sớm nhất có thể.');
+        });
+
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const elementsWithTranslations = document.querySelectorAll('[data-vi][data-en]');
+        let currentLanguage = 'vi';
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                langButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const selectedLang = btn.getAttribute('data-lang');
+                currentLanguage = selectedLang;
+                elementsWithTranslations.forEach(element => {
+                    const translation = element.getAttribute(`data-${selectedLang}`);
+                    if (translation) {
+                        element.textContent = translation;
+                    }
+                });
+                localStorage.setItem('preferred-language', selectedLang);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred-language');
+            if (savedLang && savedLang !== 'vi') {
+                const targetBtn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
+                if (targetBtn) {
+                    targetBtn.click();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
