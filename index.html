@@ -155,30 +155,18 @@
 
         .hero-content {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            grid-template-columns: 1fr 1.5fr;
             gap: 4rem;
-            align-items: center;
+            align-items: start;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .hero-illustration {
-            position: relative;
+        .hero-left {
             animation: fadeInLeft 1s ease-out;
         }
 
-        .hero-illustration img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-        }
-
-        .hero-text {
-            animation: fadeInRight 1s ease-out;
-        }
-
-        .hero-text h1 {
+        .hero-left h1 {
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
             font-weight: 400;
@@ -186,9 +174,33 @@
             line-height: 1.2;
         }
 
-        .hero-text h1 .highlight {
+        .hero-left h1 .highlight {
             font-weight: 700;
             font-size: 4rem;
+        }
+
+        .hero-left .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #6c757d;
+            font-weight: 500;
+            border-bottom: 2px solid #f0ede6;
+            padding-bottom: 1.5rem;
+        }
+
+        .hero-illustration {
+            margin-top: 2rem;
+        }
+
+        .hero-illustration img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            display: block;
+        }
+
+        .hero-text {
+            animation: fadeInRight 1s ease-out;
         }
 
         .hero-text .subtitle {
@@ -200,7 +212,7 @@
             padding-bottom: 1.5rem;
         }
 
-        .hero-text .intro-paragraph {
+        .intro-paragraph {
             font-size: 1.05rem;
             margin-bottom: 1.5rem;
             color: #2c3e50;
@@ -208,16 +220,9 @@
             text-align: justify;
         }
 
-        .hero-text .intro-paragraph:first-of-type {
+        .intro-paragraph:first-of-type {
             font-weight: 500;
             color: #495057;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2.5rem;
-            flex-wrap: wrap;
         }
 
         .btn {
@@ -605,27 +610,23 @@
                 gap: 2rem;
             }
 
-            .hero-illustration {
-                text-align: center;
-            }
-
             .hero-illustration img {
                 max-width: 350px;
             }
 
-            .hero-text h1 {
+            .hero-left h1 {
                 font-size: 2.5rem;
             }
 
-            .hero-text h1 .highlight {
+            .hero-left h1 .highlight {
                 font-size: 3rem;
             }
 
-            .hero-text .subtitle {
+            .hero-left .subtitle {
                 font-size: 1rem;
             }
 
-            .hero-text .intro-paragraph {
+            .intro-paragraph {
                 font-size: 0.95rem;
                 text-align: left;
             }
@@ -657,11 +658,11 @@
                 max-width: 280px;
             }
 
-            .hero-text h1 {
+            .hero-left h1 {
                 font-size: 2rem;
             }
 
-            .hero-text h1 .highlight {
+            .hero-left h1 .highlight {
                 font-size: 2.4rem;
             }
 
@@ -703,10 +704,7 @@
             <div class="hero">
                 <div class="container">
                     <div class="hero-content">
-                        <div class="hero-illustration">
-                            <img src="hero-illustration.png" alt="Illustration" />
-                        </div>
-                        <div class="hero-text">
+                        <div class="hero-left">
                             <h1 class="name-font">
                                 <span data-vi="Huỳnh Phú" data-en="Huynh Phu">Huỳnh Phú</span> 
                                 <span class="highlight" data-vi="XUÂN" data-en="XUAN">XUÂN</span>
@@ -714,7 +712,11 @@
                             <p class="subtitle" data-vi="Behavioral Economist | Market Research | Social Analyst" data-en="Behavioral Economist | Market Research | Social Analyst">
                                 Behavioral Economist | Market Research | Social Analyst
                             </p>
-                            
+                            <div class="hero-illustration">
+                                <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/324b6d1ffd6c035028fc9f9bda8c0c09f872a239/porfolio-image.jpg" alt="Illustration" />
+                            </div>
+                        </div>
+                        <div class="hero-text">
                             <p class="intro-paragraph" data-vi='Có lần một người bạn hỏi tôi: "Tại sao mày nhìn gì cũng thấy kinh tế học vậy?"' data-en='Once a friend asked me: "Why do you see economics in everything?"'>
                                 Có lần một người bạn hỏi tôi: "Tại sao mày nhìn gì cũng thấy kinh tế học vậy?"
                             </p>
@@ -734,12 +736,6 @@
                             <p class="intro-paragraph" data-vi='Nếu bạn tò mò muốn biết "Tại sao?" đằng sau những thói quen, xu hướng và quyết định của con người - chào mừng bạn đến đúng nơi rồi đấy!' data-en='If you are curious to know "Why?" behind human habits, trends and decisions - welcome to the right place!'>
                                 Nếu bạn tò mò muốn biết "Tại sao?" đằng sau những thói quen, xu hướng và quyết định của con người - chào mừng bạn đến đúng nơi rồi đấy!
                             </p>
-                            
-                            <div class="btn-group">
-                                <a href="#cv" class="btn primary nav-link" data-vi="Resume" data-en="Resume">Resume</a>
-                                <a href="#blog" class="btn nav-link" data-vi="Blogs" data-en="Blogs">Blogs</a>
-                                <a href="#contact" class="btn nav-link" data-vi="Contact" data-en="Contact">Contact</a>
-                            </div>
                         </div>
                     </div>
                 </div>
