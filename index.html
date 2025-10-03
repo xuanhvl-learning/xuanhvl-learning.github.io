@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huỳnh Phú Xuân - Portfolio & Blogs</title>
+    <title>Khoảng cách giàu nghèo đã ảnh hưởng đến cách chúng ta mua & sử dụng thực phẩm như thế nào? - Huỳnh Phú Xuân</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
             color: #2c3e50;
             background: #f5f2eb;
         }
@@ -56,608 +56,144 @@
             letter-spacing: -0.3px;
         }
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-menu a {
+        .back-btn {
             color: #6c757d;
             text-decoration: none;
-            transition: color 0.3s ease;
-            cursor: pointer;
             font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        .nav-menu a:hover, .nav-menu a.active {
+        .back-btn:hover {
             color: #c8a882;
         }
 
-        .language-switcher {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-left: 1rem;
-        }
-
-        .lang-btn {
-            padding: 0.4rem 0.8rem;
-            background: #f0ede6;
-            color: #6c757d;
-            text-decoration: none;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-            border: 1px solid #ebe8e1;
-            font-weight: 500;
-        }
-
-        .lang-btn:hover, .lang-btn.active {
-            background: #c8a882;
-            color: white;
-            border-color: #c8a882;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #2c3e50;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        main {
-            margin-top: 80px;
-            min-height: calc(100vh - 80px);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Blog Post Container */
+        .blog-post {
+            max-width: 800px;
+            margin: 120px auto 80px;
             padding: 0 20px;
         }
 
-        .section {
-            padding: 80px 0;
-            display: none;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
+        .blog-header {
             margin-bottom: 3rem;
             text-align: center;
-            color: #2c3e50;
-            font-weight: 300;
-            letter-spacing: -1px;
-        }
-
-        /* Home Section */
-        .hero {
-            background: #fefdfb;
-            color: #2c3e50;
-            padding: 80px 0 100px;
-            margin-top: -80px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero-left {
-            animation: fadeInLeft 1s ease-out;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .hero-left h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
-            letter-spacing: -1px;
-            line-height: 1.2;
-        }
-
-        .hero-left .subtitle {
-            font-size: 1.2rem;
-            color: #6c757d;
-            font-weight: 500;
-            line-height: 1.6;
-        }
-
-        .hero-right {
-            animation: fadeInRight 1s ease-out;
-            text-align: center;
-        }
-
-        .hero-right img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            background: transparent;
-            color: #c8a882;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            border: 2px solid #c8a882;
-            font-weight: 500;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            min-width: 140px;
-            text-align: center;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            background: #c8a882;
-            color: white;
-            transform: translateY(-1px);
-        }
-
-        .btn.primary {
-            background: #c8a882;
-            color: white;
-        }
-
-        .btn.primary:hover {
-            background: #b69671;
-            border-color: #b69671;
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Cards */
-        .card {
-            background: #fefdfb;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            border: 1px solid #ebe8e1;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-        }
-
-        /* CV Section */
-        .cv-container {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .cv-sidebar {
-            background: #fefefe;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            border: 1px solid #f5f2eb;
-            height: fit-content;
-        }
-
-        .cv-main {
-            background: #fefefe;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            border: 1px solid #f5f2eb;
-        }
-
-        .cv-section {
-            margin-bottom: 2rem;
-        }
-
-        .cv-section h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #f0ede7;
-            font-weight: 500;
-        }
-
-        .experience-item, .education-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #f5f2eb;
-        }
-
-        .experience-item:last-child, .education-item:last-child {
-            border-bottom: none;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 0.5rem;
-        }
-
-        .item-title {
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .item-date {
-            color: #6c757d;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .item-company {
-            color: #4a90e2;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background: #f5f2eb;
-            color: #495057;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            border: 1px solid #f0ede7;
-            font-weight: 500;
-        }
-
-        /* Blog Section */
-        .blog-filters {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 0.6rem 1.5rem;
-            background: #fefefe;
-            border: 2px solid #f0ede7;
-            color: #6c757d;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: #d4a574;
-            color: white;
-            border-color: #d4a574;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .blog-card {
-            background: #fefefe;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            border: 1px solid #f5f2eb;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-        }
-
-        .blog-card-header {
-            background: #f5f2eb;
-            color: #2c3e50;
-            padding: 1.5rem;
-            border-bottom: 1px solid #f0ede7;
         }
 
         .blog-category {
             display: inline-block;
-            background: #f0e7d6;
-            color: #b8956b;
-            padding: 0.3rem 0.8rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            margin-bottom: 0.75rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            background: #d4e8d4;
+            color: #2d5a2d;
         }
 
         .blog-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
             font-weight: 600;
-            line-height: 1.4;
-        }
-
-        .blog-date {
-            color: #6c757d;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .blog-card-body {
-            padding: 1.5rem;
-        }
-
-        .blog-excerpt {
-            color: #495057;
-            line-height: 1.6;
+            color: #2c3e50;
             margin-bottom: 1rem;
+            line-height: 1.3;
         }
 
-        .read-more {
-            color: #d4a574;
+        .blog-meta {
+            color: #6c757d;
+            font-size: 0.95rem;
+        }
+
+        .blog-content {
+            background: #fefdfb;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #ebe8e1;
+        }
+
+        .blog-content h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin: 2.5rem 0 1.5rem;
+            font-weight: 600;
+            border-bottom: 2px solid #f0ede6;
+            padding-bottom: 0.5rem;
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            color: #495057;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
+        }
+
+        .blog-content a {
+            color: #c8a882;
             text-decoration: none;
-            font-weight: 500;
+            border-bottom: 1px solid #c8a882;
             transition: color 0.3s ease;
         }
 
-        .read-more:hover {
-            color: #c19660;
+        .blog-content a:hover {
+            color: #b69671;
+            border-bottom-color: #b69671;
         }
 
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
+        .blog-content blockquote {
+            border-left: 4px solid #c8a882;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #495057;
         }
 
-        .contact-form {
-            background: #fefefe;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            border: 1px solid #f5f2eb;
+        .blog-content hr {
+            border: none;
+            border-top: 1px solid #ebe8e1;
+            margin: 2.5rem 0;
         }
 
-        .contact-info {
-            background: #fefefe;
-            color: #2c3e50;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            border: 1px solid #f5f2eb;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #2c3e50;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #f0ede7;
-            border-radius: 8px;
-            font-family: inherit;
-            transition: border-color 0.3s ease;
-            background: #fefefe;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #d4a574;
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: #f5f2eb;
-            border-radius: 8px;
-            border: 1px solid #f0ede7;
-        }
-
-        .contact-item i {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            width: 30px;
-        }
-
-        .contact-item h4 {
-            margin-bottom: 0.25rem;
-            color: #2c3e50;
-            font-weight: 600;
-        }
-
-        .contact-item p {
-            color: #6c757d;
-            margin: 0;
-        }
-
-        /* Coming Soon Message */
-        .coming-soon {
+        .blog-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ebe8e1;
             text-align: center;
-            padding: 100px 20px;
-        }
-
-        .coming-soon-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .coming-soon h3 {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .coming-soon p {
-            font-size: 1.1rem;
             color: #6c757d;
-            max-width: 500px;
-            margin: 0 auto;
+            font-style: italic;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 80px;
-                flex-direction: column;
-                background: #fefdfb;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                padding: 2rem 0;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .language-switcher {
-                margin-left: 0;
-                margin-right: 1rem;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .hero-left h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero-left .subtitle {
-                font-size: 1rem;
-            }
-
-            .hero-right img {
-                max-width: 350px;
-            }
-
-            .section h2 {
+            .blog-title {
                 font-size: 2rem;
             }
 
-            .cv-container {
-                grid-template-columns: 1fr;
+            .blog-content {
+                padding: 2rem 1.5rem;
             }
 
-            .contact-container {
-                grid-template-columns: 1fr;
+            .blog-content h2 {
+                font-size: 1.5rem;
             }
 
-            .btn-group {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-right img {
-                max-width: 280px;
-            }
-
-            .hero-left h1 {
-                font-size: 2.2rem;
-            }
-
-            .section h2 {
-                font-size: 1.8rem;
-            }
-
-            .blog-filters {
-                flex-direction: column;
-                align-items: center;
+            .blog-content h3 {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -665,180 +201,98 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo name-font">Huỳnh Phú Xuân</a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#cv" class="nav-link">Resume</a></li>
-                <li><a href="#blog" class="nav-link">Blogs</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="language-switcher">
-                <a href="#" class="lang-btn active" data-lang="vi">🇻🇳 VI</a>
-                <a href="#" class="lang-btn" data-lang="en">🇺🇸 EN</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a href="index.html" class="logo name-font">Huỳnh Phú Xuân</a>
+            <a href="index.html#blog" class="back-btn">← Quay lại Blog</a>
         </div>
     </nav>
 
-    <main>
-        <section id="home" class="section active">
-            <div class="hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <div class="hero-left">
-                            <h1 class="name-font" data-vi="Huỳnh Phú Xuân" data-en="Huynh Phu Xuan">
-                                Huỳnh Phú Xuân
-                            </h1>
-                            <p class="subtitle" data-vi="Behavioral Economist | Market Research | Social Analyst" data-en="Behavioral Economist | Market Research | Social Analyst">
-                                Behavioral Economist | Market Research | Social Analyst
-                            </p>
-                        </div>
-                        <div class="hero-right">
-                            <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/324b6d1ffd6c035028fc9f9bda8c0c09f872a239/fav-artwork.jpg" alt="Illustration" />
-                        </div>
-                    </div>
-                </div>
+    <article class="blog-post">
+        <header class="blog-header">
+            <span class="blog-category">Kinh tế học</span>
+            <h1 class="blog-title">Khoảng cách giàu nghèo đã ảnh hưởng đến cách chúng ta mua & sử dụng thực phẩm như thế nào?</h1>
+            <div class="blog-meta">4 tháng 10, 2025</div>
+        </header>
+
+        <div class="blog-content">
+            <h2>1. Mở đầu: Khi chiếc TV quan trọng hơn bữa cơm</h2>
+            <p>Trong cuốn "Good Economics for Hard Times", Abhijit Banerjee và Esther Duflo kể về một cuộc gặp gỡ đầy ấn tượng với một người đàn ông ở Morocco. Sau khi than phiền rằng gia đình không có đủ thức ăn, ông chỉ vào chiếc TV lớn với kết nối vệ tinh và tuyên bố: "Television is more important than food" (TV quan trọng hơn thức ăn). Câu chuyện này không chỉ là một câu chuyện đơn lẻ, mà phản ánh một hiện thực phức tạp về cách mà địa vị kinh tế xã hội định hình những lựa chọn thực phẩm của chúng ta.</p>
+
+            <hr>
+
+            <h2>2. Những khám phá đột phá từ nghiên cứu Andretti và cộng sự</h2>
+            <p>Nghiên cứu gần đây của Bernardo Andretti và nhóm cộng sự, được thực hiện tại Rio de Janeiro - một trong những thành phố có sự bất bình đẳng cao nhất thế giới, đã mang đến những phát hiện đáng chú ý về mối quan hệ giữa địa vị kinh tế xã hội và lựa chọn thực phẩm.</p>
+            <p>Xem nghiên cứu tại: <a href="https://journals.sagepub.com/doi/10.1177/00222429241296048" target="_blank">journals.sagepub.com</a></p>
+
+            <hr>
+
+            <h2>3. Ba khám phá then chốt</h2>
+            
+            <h3>3.1. Lựa chọn thực phẩm không lành mạnh ngay cả khi không có rào cản tài chính</h3>
+            <p>Điều đáng ngạc nhiên nhất là ngay cả khi loại bỏ các yếu tố về giá cả và khả năng tiếp cận (supply-side factors), những người có địa vị kinh tế xã hội thấp vẫn có xu hướng chọn những thực phẩm ít lành mạnh hơn. Điều này cho thấy rằng vấn đề không chỉ đơn thuần là "người nghèo không mua được thức ăn tốt" mà còn có những yếu tố tâm lý sâu xa hơn.</p>
+
+            <h3>3.2. Sự đánh đổi giữa "lành mạnh" và "no bụng"</h3>
+            <p>Nghiên cứu cho thấy người có thu nhập thấp sẵn sàng đánh đổi tính lành mạnh của thực phẩm để đổi lấy khả năng "no bụng" (fillingness). Đây là một phát hiện quan trọng vì nó giải thích tại sao các chính sách khuyến khích ăn uống lành mạnh thường thất bại ở các cộng đồng có thu nhập thấp.</p>
+
+            <h3>3.3. Những định kiến tiêu cực về thực phẩm lành mạnh</h3>
+            <p>Nhóm người có địa vị kinh tế xã hội thấp có xu hướng tin rằng:</p>
+            <ul>
+                <li>"Thức ăn lành mạnh = ít no bụng"</li>
+                <li>"Thức ăn lành mạnh = ít ngon"</li>
+            </ul>
+            <p>Những quan niệm này tạo thành những rào cản tâm lý mạnh mẽ, ngăn cản việc lựa chọn thực phẩm có lợi cho sức khỏe.</p>
+
+            <hr>
+
+            <h2>4. Góc nhìn từ "Poor Economics": Tại sao người nghèo có những lựa chọn "phi lý"?</h2>
+            <p>Banerjee và Duflo trong "Poor Economics" đã đưa ra một góc nhìn khác về vấn đề này. Họ lập luận rằng những lựa chọn của người nghèo, dù có vẻ "phi lý" từ góc độ của người giàu, thực ra lại hoàn toàn hợp lý trong bối cảnh của họ.</p>
+
+            <h3>i. Bài học từ người đàn ông Morocco</h3>
+            <p>Người đàn ông Morocco không phải là một kẻ bốc đồng khi mua TV thay vì thức ăn. Ông đã suy nghĩ kỹ càng và nhận ra rằng:</p>
+            <ul>
+                <li>Ông đã đủ sức khỏe để làm những công việc có sẵn</li>
+                <li>Dinh dưỡng tốt hơn sẽ không mang lại nhiều cơ hội kinh tế hơn</li>
+                <li>TV giải quyết được vấn đề nhàm chán - một nhu cầu thiết yếu trong cuộc sống hàng ngày</li>
+            </ul>
+
+            <h3>ii. Sự thay đổi trong chi tiêu thực phẩm</h3>
+            <p>Tại Ấn Độ, các tác giả quan sát thấy xu hướng giảm chi tiêu cho thực phẩm ngay cả khi thu nhập tăng. Điều này không phải vì người dân đã "đủ ăn", mà vì họ có nhiều lựa chọn tiêu dùng khác: điện thoại di động, TV, và những tiện ích nhỏ khác mà trước đây không có.</p>
+
+            <hr>
+
+            <h2>5. Tâm lý học của nghèo đói và lựa chọn thực phẩm</h2>
+
+            <h3>i. Tư duy "hiện tại" vs "tương lai"</h3>
+            <p>Người nghèo thường có xu hướng tập trung vào hiện tại hơn là tương lai. Khi sống trong điều kiện bất ổn, việc tận hưởng những khoái lạc nhỏ ngay lập tức (như một bữa ăn ngon dù không lành mạnh) có thể quan trọng hơn việc đầu tư vào sức khỏe lâu dài. Và các sản phẩm tiện lợi ngày nay thường được dân Marketing chăm chỉ, tập trung, nỗ lực xoáy vào yếu tố NGON, NO BỤNG mà lờ đi các cam kết dài hạn về sức khỏe.</p>
+
+            <h3>ii. Áp lực tâm lý và stress</h3>
+            <p>Nghèo đói tạo ra stress mãn tính, ảnh hưởng đến khả năng đưa ra quyết định hợp lý. Trong trạng thái này, não bộ có xu hướng tìm kiếm những phần thưởng tức thì, thường là thực phẩm có nhiều đường, muối, và chất béo.</p>
+
+            <h3>iii. Cảm giác kiểm soát và quyền lực</h3>
+            <p>Đối với người có thu nhập thấp, việc chọn những món ăn ngon miệng có thể là một trong số ít quyết định mà họ có thể tự do đưa ra. Đây là cách để khẳng định quyền tự chủ trong một đời sống đầy hạn chế.</p>
+
+            <hr>
+
+            <h2>6. Kết luận</h2>
+
+            <h3>i. Suy ngẫm: Khi đói no không chỉ là chuyện cái bụng</h3>
+            <p>Qua những nghiên cứu này, chúng ta thấy rằng vấn đề lựa chọn thực phẩm không đơn giản là chuyện "có tiền hay không có tiền". Nó là một hiện tượng phức tạp, đan xen giữa tâm lý, xã hội, văn hóa và kinh tế.</p>
+
+            <h3>ii. Bài học về sự đồng cảm</h3>
+            <p>Thay vì phán xét những lựa chọn của người khác, chúng ta cần hiểu rằng mỗi quyết định đều có logic riêng trong bối cảnh của từng người. Chiếc TV của người đàn ông Morocco không phải là sự xa xỉ, mà là cách ông tìm kiếm ý nghĩa và kết nối trong cuộc sống khó khăn.</p>
+
+            <h3>iii. Thách thức cho tương lai</h3>
+            <p>Làm thế nào để tạo ra một xã hội mà việc chọn thực phẩm lành mạnh không chỉ là đặc quyền của người giàu? Làm sao để những người có hoàn cảnh khó khăn cũng có thể vừa "no bụng", vừa "ngon miệng", vừa "tốt cho sức khỏe"?</p>
+
+            <h3>iv. Kết luận</h3>
+            <p>Sự phân biệt giàu nghèo ảnh hưởng đến lựa chọn thực phẩm theo những cách sâu sắc và đa chiều mà chúng ta vừa mới bắt đầu hiểu. Nghiên cứu của Andretti và những hiểu biết từ "Poor Economics" cho thấy rằng giải pháp không nằm ở việc đơn giản hóa vấn đề thành "cho tiền" hay "giáo dục", mà cần một cách tiếp cận toàn diện, tôn trọng và hiểu rõ tâm lý của từng nhóm đối tượng.</p>
+
+            <p>Cuối cùng, có lẽ câu chuyện về thực phẩm và sự bất bình đẳng là câu chuyện về con người - về cách chúng ta tìm kiếm Ý NGHĨA, KHOÁI LẠC và PHẨM GIÁ trong những hoàn cảnh khác nhau. Và đó chính là nơi mà mọi giải pháp thực sự bền vững cần bắt đầu. Thực tế là khoảng cách giàu nghèo ở Việt Nam theo cảm nhận của cá nhân tôi thì nó càng ngày càng rõ, haizzzzz.</p>
+
+            <div class="blog-footer">
+                <p>Bài viết được viết bởi một người nghèo nên chưa kịp nghĩ ra giải pháp gì đâu, cũng hông giúp ai giỏi hơn.</p>
+                <p>Chúc bạn ngày nắng yêu nắng, ngày mưa yêu mưa.</p>
             </div>
-        </section>
-
-        <section id="cv" class="section">
-            <div class="container">
-                <h2 data-vi="Hồ Sơ & Kinh Nghiệm" data-en="Profile & Experience">Hồ Sơ & Kinh Nghiệm</h2>
-                <div class="coming-soon">
-                    <div class="coming-soon-icon">🚧</div>
-                    <h3 data-vi="Đang cập nhật" data-en="Under Construction">Đang cập nhật</h3>
-                    <p data-vi="Thông tin hồ sơ và kinh nghiệm đang được hoàn thiện. Vui lòng quay lại sau!" data-en="Profile and experience information is being updated. Please come back later!">
-                        Thông tin hồ sơ và kinh nghiệm đang được hoàn thiện. Vui lòng quay lại sau!
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="blog" class="section">
-            <div class="container">
-                <h2 data-vi="Blog & Chia sẻ" data-en="Blog & Sharing">Blog & Chia sẻ</h2>
-                
-                <div class="blog-filters">
-                    <button class="filter-btn active" data-filter="all" data-vi="Tất cả" data-en="All">Tất cả</button>
-                    <button class="filter-btn" data-filter="economics" data-vi="Kinh tế học" data-en="Economics">Kinh tế học</button>
-                    <button class="filter-btn" data-filter="psychology" data-vi="Tâm lý học" data-en="Psychology">Tâm lý học</button>
-                    <button class="filter-btn" data-filter="religion" data-vi="Tôn giáo" data-en="Religion">Tôn giáo</button>
-                    <button class="filter-btn" data-filter="science-tech" data-vi="Khoa học Công nghệ" data-en="Science & Technology">Khoa học Công nghệ</button>
-                    <button class="filter-btn" data-filter="others" data-vi="Khác" data-en="Others">Khác</button>
-                </div>
-
-                <div class="blog-grid">
-                    <article class="blog-card" data-category="economics">
-                        <div class="blog-card-header">
-                            <span class="blog-category" data-vi="Kinh tế học" data-en="Economics">Kinh tế học</span>
-                            <h3 class="blog-title" data-vi="Khoảng cách giàu nghèo đã ảnh hưởng đến cách chúng ta mua & sử dụng thực phẩm như thế nào?" data-en="How Income Inequality Affects Our Food Choices">Khoảng cách giàu nghèo đã ảnh hưởng đến cách chúng ta mua & sử dụng thực phẩm như thế nào?</h3>
-                            <p class="blog-date">4 tháng 10, 2025</p>
-                        </div>
-                        <div class="blog-card-body">
-                            <p class="blog-excerpt" data-vi='Trong cuốn "Good Economics for Hard Times", Abhijit Banerjee và Esther Duflo kể về một người đàn ông ở Morocco tuyên bố: "Television is more important than food". Câu chuyện này phản ánh một hiện thực phức tạp về cách địa vị kinh tế xã hội định hình những lựa chọn thực phẩm của chúng ta...' data-en='In "Good Economics for Hard Times", Abhijit Banerjee and Esther Duflo tell the story of a man in Morocco who declared: "Television is more important than food". This story reflects a complex reality about how socioeconomic status shapes our food choices...'>
-                                Trong cuốn "Good Economics for Hard Times", Abhijit Banerjee và Esther Duflo kể về một người đàn ông ở Morocco tuyên bố: "Television is more important than food". Câu chuyện này phản ánh một hiện thực phức tạp về cách địa vị kinh tế xã hội định hình những lựa chọn thực phẩm của chúng ta...
-                            </p>
-                            <a href="blog-khoang-cach-giau-ngheo.html" class="read-more" data-vi="Đọc tiếp →" data-en="Read more →">Đọc tiếp →</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 data-vi="Liên hệ với tôi" data-en="Contact Me">Liên hệ với tôi</h2>
-                <div class="coming-soon">
-                    <div class="coming-soon-icon">📧</div>
-                    <h3 data-vi="Đang cập nhật" data-en="Under Construction">Đang cập nhật</h3>
-                    <p data-vi="Thông tin liên hệ đang được hoàn thiện. Vui lòng quay lại sau!" data-en="Contact information is being updated. Please come back later!">
-                        Thông tin liên hệ đang được hoàn thiện. Vui lòng quay lại sau!
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('.section');
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                navLinks.forEach(l => l.classList.remove('active'));
-                sections.forEach(s => s.classList.remove('active'));
-                link.classList.add('active');
-                const targetId = link.getAttribute('href').substring(1);
-                document.getElementById(targetId).classList.add('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const blogCards = document.querySelectorAll('.blog-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.getAttribute('data-filter');
-                blogCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        const contactForm = document.querySelector('#contact form');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Cảm ơn bạn đã gửi tin nhắn! Tôi sẽ phản hồi sớm nhất có thể.');
-        });
-
-        const langButtons = document.querySelectorAll('.lang-btn');
-        const elementsWithTranslations = document.querySelectorAll('[data-vi][data-en]');
-        let currentLanguage = 'vi';
-
-        langButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                langButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const selectedLang = btn.getAttribute('data-lang');
-                currentLanguage = selectedLang;
-                elementsWithTranslations.forEach(element => {
-                    const translation = element.getAttribute(`data-${selectedLang}`);
-                    if (translation) {
-                        element.textContent = translation;
-                    }
-                });
-                localStorage.setItem('preferred-language', selectedLang);
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferred-language');
-            if (savedLang && savedLang !== 'vi') {
-                const targetBtn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
-                if (targetBtn) {
-                    targetBtn.click();
-                }
-            }
-        });
-    </script>
+        </div>
+    </article>
 </body>
 </html>
