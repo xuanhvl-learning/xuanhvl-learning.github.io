@@ -18,21 +18,7 @@
   </style>
 </head>
 <body>
-  <!-- Header từ file blog cũ: Nav menu + ngôn ngữ -->
-  <header>
-    <nav>
-      <h1>Huỳnh Phú Xuân</h1>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/resume.html">Resume</a></li>
-        <li><a href="/blogs.html">Blogs</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-      </ul>
-      <div class="lang-switch">
-        🇻🇳 VI | 🇺🇸 EN
-      </div>
-    </nav>
-  </header>
+ {% include header.html %}
 
   <!-- Nội dung chính: Title, date, category từ front matter, và content từ Markdown -->
   <main>
@@ -46,15 +32,4 @@
     </article>
   </main>
 
-  <!-- Footer từ file blog cũ: Chia sẻ + disclaimer -->
-  <footer>
-    <div class="share">
-      Chia sẻ bài viết:
-      <a href="#">Facebook</a> |
-      <a href="#">LinkedIn</a>
-    </div>
-    <p>Bài viết được viết bởi một người nghèo nên chưa kịp nghĩ ra giải pháp gì đâu, cũng hông giúp ai giỏi hơn.<br>
-    Chúc bạn ngày nắng yêu nắng, ngày mưa yêu mưa.</p>
-  </footer>
-</body>
-</html>
+{% include footer.html %}
