@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} | Huỳnh Phú Xuân</title>
+  <!-- Thêm CSS nếu có từ file cũ, hoặc external link -->
+  <style>
+    /* CSS cơ bản để giữ thiết kế từ file blog cũ (chỉnh theo ý) */
+    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; color: #333; background: #fff; }
+    header nav { background: #f4f4f4; padding: 10px; text-align: center; border-bottom: 1px solid #ddd; }
+    header nav ul { list-style: none; padding: 0; display: inline-block; }
+    header nav ul li { display: inline; margin: 0 10px; }
+    article { max-width: 800px; margin: auto; padding: 20px; }
+    h1, h2, h3 { color: #333; }
+    .share { margin: 20px 0; text-align: center; border-top: 1px solid #ddd; padding-top: 10px; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; background: #f9f9f9; border-top: 1px solid #ddd; }
+    .lang-switch { float: right; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <!-- Header từ file blog cũ: Nav menu + ngôn ngữ -->
+  <header>
+    <nav>
+      <h1>Huỳnh Phú Xuân</h1>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/resume.html">Resume</a></li>
+        <li><a href="/blogs.html">Blogs</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <div class="lang-switch">
+        🇻🇳 VI | 🇺🇸 EN
+      </div>
+    </nav>
+  </header>
+
+  <!-- Nội dung chính: Title, date, category từ front matter, và content từ Markdown -->
+  <main>
+    <article>
+      <header class="post-header">
+        <h1>{{ page.title }}</h1>
+        <p>Ngày: {{ page.date | date: "%d tháng %m, %Y" }}</p>
+        {% if page.category %}<p>Danh mục: {{ page.category }}</p>{% endif %}
+      </header>
+      {{ content }}  <!-- Jekyll tự chèn nội dung Markdown từ file .md ở đây -->
+    </article>
+  </main>
+
+  <!-- Footer từ file blog cũ: Chia sẻ + disclaimer -->
+  <footer>
+    <div class="share">
+      Chia sẻ bài viết:
+      <a href="#">Facebook</a> |
+      <a href="#">LinkedIn</a>
+    </div>
+    <p>Bài viết được viết bởi một người nghèo nên chưa kịp nghĩ ra giải pháp gì đâu, cũng hông giúp ai giỏi hơn.<br>
+    Chúc bạn ngày nắng yêu nắng, ngày mưa yêu mưa.</p>
+  </footer>
+</body>
+</html>
