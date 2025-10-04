@@ -184,12 +184,14 @@
             font-weight: 500;
             line-height: 1.6;
         }
-/* Visitor Counter style */
+
+        /* Visitor Counter style */
         #visitor-counter {
             margin-top: 1em;
             font-size: 1em;
             color: #888;
         }
+
         .hero-right {
             animation: fadeInRight 1s ease-out;
             text-align: center;
@@ -517,6 +519,11 @@
                             <p class="subtitle" data-vi="Behavioral Economist | Market Research | Social Analyst" data-en="Behavioral Economist | Market Research | Social Analyst">
                                 Behavioral Economist | Market Research | Social Analyst
                             </p>
+                            <!-- Visitor Counter Start -->
+                            <div id="visitor-counter">
+                                <span id="visitor-count">Đang tải số lượt truy cập...</span>
+                            </div>
+                            <!-- Visitor Counter End -->
                         </div>
                         <div class="hero-right">
                             <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/324b6d1ffd6c035028fc9f9bda8c0c09f872a239/fav-artwork.jpg" alt="Illustration" />
@@ -553,7 +560,19 @@
                 </div>
 
                 <div class="blog-grid">
-                   
+                    <article class="blog-card" data-category="economics">
+                        <div class="blog-card-header">
+                            <span class="blog-category category-economics" data-vi="Kinh tế học" data-en="Economics">Kinh tế học</span>
+                            <h3 class="blog-title" data-vi="Khoảng cách giàu nghèo đã ảnh hưởng đến cách chúng ta mua & sử dụng thực phẩm như thế nào?" data-en="How Income Inequality Affects Our Food Choices">Khoảng cách giàu nghèo đã ảnh hưởng đến cách chúng ta mua & sử dụng thực phẩm như thế nào?</h3>
+                            <p class="blog-date">4 tháng 10, 2025</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt" data-vi='Trong cuốn "Good Economics for Hard Times", Abhijit Banerjee và Esther Duflo kể về một người đàn ông ở Morocco tuyên bố: "Television is more important than food". Câu chuyện này phản ánh một hiện thực phức tạp về cách địa vị kinh tế xã hội định hình những lựa chọn thực phẩm của chúng ta...' data-en='In "Good Economics for Hard Times", Abhijit Banerjee and Esther Duflo tell the story of a man in Morocco who declared: "Television is more important than food". This story reflects a complex reality about how socioeconomic status shapes our food choices...'>
+                                Trong cuốn "Good Economics for Hard Times", Abhijit Banerjee và Esther Duflo kể về một người đàn ông ở Morocco tuyên bố: "Television is more important than food". Câu chuyện này phản ánh một hiện thực phức tạp về cách địa vị kinh tế xã hội định hình những lựa chọn thực phẩm của chúng ta...
+                            </p>
+                            <a href="blog-khoang-cach-giau-ngheo.html" class="read-more" data-vi="Đọc tiếp →" data-en="Read more →">Đọc tiếp →</a>
+                        </div>
+                    </article>
                     <article class="blog-card" data-category="economics">
         <div class="blog-card-header">
             <span class="blog-category category-economics">Kinh tế học</span>
@@ -654,7 +673,7 @@
                     targetBtn.click();
                 }
             }
-// Visitor Counter fetch
+            // Visitor Counter fetch
             fetch('https://api.countapi.xyz/hit/xuanhvl-learning.github.io/visits')
                 .then(response => response.json())
                 .then(data => {
@@ -664,7 +683,7 @@
                 .catch(() => {
                     document.getElementById('visitor-count').innerText =
                         'Không thể tải số lượt truy cập!';
-
+                });
         });
     </script>
 </body>
