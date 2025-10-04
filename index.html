@@ -558,36 +558,31 @@
                     <button class="filter-btn" data-filter="science-tech" data-vi="Khoa học Công nghệ" data-en="Science & Technology">Khoa học Công nghệ</button>
                     <button class="filter-btn" data-filter="others" data-vi="Khác" data-en="Others">Khác</button>
                 </div>
-
-                <div class="blog-grid">
-        
-                    <article class="blog-card" data-category="economics">
+                
+<div class="blog-grid">
+    {% for post in site.posts %}
+    <article class="blog-card" data-category="{{ post.category }}">
         <div class="blog-card-header">
-            <span class="blog-category category-economics">Kinh tế học</span>
-            <h3 class="blog-title">Khoảng cách giàu nghèo đã ảnh hưởng đến cách chúng ta mua & sử dụng thực phẩm như thế nào?</h3>
-            <p class="blog-date">4 tháng 10, 2025</p>
+            <span class="blog-category category-{{ post.category }}">
+                {% if post.category == 'economics' %}Kinh tế học
+                {% elsif post.category == 'psychology' %}Tâm lý học
+                {% elsif post.category == 'scociety' %}Xã hội
+                {% elsif post.category == 'science-tech' %}Khoa học Công nghệ
+                {% else %}Khác
+                {% endif %}
+            </span>
+            <h3 class="blog-title">{{ post.title }}</h3>
+            <p class="blog-date">{{ post.date | date: "%d tháng %m, %Y" }}</p>
         </div>
         <div class="blog-card-body">
-            <p class="blog-excerpt">
-                Trong cuốn "Good Economics for Hard Times", Abhijit Banerjee và Esther Duflo kể về một người đàn ông ở Morocco tuyên bố: "Television is more important than food". Câu chuyện này phản ánh một hiện thực phức tạp về cách địa vị kinh tế xã hội định hình những lựa chọn thực phẩm của chúng ta...
-            </p>
-            <a href="blog-kinhtehoc-Khoangcachgiaungheo.html" class="read-more">Đọc tiếp →</a>
+            <p class="blog-excerpt">{{ post.excerpt }}</p>
+            <a href="{{ post.url }}" class="read-more">Đọc tiếp →</a>
         </div>
     </article>
-                   <article class="blog-card" data-category="economics">
-        <div class="blog-card-header">
-            <span class="blog-category category-economics">Kinh tế học</span>
-            <h3 class="blog-title">Insight - Khoa học thao túng hay chìa khóa giải phóng?</h3>
-            <p class="blog-date">4 tháng 10, 2025</p>
-        </div>
-        <div class="blog-card-body">
-            <p class="blog-excerpt">
-Ai nắm được insight là ai nắm được quyền lực định hình hành vi con người. Câu hỏi không phải là insight có mạnh mẽ hay không, mà là nó phục vụ ai.            </p>
-            <a href="blog-kinhtehoc-InsightKhoahocthaotunghaygiaiphong.html" class="read-more">Đọc tiếp →</a>
-        </div>
-    </article>   
-                </div>
-            </div>
+    {% endfor %}
+</div>
+               
+           
         </section>
 
         <section id="contact" class="section">
