@@ -9,82 +9,479 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* -- (CSS giữ nguyên như phiên bản trước, không thay đổi) -- */
-        * {margin: 0; padding: 0; box-sizing: border-box;}
-        body {font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #2c3e50; background: #f5f2eb;}
-        .name-font {font-family: 'Playfair Display', serif; font-weight: 500;}
-        .navbar {background: #fefdfb; padding: 1rem 0; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.04); border-bottom: 1px solid #ebe8e1;}
-        .nav-container {max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;}
-        .logo {color: #2c3e50; font-size: 1.5rem; font-weight: 500; text-decoration: none; letter-spacing: -0.3px;}
-        .nav-menu {display: flex; list-style: none; gap: 2rem;}
-        .nav-menu a {color: #6c757d; text-decoration: none; transition: color 0.3s ease; cursor: pointer; font-weight: 500;}
-        .nav-menu a:hover, .nav-menu a.active {color: #c8a882;}
-        .language-switcher {display: flex; align-items: center; gap: 0.5rem; margin-left: 1rem;}
-        .lang-btn {padding: 0.4rem 0.8rem; background: #f0ede6; color: #6c757d; text-decoration: none; border-radius: 20px; font-size: 0.85rem; transition: all 0.3s ease; border: 1px solid #ebe8e1; font-weight: 500;}
-        .lang-btn:hover, .lang-btn.active {background: #c8a882; color: white; border-color: #c8a882;}
-        .hamburger {display: none; flex-direction: column; cursor: pointer;}
-        .hamburger span {width: 25px; height: 3px; background: #2c3e50; margin: 3px 0; transition: 0.3s;}
-        main {margin-top: 80px; min-height: calc(100vh - 80px);}
-        .container {max-width: 1200px; margin: 0 auto; padding: 0 20px;}
-        .section {padding: 80px 0; display: none;}
-        .section.active {display: block;}
-        .section h2 {font-size: 2.5rem; margin-bottom: 3rem; text-align: center; color: #2c3e50; font-weight: 300; letter-spacing: -1px;}
-        .hero {background: #fefdfb; color: #2c3e50; padding: 80px 0 100px; margin-top: -80px; min-height: 100vh; display: flex; align-items: center;}
-        .hero-content {display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; max-width: 1200px; margin: 0 auto;}
-        .hero-left {animation: fadeInLeft 1s ease-out; display: flex; flex-direction: column; justify-content: center; text-align: center;}
-        .hero-left h1 {font-size: 4rem; margin-bottom: 1rem; font-weight: 500; letter-spacing: -1px; line-height: 1.2;}
-        .hero-left .subtitle {font-size: 1.2rem; color: #6c757d; font-weight: 500; line-height: 1.6;}
-        #visitor-counter {margin-top: 1em; font-size: 1em; color: #888;}
-        .hero-right {animation: fadeInRight 1s ease-out; text-align: center;}
-        .hero-right img {width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;}
-        @keyframes fadeInLeft {from {opacity: 0; transform: translateX(-50px);} to {opacity: 1; transform: translateX(0);}}
-        @keyframes fadeInRight {from {opacity: 0; transform: translateX(50px);} to {opacity: 1; transform: translateX(0);}}
-        .coming-soon {text-align: center; padding: 100px 20px;}
-        .coming-soon-icon {font-size: 4rem; margin-bottom: 1.5rem;}
-        .coming-soon h3 {font-size: 2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 600;}
-        .coming-soon p {font-size: 1.1rem; color: #6c757d; max-width: 500px; margin: 0 auto;}
-        .blog-filters {display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;}
-        .filter-btn {padding: 0.6rem 1.5rem; background: #fefefe; border: 2px solid #f0ede7; color: #6c757d; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; font-weight: 500;}
-        .filter-btn:hover {background: #f0ede6;}
-        .filter-btn.active[data-filter="all"] {background: #c8a882; color: white; border-color: #c8a882;}
-        .filter-btn.active[data-filter="economics"] {background: #2d5a2d; color: white; border-color: #2d5a2d;}
-        .filter-btn.active[data-filter="psychology"] {background: #6b4a6b; color: white; border-color: #6b4a6b;}
-        .filter-btn.active[data-filter="religion"] {background: #b8956b; color: white; border-color: #b8956b;}
-        .filter-btn.active[data-filter="science-tech"] {background: #2d5a7a; color: white; border-color: #2d5a7a;}
-        .filter-btn.active[data-filter="others"] {background: #5a5a5a; color: white; border-color: #5a5a5a;}
-        .blog-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 2rem;}
-        .blog-card {background: #fefefe; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #f5f2eb; transition: transform 0.3s ease, box-shadow 0.3s ease;}
-        .blog-card:hover {transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.08);}
-        .blog-card-header {background: #f5f2eb; color: #2c3e50; padding: 1.5rem; border-bottom: 1px solid #f0ede7;}
-        .blog-category {display: inline-block; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.75rem; margin-bottom: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;}
-        .category-economics {background: #d4e8d4; color: #2d5a2d;}
-        .category-psychology {background: #e8d4e8; color: #6b4a6b;}
-        .category-religion {background: #f0e7d6; color: #b8956b;}
-        .category-science-tech {background: #d4e4f0; color: #2d5a7a;}
-        .category-others {background: #e8e8e8; color: #5a5a5a;}
-        .blog-title {font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 600; line-height: 1.4;}
-        .blog-date {color: #6c757d; font-size: 0.9rem; font-weight: 500;}
-        .blog-card-body {padding: 1.5rem;}
-        .blog-excerpt {color: #495057; line-height: 1.6; margin-bottom: 1rem;}
-        .read-more {color: #d4a574; text-decoration: none; font-weight: 500; transition: color 0.3s ease;}
-        .read-more:hover {color: #c19660;}
-        @media (max-width: 768px) {
-            .hamburger {display: flex;}
-            .nav-menu {position: fixed; left: -100%; top: 80px; flex-direction: column; background: #fefdfb; width: 100%; text-align: center; transition: 0.3s; padding: 2rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.04);}
-            .nav-menu.active {left: 0;}
-            .language-switcher {margin-left: 0; margin-right: 1rem;}
-            .hero-content {grid-template-columns: 1fr; gap: 2rem;}
-            .hero-right img {max-width: 350px;}
-            .hero-left h1 {font-size: 2.5rem;}
-            .hero-left .subtitle {font-size: 1rem;}
-            .section h2 {font-size: 2rem;}
-            .blog-grid {grid-template-columns: 1fr;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f5f2eb;
+        }
+
+        .name-font {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: #fefdfb;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-bottom: 1px solid #ebe8e1;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: #6c757d;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: #c8a882;
+        }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            background: #f0ede6;
+            color: #6c757d;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: 1px solid #ebe8e1;
+            font-weight: 500;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: #c8a882;
+            color: white;
+            border-color: #c8a882;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #2c3e50;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #2c3e50;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        /* Home Section */
+        .hero {
+            background: #fefdfb;
+            color: #2c3e50;
+            padding: 80px 0 100px;
+            margin-top: -80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-left {
+            animation: fadeInLeft 1s ease-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-left h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .hero-left .subtitle {
+            font-size: 1.2rem;
+            color: #6c757d;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        /* Visitor Counter style */
+        #visitor-counter {
+            margin-top: 1em;
+            font-size: 1em;
+            color: #888;
+        }
+
+        .hero-right {
+            animation: fadeInRight 1s ease-out;
+            text-align: center;
+        }
+
+        .hero-right img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Coming Soon Message */
+        .coming-soon {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .coming-soon-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .coming-soon h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .coming-soon p {
+            font-size: 1.1rem;
+            color: #6c757d;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Blog Section */
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            background: #fefefe;
+            border: 2px solid #f0ede7;
+            color: #6c757d;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover {
+            background: #f0ede6;
+        }
+
+        .filter-btn.active[data-filter="all"] {
+            background: #c8a882;
+            color: white;
+            border-color: #c8a882;
+        }
+
+        .filter-btn.active[data-filter="economics"] {
+            background: #2d5a2d;
+            color: white;
+            border-color: #2d5a2d;
+        }
+
+        .filter-btn.active[data-filter="psychology"] {
+            background: #6b4a6b;
+            color: white;
+            border-color: #6b4a6b;
+        }
+
+        .filter-btn.active[data-filter="religion"] {
+            background: #b8956b;
+            color: white;
+            border-color: #b8956b;
+        }
+
+        .filter-btn.active[data-filter="science-tech"] {
+            background: #2d5a7a;
+            color: white;
+            border-color: #2d5a7a;
+        }
+
+        .filter-btn.active[data-filter="others"] {
+            background: #5a5a5a;
+            color: white;
+            border-color: #5a5a5a;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: #fefefe;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #f5f2eb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .blog-card-header {
+            background: #f5f2eb;
+            color: #2c3e50;
+            padding: 1.5rem;
+            border-bottom: 1px solid #f0ede7;
+        }
+
+        .blog-category {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Category Colors */
+        .category-economics {
+            background: #d4e8d4;
+            color: #2d5a2d;
+        }
+
+        .category-psychology {
+            background: #e8d4e8;
+            color: #6b4a6b;
+        }
+
+        .category-religion {
+            background: #f0e7d6;
+            color: #b8956b;
+        }
+
+        .category-science-tech {
+            background: #d4e4f0;
+            color: #2d5a7a;
+        }
+
+        .category-others {
+            background: #e8e8e8;
+            color: #5a5a5a;
+        }
+
+        .blog-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .blog-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .blog-card-body {
+            padding: 1.5rem;
+        }
+
+        .blog-excerpt {
+            color: #495057;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #d4a574;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #c19660;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: #fefdfb;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .language-switcher {
+                margin-left: 0;
+                margin-right: 1rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-right img {
+                max-width: 350px;
+            }
+
+            .hero-left h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-left .subtitle {
+                font-size: 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 480px) {
-            .hero-right img {max-width: 280px;}
-            .hero-left h1 {font-size: 2rem;}
-            .section h2 {font-size: 1.8rem;}
-            .blog-filters {flex-direction: column; align-items: center;}
+            .hero-right img {
+                max-width: 280px;
+            }
+
+            .hero-left h1 {
+                font-size: 2rem;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+
+            .blog-filters {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -152,6 +549,7 @@
         <section id="blog" class="section">
             <div class="container">
                 <h2 data-vi="Blog & Chia sẻ" data-en="Blog & Sharing">Blog & Chia sẻ</h2>
+                
                 <div class="blog-filters">
                     <button class="filter-btn active" data-filter="all" data-vi="Tất cả" data-en="All">Tất cả</button>
                     <button class="filter-btn" data-filter="economics" data-vi="Kinh tế học" data-en="Economics">Kinh tế học</button>
@@ -160,10 +558,22 @@
                     <button class="filter-btn" data-filter="science-tech" data-vi="Khoa học Công nghệ" data-en="Science & Technology">Khoa học Công nghệ</button>
                     <button class="filter-btn" data-filter="others" data-vi="Khác" data-en="Others">Khác</button>
                 </div>
+
                 <div class="blog-grid">
-                    <!-- ĐÃ XÓA HOÀN TOÀN BÀI CÓ LINK blog-khoang-cach-giau-ngheo.html.
-                    Nếu có bài nào khác, thêm ở đây. Nếu chưa có, để trống như mẫu dưới: -->
-                    <!-- <article class="blog-card" data-category="economics"> ... </article> -->
+        
+                    <article class="blog-card" data-category="economics">
+        <div class="blog-card-header">
+            <span class="blog-category category-economics">Kinh tế học</span>
+            <h3 class="blog-title">Khoảng cách giàu nghèo đã ảnh hưởng đến cách chúng ta mua & sử dụng thực phẩm như thế nào?</h3>
+            <p class="blog-date">4 tháng 10, 2025</p>
+        </div>
+        <div class="blog-card-body">
+            <p class="blog-excerpt">
+                Trong cuốn "Good Economics for Hard Times", Abhijit Banerjee và Esther Duflo kể về một người đàn ông ở Morocco tuyên bố: "Television is more important than food". Câu chuyện này phản ánh một hiện thực phức tạp về cách địa vị kinh tế xã hội định hình những lựa chọn thực phẩm của chúng ta...
+            </p>
+            <a href="blog-kinhtehoc-Khoangcachgiaungheo.html" class="read-more">Đọc tiếp →</a>
+        </div>
+    </article>
                 </div>
             </div>
         </section>
