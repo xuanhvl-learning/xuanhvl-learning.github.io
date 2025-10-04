@@ -185,13 +185,6 @@
             line-height: 1.6;
         }
 
-        /* Visitor Counter style */
-        #visitor-counter {
-            margin-top: 1em;
-            font-size: 1em;
-            color: #888;
-        }
-
         .hero-right {
             animation: fadeInRight 1s ease-out;
             text-align: center;
@@ -519,11 +512,6 @@
                             <p class="subtitle" data-vi="Behavioral Economist | Market Research | Social Analyst" data-en="Behavioral Economist | Market Research | Social Analyst">
                                 Behavioral Economist | Market Research | Social Analyst
                             </p>
-                            <!-- Visitor Counter Start -->
-                            <div id="visitor-counter">
-                                <span id="visitor-count">Đang tải số lượt truy cập...</span>
-                            </div>
-                            <!-- Visitor Counter End -->
                         </div>
                         <div class="hero-right">
                             <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/324b6d1ffd6c035028fc9f9bda8c0c09f872a239/fav-artwork.jpg" alt="Illustration" />
@@ -673,17 +661,6 @@
                     targetBtn.click();
                 }
             }
-            // Visitor Counter fetch
-            fetch('https://api.countapi.xyz/hit/xuanhvl-learning.github.io/visits')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('visitor-count').innerText =
-                        'Số lượt truy cập: ' + data.value;
-                })
-                .catch(() => {
-                    document.getElementById('visitor-count').innerText =
-                        'Không thể tải số lượt truy cập!';
-                });
         });
     </script>
 </body>
