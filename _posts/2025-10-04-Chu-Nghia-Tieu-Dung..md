@@ -3,7 +3,7 @@ layout: post
 title: "TỪ ĐẠO ĐỨC LAO ĐỘNG ĐẾN THẨM MỸ TIÊU DÙNG: HÀNH TRÌNH THAY CÒNG KHÔNG BÁO TRƯỚC"
 date: 2025-10-04
 category: psychology
-excerpt: "Chúng ta chạy vòng vòng trong cái "chuồng hamster" hiện đại – làm nhiều hơn để tiêu nhiều hơn, tiêu nhiều hơn để lại phải làm nhiều hơn."
+excerpt: "Chúng ta chạy vòng vòng trong cái chuồng hamster hiện đại, làm nhiều hơn để tiêu nhiều hơn, tiêu nhiều hơn để lại phải làm nhiều hơn."
 ---
 
 *Ký sự của kẻ ngồi quán cóc, nhìn thiên hạ chạy deadline và ngẫm về lịch sử bóc lột*
