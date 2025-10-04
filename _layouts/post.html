@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -79,13 +80,13 @@
 
         .blog-category {
             display: inline-block;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            margin-bottom: 1.5rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
         .category-economics { background: #d4e8d4; color: #2d5a2d; }
@@ -95,16 +96,18 @@
         .category-others { background: #e8e8e8; color: #5a5a5a; }
 
         .blog-title {
-            font-size: 2.5rem;
-            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
             color: #2c3e50;
-            margin-bottom: 1rem;
-            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
         }
 
         .blog-meta {
             color: #6c757d;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .blog-content {
@@ -115,8 +118,20 @@
             border: 1px solid #ebe8e1;
         }
 
+        /* Drop Cap - Chữ cái đầu to */
+        .blog-content > p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 0.8;
+            float: left;
+            margin: 0.1em 0.1em 0 0;
+            color: #2c3e50;
+        }
+
         .blog-content h2 {
-            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
             color: #2c3e50;
             margin: 2.5rem 0 1.5rem;
             font-weight: 600;
@@ -125,7 +140,8 @@
         }
 
         .blog-content h3 {
-            font-size: 1.4rem;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
             color: #495057;
             margin: 2rem 0 1rem;
             font-weight: 600;
@@ -164,13 +180,67 @@
             margin: 2.5rem 0;
         }
 
+        /* Footer với Share Buttons */
         .blog-footer {
             margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid #ebe8e1;
             text-align: center;
+        }
+
+        .share-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .share-btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .share-btn-facebook {
+            background: #1877f2;
+            color: white;
+        }
+
+        .share-btn-facebook:hover {
+            background: #0d65d9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(24, 119, 242, 0.4);
+        }
+
+        .share-btn-linkedin {
+            background: #0a66c2;
+            color: white;
+        }
+
+        .share-btn-linkedin:hover {
+            background: #004182;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(10, 102, 194, 0.4);
+        }
+
+        .blog-footer-note {
             color: #6c757d;
             font-style: italic;
+            margin-top: 1.5rem;
         }
 
         @media (max-width: 768px) {
@@ -182,12 +252,26 @@
                 padding: 2rem 1.5rem;
             }
 
+            .blog-content > p:first-of-type::first-letter {
+                font-size: 3.5rem;
+            }
+
             .blog-content h2 {
                 font-size: 1.5rem;
             }
 
             .blog-content h3 {
                 font-size: 1.2rem;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .share-btn {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -203,11 +287,11 @@
     <article class="blog-post">
         <header class="blog-header">
             <span class="blog-category category-{{ page.category }}">
-                {% if page.category == 'economics' %}Kinh tế học
-                {% elsif page.category == 'psychology' %}Tâm lý học
-                {% elsif page.category == 'religion' %}Tôn giáo
-                {% elsif page.category == 'science-tech' %}Khoa học Công nghệ
-                {% else %}Khác
+                {% if page.category == 'economics' %}KINH TẾ HỌC
+                {% elsif page.category == 'psychology' %}TÂM LÝ HỌC
+                {% elsif page.category == 'religion' %}TÔN GIÁO
+                {% elsif page.category == 'science-tech' %}KHOA HỌC CÔNG NGHỆ
+                {% else %}KHÁC
                 {% endif %}
             </span>
             <h1 class="blog-title">{{ page.title }}</h1>
@@ -216,11 +300,26 @@
 
         <div class="blog-content">
             {{ content }}
-
-            <div class="blog-footer">
-                <p>Cảm ơn bạn đã đọc!</p>
-            </div>
         </div>
+
+        <footer class="blog-footer">
+            <h3 class="share-title">Chia sẻ bài viết</h3>
+            
+            <div class="share-buttons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" 
+                   target="_blank" 
+                   class="share-btn share-btn-facebook">
+                    Facebook
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}" 
+                   target="_blank" 
+                   class="share-btn share-btn-linkedin">
+                    LinkedIn
+                </a>
+            </div>
+
+            <p class="blog-footer-note">Cảm ơn bạn đã đọc!</p>
+        </footer>
     </article>
 </body>
 </html>
