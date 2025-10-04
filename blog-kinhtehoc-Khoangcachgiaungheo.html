@@ -55,15 +55,61 @@
             letter-spacing: -0.3px;
         }
 
-        .back-btn {
-            color: #6c757d;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
         }
 
-        .back-btn:hover {
+        .nav-menu a {
+            color: #6c757d;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
             color: #c8a882;
+        }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            background: #f0ede6;
+            color: #6c757d;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: 1px solid #ebe8e1;
+            font-weight: 500;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: #c8a882;
+            color: white;
+            border-color: #c8a882;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #2c3e50;
+            margin: 3px 0;
+            transition: 0.3s;
         }
 
         .blog-post {
@@ -74,7 +120,13 @@
 
         .blog-header {
             margin-bottom: 3rem;
-            text-align: center;
+        }
+
+        .blog-meta-top {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .blog-category {
@@ -82,7 +134,6 @@
             padding: 0.4rem 1rem;
             border-radius: 20px;
             font-size: 0.85rem;
-            margin-bottom: 1rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -90,17 +141,18 @@
             color: #2d5a2d;
         }
 
+        .blog-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
         .blog-title {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 600;
             color: #2c3e50;
             margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        .blog-meta {
-            color: #6c757d;
-            font-size: 0.95rem;
+            line-height: 1.2;
+            font-family: 'Playfair Display', serif;
         }
 
         .blog-content {
@@ -111,17 +163,27 @@
             border: 1px solid #ebe8e1;
         }
 
+        .blog-content p:first-of-type::first-letter {
+            font-size: 4rem;
+            font-weight: 700;
+            float: left;
+            line-height: 1;
+            margin: 0 10px 0 0;
+            color: #2d5a2d;
+            font-family: 'Playfair Display', serif;
+        }
+
         .blog-content h2 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #2c3e50;
-            margin: 2.5rem 0 1.5rem;
+            margin: 3rem 0 1.5rem;
             font-weight: 600;
-            border-bottom: 2px solid #f0ede6;
             padding-bottom: 0.5rem;
+            border-bottom: 3px solid #d4e8d4;
         }
 
         .blog-content h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: #495057;
             margin: 2rem 0 1rem;
             font-weight: 600;
@@ -129,7 +191,7 @@
 
         .blog-content p {
             margin-bottom: 1.5rem;
-            line-height: 1.8;
+            line-height: 1.9;
             color: #2c3e50;
         }
 
@@ -138,38 +200,128 @@
         }
 
         .blog-content li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             line-height: 1.8;
         }
 
         .blog-content a {
-            color: #c8a882;
+            color: #2d5a2d;
             text-decoration: none;
-            border-bottom: 1px solid #c8a882;
-            transition: color 0.3s ease;
+            border-bottom: 2px solid #d4e8d4;
+            transition: all 0.3s ease;
         }
 
         .blog-content a:hover {
-            color: #b69671;
-            border-bottom-color: #b69671;
+            background: #d4e8d4;
+            border-bottom-color: #2d5a2d;
         }
 
         .blog-content hr {
             border: none;
-            border-top: 1px solid #ebe8e1;
-            margin: 2.5rem 0;
+            border-top: 2px solid #ebe8e1;
+            margin: 3rem 0;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6c757d;
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
         }
 
         .blog-footer {
             margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 1px solid #ebe8e1;
+            border-top: 2px solid #ebe8e1;
+        }
+
+        .share-section {
+            text-align: center;
+            padding: 2rem;
+            background: #f5f2eb;
+            border-radius: 8px;
+        }
+
+        .share-section h4 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .share-facebook {
+            background: #1877f2;
+            color: white;
+        }
+
+        .share-linkedin {
+            background: #0077b5;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .author-note {
             text-align: center;
             color: #6c757d;
             font-style: italic;
+            margin-top: 2rem;
         }
 
         @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: #fefdfb;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .language-switcher {
+                margin-left: 0;
+                margin-right: 1rem;
+            }
+
             .blog-title {
                 font-size: 2rem;
             }
@@ -179,11 +331,11 @@
             }
 
             .blog-content h2 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
 
             .blog-content h3 {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -192,97 +344,171 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo name-font">Huỳnh Phú Xuân</a>
-            <a href="index.html#blog" class="back-btn">← Quay lại Blog</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#cv">Resume</a></li>
+                <li><a href="index.html#blog">Blogs</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="language-switcher">
+                <a href="#" class="lang-btn active">🇻🇳 VI</a>
+                <a href="#" class="lang-btn">🇺🇸 EN</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <article class="blog-post">
         <header class="blog-header">
-            <span class="blog-category">Kinh tế học</span>
-            <h1 class="blog-title">Khoảng cách giàu nghèo đã ảnh hưởng đến cách chúng ta mua & sử dụng thực phẩm như thế nào?</h1>
-            <div class="blog-meta">4 tháng 10, 2025</div>
+            <div class="blog-meta-top">
+                <span class="blog-category" data-vi="Kinh tế học" data-en="Economics">Kinh tế học</span>
+                <span class="blog-date" data-vi="4 tháng 10, 2025" data-en="October 4, 2025">4 tháng 10, 2025</span>
+            </div>
+            <h1 class="blog-title" data-vi="Khoảng cách giàu nghèo đã ảnh hưởng đến cách chúng ta mua & sử dụng thực phẩm như thế nào?" data-en="How Does Income Inequality Affect the Way We Buy & Use Food?">Khoảng cách giàu nghèo đã ảnh hưởng đến cách chúng ta mua & sử dụng thực phẩm như thế nào?</h1>
         </header>
 
         <div class="blog-content">
-            <h2>1. Mở đầu: Khi chiếc TV quan trọng hơn bữa cơm</h2>
-            <p>Trong cuốn "Good Economics for Hard Times", Abhijit Banerjee và Esther Duflo kể về một cuộc gặp gỡ đầy ấn tượng với một người đàn ông ở Morocco. Sau khi than phiền rằng gia đình không có đủ thức ăn, ông chỉ vào chiếc TV lớn với kết nối vệ tinh và tuyên bố: "Television is more important than food" (TV quan trọng hơn thức ăn). Câu chuyện này không chỉ là một câu chuyện đơn lẻ, mà phản ánh một hiện thực phức tạp về cách mà địa vị kinh tế xã hội định hình những lựa chọn thực phẩm của chúng ta.</p>
+            <h2 data-vi="1. Mở đầu: Khi chiếc TV quan trọng hơn bữa cơm" data-en="1. Introduction: When TV Is More Important Than Food">1. Mở đầu: Khi chiếc TV quan trọng hơn bữa cơm</h2>
+            <p data-vi='Trong cuốn "Good Economics for Hard Times", Abhijit Banerjee và Esther Duflo kể về một cuộc gặp gỡ đầy ấn tượng với một người đàn ông ở Morocco. Sau khi than phiền rằng gia đình không có đủ thức ăn, ông chỉ vào chiếc TV lớn với kết nối vệ tinh và tuyên bố: "Television is more important than food" (TV quan trọng hơn thức ăn). Câu chuyện này không chỉ là một câu chuyện đơn lẻ, mà phản ánh một hiện thực phức tạp về cách mà địa vị kinh tế xã hội định hình những lựa chọn thực phẩm của chúng ta.' data-en='In "Good Economics for Hard Times", Abhijit Banerjee and Esther Duflo recount a striking encounter with a man in Morocco. After complaining that his family didn&apos;t have enough food, he pointed to a large TV with satellite connection and declared: "Television is more important than food." This story is not just an isolated anecdote, but reflects a complex reality about how socioeconomic status shapes our food choices.'>Trong cuốn "Good Economics for Hard Times", Abhijit Banerjee và Esther Duflo kể về một cuộc gặp gỡ đầy ấn tượng với một người đàn ông ở Morocco. Sau khi than phiền rằng gia đình không có đủ thức ăn, ông chỉ vào chiếc TV lớn với kết nối vệ tinh và tuyên bố: "Television is more important than food" (TV quan trọng hơn thức ăn). Câu chuyện này không chỉ là một câu chuyện đơn lẻ, mà phản ánh một hiện thực phức tạp về cách mà địa vị kinh tế xã hội định hình những lựa chọn thực phẩm của chúng ta.</p>
 
             <hr>
 
-            <h2>2. Những khám phá đột phá từ nghiên cứu Andretti và cộng sự</h2>
-            <p>Nghiên cứu gần đây của Bernardo Andretti và nhóm cộng sự, được thực hiện tại Rio de Janeiro - một trong những thành phố có sự bất bình đẳng cao nhất thế giới, đã mang đến những phát hiện đáng chú ý về mối quan hệ giữa địa vị kinh tế xã hội và lựa chọn thực phẩm.</p>
-            <p>Xem nghiên cứu tại: <a href="https://journals.sagepub.com/doi/10.1177/00222429241296048" target="_blank">journals.sagepub.com</a></p>
+            <h2 data-vi="2. Những khám phá đột phá từ nghiên cứu Andretti và cộng sự" data-en="2. Breakthrough Findings from Andretti and Colleagues' Research">2. Những khám phá đột phá từ nghiên cứu Andretti và cộng sự</h2>
+            <p data-vi="Nghiên cứu gần đây của Bernardo Andretti và nhóm cộng sự, được thực hiện tại Rio de Janeiro - một trong những thành phố có sự bất bình đẳng cao nhất thế giới, đã mang đến những phát hiện đáng chú ý về mối quan hệ giữa địa vị kinh tế xã hội và lựa chọn thực phẩm." data-en="Recent research by Bernardo Andretti and colleagues, conducted in Rio de Janeiro - one of the world's most unequal cities, has yielded remarkable findings about the relationship between socioeconomic status and food choices.">Nghiên cứu gần đây của Bernardo Andretti và nhóm cộng sự, được thực hiện tại Rio de Janeiro - một trong những thành phố có sự bất bình đẳng cao nhất thế giới, đã mang đến những phát hiện đáng chú ý về mối quan hệ giữa địa vị kinh tế xã hội và lựa chọn thực phẩm.</p>
+
+            <p data-vi="Xem nghiên cứu tại:" data-en="View the research at:">Xem nghiên cứu tại: <a href="https://journals.sagepub.com/doi/10.1177/00222429241296048" target="_blank">journals.sagepub.com</a></p>
 
             <hr>
 
-            <h2>3. Ba khám phá then chốt</h2>
+            <h2 data-vi="3. Ba khám phá then chốt" data-en="3. Three Key Discoveries">3. Ba khám phá then chốt</h2>
             
-            <h3>3.1. Lựa chọn thực phẩm không lành mạnh ngay cả khi không có rào cản tài chính</h3>
-            <p>Điều đáng ngạc nhiên nhất là ngay cả khi loại bỏ các yếu tố về giá cả và khả năng tiếp cận (supply-side factors), những người có địa vị kinh tế xã hội thấp vẫn có xu hướng chọn những thực phẩm ít lành mạnh hơn. Điều này cho thấy rằng vấn đề không chỉ đơn thuần là "người nghèo không mua được thức ăn tốt" mà còn có những yếu tố tâm lý sâu xa hơn.</p>
+            <h3 data-vi="3.1. Lựa chọn thực phẩm không lành mạnh ngay cả khi không có rào cản tài chính" data-en="3.1. Unhealthy Food Choices Even Without Financial Barriers">3.1. Lựa chọn thực phẩm không lành mạnh ngay cả khi không có rào cản tài chính</h3>
+            <p data-vi="Điều đáng ngạc nhiên nhất là ngay cả khi loại bỏ các yếu tố về giá cả và khả năng tiếp cận (supply-side factors), những người có địa vị kinh tế xã hội thấp vẫn có xu hướng chọn những thực phẩm ít lành mạnh hơn. Điều này cho thấy rằng vấn đề không chỉ đơn thuần là \"người nghèo không mua được thức ăn tốt\" mà còn có những yếu tố tâm lý sâu xa hơn." data-en="Most surprisingly, even when removing factors related to price and accessibility (supply-side factors), people with lower socioeconomic status still tend to choose less healthy foods. This shows that the issue is not simply &quot;the poor can't afford good food&quot; but involves deeper psychological factors.">Điều đáng ngạc nhiên nhất là ngay cả khi loại bỏ các yếu tố về giá cả và khả năng tiếp cận (supply-side factors), những người có địa vị kinh tế xã hội thấp vẫn có xu hướng chọn những thực phẩm ít lành mạnh hơn. Điều này cho thấy rằng vấn đề không chỉ đơn thuần là "người nghèo không mua được thức ăn tốt" mà còn có những yếu tố tâm lý sâu xa hơn.</p>
 
-            <h3>3.2. Sự đánh đổi giữa "lành mạnh" và "no bụng"</h3>
-            <p>Nghiên cứu cho thấy người có thu nhập thấp sẵn sàng đánh đổi tính lành mạnh của thực phẩm để đổi lấy khả năng "no bụng" (fillingness). Đây là một phát hiện quan trọng vì nó giải thích tại sao các chính sách khuyến khích ăn uống lành mạnh thường thất bại ở các cộng đồng có thu nhập thấp.</p>
+            <h3 data-vi="3.2. Sự đánh đổi giữa \"lành mạnh\" và \"no bụng\"" data-en="3.2. The Trade-off Between &quot;Healthy&quot; and &quot;Filling&quot;">3.2. Sự đánh đổi giữa "lành mạnh" và "no bụng"</h3>
+            <p data-vi="Nghiên cứu cho thấy người có thu nhập thấp sẵn sàng đánh đổi tính lành mạnh của thực phẩm để đổi lấy khả năng \"no bụng\" (fillingness). Đây là một phát hiện quan trọng vì nó giải thích tại sao các chính sách khuyến khích ăn uống lành mạnh thường thất bại ở các cộng đồng có thu nhập thấp." data-en="The research shows that low-income people are willing to trade off the healthiness of food for its ability to be &quot;filling&quot; (fillingness). This is an important finding because it explains why policies encouraging healthy eating often fail in low-income communities.">Nghiên cứu cho thấy người có thu nhập thấp sẵn sàng đánh đổi tính lành mạnh của thực phẩm để đổi lấy khả năng "no bụng" (fillingness). Đây là một phát hiện quan trọng vì nó giải thích tại sao các chính sách khuyến khích ăn uống lành mạnh thường thất bại ở các cộng đồng có thu nhập thấp.</p>
 
-            <h3>3.3. Những định kiến tiêu cực về thực phẩm lành mạnh</h3>
-            <p>Nhóm người có địa vị kinh tế xã hội thấp có xu hướng tin rằng:</p>
+            <h3 data-vi="3.3. Những định kiến tiêu cực về thực phẩm lành mạnh" data-en="3.3. Negative Stereotypes About Healthy Food">3.3. Những định kiến tiêu cực về thực phẩm lành mạnh</h3>
+            <p data-vi="Nhóm người có địa vị kinh tế xã hội thấp có xu hướng tin rằng:" data-en="People with lower socioeconomic status tend to believe that:">Nhóm người có địa vị kinh tế xã hội thấp có xu hướng tin rằng:</p>
             <ul>
-                <li>"Thức ăn lành mạnh = ít no bụng"</li>
-                <li>"Thức ăn lành mạnh = ít ngon"</li>
+                <li data-vi="\"Thức ăn lành mạnh = ít no bụng\"" data-en="&quot;Healthy food = less filling&quot;">"Thức ăn lành mạnh = ít no bụng"</li>
+                <li data-vi="\"Thức ăn lành mạnh = ít ngon\"" data-en="&quot;Healthy food = less tasty&quot;">"Thức ăn lành mạnh = ít ngon"</li>
             </ul>
-            <p>Những quan niệm này tạo thành những rào cản tâm lý mạnh mẽ, ngăn cản việc lựa chọn thực phẩm có lợi cho sức khỏe.</p>
+            <p data-vi="Những quan niệm này tạo thành những rào cản tâm lý mạnh mẽ, ngăn cản việc lựa chọn thực phẩm có lợi cho sức khỏe." data-en="These beliefs create powerful psychological barriers that prevent the selection of foods beneficial to health.">Những quan niệm này tạo thành những rào cản tâm lý mạnh mẽ, ngăn cản việc lựa chọn thực phẩm có lợi cho sức khỏe.</p>
 
             <hr>
 
-            <h2>4. Góc nhìn từ "Poor Economics": Tại sao người nghèo có những lựa chọn "phi lý"?</h2>
-            <p>Banerjee và Duflo trong "Poor Economics" đã đưa ra một góc nhìn khác về vấn đề này. Họ lập luận rằng những lựa chọn của người nghèo, dù có vẻ "phi lý" từ góc độ của người giàu, thực ra lại hoàn toàn hợp lý trong bối cảnh của họ.</p>
+            <h2 data-vi='4. Góc nhìn từ "Poor Economics": Tại sao người nghèo có những lựa chọn "phi lý"?' data-en='4. Perspective from "Poor Economics": Why the Poor Make "Irrational" Choices'>4. Góc nhìn từ "Poor Economics": Tại sao người nghèo có những lựa chọn "phi lý"?</h2>
+            <p data-vi='Banerjee và Duflo trong "Poor Economics" đã đưa ra một góc nhìn khác về vấn đề này. Họ lập luận rằng những lựa chọn của người nghèo, dù có vẻ "phi lý" từ góc độ của người giàu, thực ra lại hoàn toàn hợp lý trong bối cảnh của họ.' data-en='Banerjee and Duflo in "Poor Economics" offered a different perspective on this issue. They argue that the choices of the poor, while appearing "irrational" from the perspective of the wealthy, are actually completely rational in their own context.'>Banerjee và Duflo trong "Poor Economics" đã đưa ra một góc nhìn khác về vấn đề này. Họ lập luận rằng những lựa chọn của người nghèo, dù có vẻ "phi lý" từ góc độ của người giàu, thực ra lại hoàn toàn hợp lý trong bối cảnh của họ.</p>
 
-            <h3>i. Bài học từ người đàn ông Morocco</h3>
-            <p>Người đàn ông Morocco không phải là một kẻ bốc đồng khi mua TV thay vì thức ăn. Ông đã suy nghĩ kỹ càng và nhận ra rằng:</p>
+            <h3 data-vi="i. Bài học từ người đàn ông Morocco" data-en="i. Lessons from the Moroccan Man">i. Bài học từ người đàn ông Morocco</h3>
+            <p data-vi="Người đàn ông Morocco không phải là một kẻ bốc đồng khi mua TV thay vì thức ăn. Ông đã suy nghĩ kỹ càng và nhận ra rằng:" data-en="The Moroccan man was not being impulsive when buying a TV instead of food. He had thought carefully and realized that:">Người đàn ông Morocco không phải là một kẻ bốc đồng khi mua TV thay vì thức ăn. Ông đã suy nghĩ kỹ càng và nhận ra rằng:</p>
             <ul>
-                <li>Ông đã đủ sức khỏe để làm những công việc có sẵn</li>
-                <li>Dinh dưỡng tốt hơn sẽ không mang lại nhiều cơ hội kinh tế hơn</li>
-                <li>TV giải quyết được vấn đề nhàm chán - một nhu cầu thiết yếu trong cuộc sống hàng ngày</li>
+                <li data-vi="Ông đã đủ sức khỏe để làm những công việc có sẵn" data-en="He was healthy enough to do the available jobs">Ông đã đủ sức khỏe để làm những công việc có sẵn</li>
+                <li data-vi="Dinh dưỡng tốt hơn sẽ không mang lại nhiều cơ hội kinh tế hơn" data-en="Better nutrition wouldn't bring more economic opportunities">Dinh dưỡng tốt hơn sẽ không mang lại nhiều cơ hội kinh tế hơn</li>
+                <li data-vi="TV giải quyết được vấn đề nhàm chán - một nhu cầu thiết yếu trong cuộc sống hàng ngày" data-en="TV solved the problem of boredom - an essential need in daily life">TV giải quyết được vấn đề nhàm chán - một nhu cầu thiết yếu trong cuộc sống hàng ngày</li>
             </ul>
 
-            <h3>ii. Sự thay đổi trong chi tiêu thực phẩm</h3>
-            <p>Tại Ấn Độ, các tác giả quan sát thấy xu hướng giảm chi tiêu cho thực phẩm ngay cả khi thu nhập tăng. Điều này không phải vì người dân đã "đủ ăn", mà vì họ có nhiều lựa chọn tiêu dùng khác: điện thoại di động, TV, và những tiện ích nhỏ khác mà trước đây không có.</p>
+            <h3 data-vi="ii. Sự thay đổi trong chi tiêu thực phẩm" data-en="ii. Changes in Food Spending">ii. Sự thay đổi trong chi tiêu thực phẩm</h3>
+            <p data-vi='Tại Ấn Độ, các tác giả quan sát thấy xu hướng giảm chi tiêu cho thực phẩm ngay cả khi thu nhập tăng. Điều này không phải vì người dân đã "đủ ăn", mà vì họ có nhiều lựa chọn tiêu dùng khác: điện thoại di động, TV, và những tiện ích nhỏ khác mà trước đây không có.' data-en='In India, the authors observed a trend of decreasing food expenditure even as income increased. This wasn&apos;t because people had "enough to eat," but because they had more consumer choices: mobile phones, TVs, and other small conveniences that weren&apos;t previously available.'>Tại Ấn Độ, các tác giả quan sát thấy xu hướng giảm chi tiêu cho thực phẩm ngay cả khi thu nhập tăng. Điều này không phải vì người dân đã "đủ ăn", mà vì họ có nhiều lựa chọn tiêu dùng khác: điện thoại di động, TV, và những tiện ích nhỏ khác mà trước đây không có.</p>
 
             <hr>
 
-            <h2>5. Tâm lý học của nghèo đói và lựa chọn thực phẩm</h2>
+            <h2 data-vi="5. Tâm lý học của nghèo đói và lựa chọn thực phẩm" data-en="5. The Psychology of Poverty and Food Choices">5. Tâm lý học của nghèo đói và lựa chọn thực phẩm</h2>
 
-            <h3>i. Tư duy "hiện tại" vs "tương lai"</h3>
-            <p>Người nghèo thường có xu hướng tập trung vào hiện tại hơn là tương lai. Khi sống trong điều kiện bất ổn, việc tận hưởng những khoái lạc nhỏ ngay lập tức (như một bữa ăn ngon dù không lành mạnh) có thể quan trọng hơn việc đầu tư vào sức khỏe lâu dài. Và các sản phẩm tiện lợi ngày nay thường được dân Marketing chăm chỉ, tập trung, nỗ lực xoáy vào yếu tố NGON, NO BỤNG mà lờ đi các cam kết dài hạn về sức khỏe.</p>
+            <h3 data-vi='i. Tư duy "hiện tại" vs "tương lai"' data-en='i. "Present" vs "Future" Thinking'>i. Tư duy "hiện tại" vs "tương lai"</h3>
+            <p data-vi="Người nghèo thường có xu hướng tập trung vào hiện tại hơn là tương lai. Khi sống trong điều kiện bất ổn, việc tận hưởng những khoái lạc nhỏ ngay lập tức (như một bữa ăn ngon dù không lành mạnh) có thể quan trọng hơn việc đầu tư vào sức khỏe lâu dài. Và các sản phẩm tiện lợi ngày nay thường được dân Marketing chăm chỉ, tập trung, nỗ lực xoáy vào yếu tố NGON, NO BỤNG mà lờ đi các cam kết dài hạn về sức khỏe." data-en="The poor tend to focus more on the present than the future. When living in unstable conditions, enjoying small immediate pleasures (like a tasty meal even if unhealthy) may be more important than investing in long-term health. And today's convenience products are often diligently, intensively, and deliberately marketed by focusing on factors like TASTE and FULLNESS while ignoring long-term health commitments.">Người nghèo thường có xu hướng tập trung vào hiện tại hơn là tương lai. Khi sống trong điều kiện bất ổn, việc tận hưởng những khoái lạc nhỏ ngay lập tức (như một bữa ăn ngon dù không lành mạnh) có thể quan trọng hơn việc đầu tư vào sức khỏe lâu dài. Và các sản phẩm tiện lợi ngày nay thường được dân Marketing chăm chỉ, tập trung, nỗ lực xoáy vào yếu tố NGON, NO BỤNG mà lờ đi các cam kết dài hạn về sức khỏe.</p>
 
-            <h3>ii. Áp lực tâm lý và stress</h3>
-            <p>Nghèo đói tạo ra stress mãn tính, ảnh hưởng đến khả năng đưa ra quyết định hợp lý. Trong trạng thái này, não bộ có xu hướng tìm kiếm những phần thưởng tức thì, thường là thực phẩm có nhiều đường, muối, và chất béo.</p>
+            <h3 data-vi="ii. Áp lực tâm lý và stress" data-en="ii. Psychological Pressure and Stress">ii. Áp lực tâm lý và stress</h3>
+            <p data-vi="Nghèo đói tạo ra stress mãn tính, ảnh hưởng đến khả năng đưa ra quyết định hợp lý. Trong trạng thái này, não bộ có xu hướng tìm kiếm những phần thưởng tức thì, thường là thực phẩm có nhiều đường, muối, và chất béo." data-en="Poverty creates chronic stress, affecting the ability to make rational decisions. In this state, the brain tends to seek immediate rewards, often in the form of foods high in sugar, salt, and fat.">Nghèo đói tạo ra stress mãn tính, ảnh hưởng đến khả năng đưa ra quyết định hợp lý. Trong trạng thái này, não bộ có xu hướng tìm kiếm những phần thưởng tức thì, thường là thực phẩm có nhiều đường, muối, và chất béo.</p>
 
-            <h3>iii. Cảm giác kiểm soát và quyền lực</h3>
-            <p>Đối với người có thu nhập thấp, việc chọn những món ăn ngon miệng có thể là một trong số ít quyết định mà họ có thể tự do đưa ra. Đây là cách để khẳng định quyền tự chủ trong một đời sống đầy hạn chế.</p>
+            <h3 data-vi="iii. Cảm giác kiểm soát và quyền lực" data-en="iii. Sense of Control and Power">iii. Cảm giác kiểm soát và quyền lực</h3>
+            <p data-vi="Đối với người có thu nhập thấp, việc chọn những món ăn ngon miệng có thể là một trong số ít quyết định mà họ có thể tự do đưa ra. Đây là cách để khẳng định quyền tự chủ trong một đời sống đầy hạn chế." data-en="For low-income people, choosing delicious food may be one of the few decisions they can freely make. This is a way to assert autonomy in a life full of constraints.">Đối với người có thu nhập thấp, việc chọn những món ăn ngon miệng có thể là một trong số ít quyết định mà họ có thể tự do đưa ra. Đây là cách để khẳng định quyền tự chủ trong một đời sống đầy hạn chế.</p>
 
             <hr>
 
-            <h2>6. Kết luận</h2>
+            <h2 data-vi="6. Kết luận" data-en="6. Conclusion">6. Kết luận</h2>
 
-            <h3>i. Suy ngẫm: Khi đói no không chỉ là chuyện cái bụng</h3>
-            <p>Qua những nghiên cứu này, chúng ta thấy rằng vấn đề lựa chọn thực phẩm không đơn giản là chuyện "có tiền hay không có tiền". Nó là một hiện tượng phức tạp, đan xen giữa tâm lý, xã hội, văn hóa và kinh tế.</p>
+            <h3 data-vi="i. Suy ngẫm: Khi đói no không chỉ là chuyện cái bụng" data-en="i. Reflection: When Hunger Is Not Just About the Stomach">i. Suy ngẫm: Khi đói no không chỉ là chuyện cái bụng</h3>
+            <p data-vi='Qua những nghiên cứu này, chúng ta thấy rằng vấn đề lựa chọn thực phẩm không đơn giản là chuyện "có tiền hay không có tiền". Nó là một hiện tượng phức tạp, đan xen giữa tâm lý, xã hội, văn hóa và kinh tế.' data-en='Through these studies, we see that the issue of food choice is not simply a matter of "having money or not." It is a complex phenomenon, intertwined with psychology, society, culture, and economics.'>Qua những nghiên cứu này, chúng ta thấy rằng vấn đề lựa chọn thực phẩm không đơn giản là chuyện "có tiền hay không có tiền". Nó là một hiện tượng phức tạp, đan xen giữa tâm lý, xã hội, văn hóa và kinh tế.</p>
 
-            <h3>ii. Bài học về sự đồng cảm</h3>
-            <p>Thay vì phán xét những lựa chọn của người khác, chúng ta cần hiểu rằng mỗi quyết định đều có logic riêng trong bối cảnh của từng người. Chiếc TV của người đàn ông Morocco không phải là sự xa xỉ, mà là cách ông tìm kiếm ý nghĩa và kết nối trong cuộc sống khó khăn.</p>
+            <h3 data-vi="ii. Bài học về sự đồng cảm" data-en="ii. Lessons on Empathy">ii. Bài học về sự đồng cảm</h3>
+            <p data-vi="Thay vì phán xét những lựa chọn của người khác, chúng ta cần hiểu rằng mỗi quyết định đều có logic riêng trong bối cảnh của từng người. Chiếc TV của người đàn ông Morocco không phải là sự xa xỉ, mà là cách ông tìm kiếm ý nghĩa và kết nối trong cuộc sống khó khăn." data-en="Instead of judging others' choices, we need to understand that each decision has its own logic within each person's context. The Moroccan man's TV was not a luxury, but his way of seeking meaning and connection in a difficult life.">Thay vì phán xét những lựa chọn của người khác, chúng ta cần hiểu rằng mỗi quyết định đều có logic riêng trong bối cảnh của từng người. Chiếc TV của người đàn ông Morocco không phải là sự xa xỉ, mà là cách ông tìm kiếm ý nghĩa và kết nối trong cuộc sống khó khăn.</p>
 
-            <h3>iii. Thách thức cho tương lai</h3>
-            <p>Làm thế nào để tạo ra một xã hội mà việc chọn thực phẩm lành mạnh không chỉ là đặc quyền của người giàu? Làm sao để những người có hoàn cảnh khó khăn cũng có thể vừa "no bụng", vừa "ngon miệng", vừa "tốt cho sức khỏe"?</p>
+            <h3 data-vi="iii. Thách thức cho tương lai" data-en="iii. Challenges for the Future">iii. Thách thức cho tương lai</h3>
+            <p data-vi='Làm thế nào để tạo ra một xã hội mà việc chọn thực phẩm lành mạnh không chỉ là đặc quyền của người giàu? Làm sao để những người có hoàn cảnh khó khăn cũng có thể vừa "no bụng", vừa "ngon miệng", vừa "tốt cho sức khỏe"?' data-en='How do we create a society where choosing healthy food is not just a privilege of the wealthy? How can we ensure that people in difficult circumstances can have food that is simultaneously "filling," "tasty," and "healthy"?'>Làm thế nào để tạo ra một xã hội mà việc chọn thực phẩm lành mạnh không chỉ là đặc quyền của người giàu? Làm sao để những người có hoàn cảnh khó khăn cũng có thể vừa "no bụng", vừa "ngon miệng", vừa "tốt cho sức khỏe"?</p>
 
-            <h3>iv. Kết luận</h3>
-            <p>Sự phân biệt giàu nghèo ảnh hưởng đến lựa chọn thực phẩm theo những cách sâu sắc và đa chiều mà chúng ta vừa mới bắt đầu hiểu. Nghiên cứu của Andretti và những hiểu biết từ "Poor Economics" cho thấy rằng giải pháp không nằm ở việc đơn giản hóa vấn đề thành "cho tiền" hay "giáo dục", mà cần một cách tiếp cận toàn diện, tôn trọng và hiểu rõ tâm lý của từng nhóm đối tượng.</p>
+            <h3 data-vi="iv. Kết luận" data-en="iv. Final Thoughts">iv. Kết luận</h3>
+            <p data-vi='Sự phân biệt giàu nghèo ảnh hưởng đến lựa chọn thực phẩm theo những cách sâu sắc và đa chiều mà chúng ta vừa mới bắt đầu hiểu. Nghiên cứu của Andretti và những hiểu biết từ "Poor Economics" cho thấy rằng giải pháp không nằm ở việc đơn giản hóa vấn đề thành "cho tiền" hay "giáo dục", mà cần một cách tiếp cận toàn diện, tôn trọng và hiểu rõ tâm lý của từng nhóm đối tượng.' data-en='Income inequality affects food choices in profound and multidimensional ways that we are just beginning to understand. Andretti&apos;s research and insights from "Poor Economics" show that the solution does not lie in simplifying the problem into "giving money" or "education," but requires a comprehensive approach that respects and deeply understands the psychology of each group.'>Sự phân biệt giàu nghèo ảnh hưởng đến lựa chọn thực phẩm theo những cách sâu sắc và đa chiều mà chúng ta vừa mới bắt đầu hiểu. Nghiên cứu của Andretti và những hiểu biết từ "Poor Economics" cho thấy rằng giải pháp không nằm ở việc đơn giản hóa vấn đề thành "cho tiền" hay "giáo dục", mà cần một cách tiếp cận toàn diện, tôn trọng và hiểu rõ tâm lý của từng nhóm đối tượng.</p>
 
-            <p>Cuối cùng, có lẽ câu chuyện về thực phẩm và sự bất bình đẳng là câu chuyện về con người - về cách chúng ta tìm kiếm Ý NGHĨA, KHOÁI LẠC và PHẨM GIÁ trong những hoàn cảnh khác nhau. Và đó chính là nơi mà mọi giải pháp thực sự bền vững cần bắt đầu. Thực tế là khoảng cách giàu nghèo ở Việt Nam theo cảm nhận của cá nhân tôi thì nó càng ngày càng rõ, haizzzzz.</p>
+            <p data-vi="Cuối cùng, có lẽ câu chuyện về thực phẩm và sự bất bình đẳng là câu chuyện về con người - về cách chúng ta tìm kiếm Ý NGHĨA, KHOÁI LẠC và PHẨM GIÁ trong những hoàn cảnh khác nhau. Và đó chính là nơi mà mọi giải pháp thực sự bền vững cần bắt đầu. Thực tế là khoảng cách giàu nghèo ở Việt Nam theo cảm nhận của cá nhân tôi thì nó càng ngày càng rõ, haizzzzz." data-en="Ultimately, perhaps the story of food and inequality is a story about humanity - about how we seek MEANING, PLEASURE, and DIGNITY in different circumstances. And that is where all truly sustainable solutions must begin. The reality is that income inequality in Vietnam, from my personal observation, is becoming increasingly evident, sigh...">Cuối cùng, có lẽ câu chuyện về thực phẩm và sự bất bình đẳng là câu chuyện về con người - về cách chúng ta tìm kiếm Ý NGHĨA, KHOÁI LẠC và PHẨM GIÁ trong những hoàn cảnh khác nhau. Và đó chính là nơi mà mọi giải pháp thực sự bền vững cần bắt đầu. Thực tế là khoảng cách giàu nghèo ở Việt Nam theo cảm nhận của cá nhân tôi thì nó càng ngày càng rõ, haizzzzz.</p>
+        </div>
 
-            <div class="blog-footer">
+        <footer class="blog-footer">
+            <div class="share-section">
+                <h4>Chia sẻ bài viết</h4>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn share-facebook">Facebook</a>
+                    <a href="#" class="share-btn share-linkedin">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="author-note">
                 <p>Bài viết được viết bởi một người nghèo nên chưa kịp nghĩ ra giải pháp gì đâu, cũng hông giúp ai giỏi hơn.</p>
                 <p>Chúc bạn ngày nắng yêu nắng, ngày mưa yêu mưa.</p>
             </div>
-        </div>
+        <footer class="blog-footer">
+            <div class="share-section">
+                <h4 data-vi="Chia sẻ bài viết" data-en="Share this article">Chia sẻ bài viết</h4>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn share-facebook">Facebook</a>
+                    <a href="#" class="share-btn share-linkedin">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="author-note">
+                <p data-vi="Bài viết được viết bởi một người nghèo nên chưa kịp nghĩ ra giải pháp gì đâu, cũng hông giúp ai giỏi hơn." data-en="This article was written by a poor person, so I haven't had time to think of any solutions, and it doesn't help anyone get better.">Bài viết được viết bởi một người nghèo nên chưa kịp nghĩ ra giải pháp gì đâu, cũng hông giúp ai giỏi hơn.</p>
+                <p data-vi="Chúc bạn ngày nắng yêu nắng, ngày mưa yêu mưa." data-en="Wishing you love the sun on sunny days, and love the rain on rainy days.">Chúc bạn ngày nắng yêu nắng, ngày mưa yêu mưa.</p>
+            </div>
+        </footer>
     </article>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Language switcher
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const elementsWithTranslations = document.querySelectorAll('[data-vi][data-en]');
+        let currentLanguage = 'vi';
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                langButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const selectedLang = btn.textContent.includes('VI') ? 'vi' : 'en';
+                currentLanguage = selectedLang;
+                
+                elementsWithTranslations.forEach(element => {
+                    const translation = element.getAttribute(`data-${selectedLang}`);
+                    if (translation) {
+                        element.textContent = translation;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
