@@ -1,0 +1,16 @@
+# Cấu hình cơ bản cho blogs
+permalink: pretty  # URL bài: /ten-bai/
+excerpt_separator: <!--more-->  # Dấu phân cách tóm tắt
+
+# Defaults cho blogs
+defaults:
+  - scope:
+      path: ""
+      type: "blogs"  # Sử dụng collection "blogs"
+    values:
+      layout: post  # Layout chung cho bài blog
+
+# Collections: Đổi "posts" thành "blogs"
+collections:
+  blogs:
+    output: true  # Tạo URL cho từng bài
