@@ -1,5 +1,20 @@
+# Thông tin website
 title: Huỳnh Phú Xuân
-description: Portfolio & Blogs
+description: Behavioral Economist | Market Research | Social Analyst
+baseurl: "" 
+url: "https://xuanhvl-learning.github.io"
+
+# Jekyll settings
 markdown: kramdown
-theme: null
-permalink: /:categories/:year/:month/:day/:title.html
+permalink: /blog/:title/
+
+# Exclude files
+exclude:
+  - README.md
+  - Gemfile
+
+# Collections (optional)
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
