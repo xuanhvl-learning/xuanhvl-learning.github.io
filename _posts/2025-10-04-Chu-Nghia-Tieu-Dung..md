@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TỪ ĐẠO ĐỨC LAO ĐỘNG ĐẾN THẨM MỸ TIÊU DÙNG: HÀNH TRÌNH THAY CÒNG KHÔNG BÁO TRƯỚC"
+title: "Từ Đạo đức lao động đến thẩm mỹ tiêu dùng: Hành trì thay tròng không báo trước."
 date: 2025-10-04
 category: psychology
 excerpt: "Chúng ta chạy vòng vòng trong cái chuồng hamster hiện đại, làm nhiều hơn để tiêu nhiều hơn, tiêu nhiều hơn để lại phải làm nhiều hơn."
