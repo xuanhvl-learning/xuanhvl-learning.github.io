@@ -3,7 +3,7 @@ layout: post
 title: "DI CƯ VIỆT NAM: Từ Định Kiến Phân Biệt Vùng Miền Đến Động Lực Phát Triển"
 date: 2025-10-04
 category: society
-excerpt: "Phát hiện đau lòng : Ở châu Âu và Mỹ, người dân tin rằng số lượng người nhập cư gấp 2-3 lần thực tế. Họ nghĩ người nhập cú kém học vấn, nghèo đói, thất nghiệp và "ăn bám" chính phủ hơn so với thực tế. Ví dụ: ở Ý tỉ lệ nhập cư trong dân số thực tế chỉ có 10% nhưng nhận thức điển hình về tỉ lệ đó là 26%."
+excerpt: "Ở châu Âu và Mỹ, người dân tin rằng số lượng người nhập cư gấp 2-3 lần thực tế. Họ nghĩ người nhập cú kém học vấn, nghèo đói, thất nghiệp và "ăn bám" chính phủ hơn so với thực tế."
 ---
 
 # DI CƯ VIỆT NAM: Từ Định Kiến Phân Biệt Vùng Miền Đến Động Lực Phát Triển
