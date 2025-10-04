@@ -56,15 +56,46 @@
             letter-spacing: -0.3px;
         }
 
-        .back-btn {
-            color: #6c757d;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
         }
 
-        .back-btn:hover {
+        .nav-menu a {
+            color: #6c757d;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
             color: #c8a882;
+        }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            background: #f0ede6;
+            color: #6c757d;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: 1px solid #ebe8e1;
+            font-weight: 500;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: #c8a882;
+            color: white;
+            border-color: #c8a882;
         }
 
         .blog-post {
@@ -244,6 +275,19 @@
         }
 
         @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .language-switcher {
+                gap: 0.3rem;
+            }
+
+            .lang-btn {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.75rem;
+            }
+
             .blog-title {
                 font-size: 2rem;
             }
@@ -280,7 +324,16 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="/index.html" class="logo name-font">Huỳnh Phú Xuân</a>
-            <a href="/index.html#blog" class="back-btn">← Quay lại Blog</a>
+            <ul class="nav-menu">
+                <li><a href="/index.html#home">Home</a></li>
+                <li><a href="/index.html#cv">Resume</a></li>
+                <li><a href="/index.html#blog" class="active">Blogs</a></li>
+                <li><a href="/index.html#contact">Contact</a></li>
+            </ul>
+            <div class="language-switcher">
+                <a href="#" class="lang-btn active" data-lang="vi">🇻🇳 VI</a>
+                <a href="#" class="lang-btn" data-lang="en">🇺🇸 EN</a>
+            </div>
         </div>
     </nav>
 
