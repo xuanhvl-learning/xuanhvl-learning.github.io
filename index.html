@@ -1,44 +1,82 @@
----
----
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huỳnh Phú Xuân - Portfolio & Blogs</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Huỳnh Phú Xuân - Behavioral Economist | Market Research | Social Analyst</title>
+    <meta name="description" content="Huỳnh Phú Xuân - Kinh tế Hành vi, Nghiên cứu Thị trường và Phân tích Xã hội. Chia sẻ kiến thức về kinh tế, tâm lý học và công nghệ.">
+    <meta name="keywords" content="Huỳnh Phú Xuân, Behavioral Economics, Market Research, Social Analysis, Kinh tế hành vi">
+    <meta name="author" content="Huỳnh Phú Xuân">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Huỳnh Phú Xuân - Behavioral Economist">
+    <meta property="og:description" content="Kinh tế Hành vi | Market Research | Social Analyst">
+    <meta property="og:image" content="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/main/og-image.jpg">
+    
+    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Optimized Font Loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+    
     <style>
+        /* CSS Variables for Easy Maintenance */
+        :root {
+            --primary-bg: #fefdfb;
+            --secondary-bg: #f5f2eb;
+            --text-primary: #2c3e50;
+            --text-secondary: #6c757d;
+            --accent: #c8a882;
+            --accent-hover: #b89968;
+            --border-light: #ebe8e1;
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset & Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
-            color: #2c3e50;
-            background: #f5f2eb;
+            color: var(--text-primary);
+            background: var(--secondary-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
+        /* Typography */
         .name-font {
             font-family: 'Playfair Display', serif;
             font-weight: 500;
         }
 
-        /* Navigation */
+        /* Navigation - Optimized */
         .navbar {
-            background: #fefdfb;
+            background: var(--primary-bg);
             padding: 1rem 0;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-            border-bottom: 1px solid #ebe8e1;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border-light);
+            backdrop-filter: blur(10px);
         }
 
         .nav-container {
@@ -51,7 +89,7 @@
         }
 
         .logo {
-            color: #2c3e50;
+            color: var(--text-primary);
             font-size: 1.5rem;
             font-weight: 500;
             text-decoration: none;
@@ -65,15 +103,33 @@
         }
 
         .nav-menu a {
-            color: #6c757d;
+            color: var(--text-secondary);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: var(--transition);
             cursor: pointer;
             font-weight: 500;
+            position: relative;
         }
 
-        .nav-menu a:hover, .nav-menu a.active {
-            color: #c8a882;
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--accent);
         }
 
         .language-switcher {
@@ -85,36 +141,40 @@
 
         .lang-btn {
             padding: 0.4rem 0.8rem;
-            background: #f0ede6;
-            color: #6c757d;
+            background: transparent;
+            color: var(--text-secondary);
             text-decoration: none;
             border-radius: 20px;
             font-size: 0.85rem;
-            transition: all 0.3s ease;
-            border: 1px solid #ebe8e1;
+            transition: var(--transition);
+            border: 1px solid var(--border-light);
             font-weight: 500;
         }
 
-        .lang-btn:hover, .lang-btn.active {
-            background: #c8a882;
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: var(--accent);
             color: white;
-            border-color: #c8a882;
+            border-color: var(--accent);
+            transform: translateY(-1px);
         }
 
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
+            padding: 5px;
         }
 
         .hamburger span {
             width: 25px;
-            height: 3px;
-            background: #2c3e50;
+            height: 2px;
+            background: var(--text-primary);
             margin: 3px 0;
-            transition: 0.3s;
+            transition: var(--transition);
         }
 
+        /* Main Content */
         main {
             margin-top: 80px;
             min-height: calc(100vh - 80px);
@@ -129,6 +189,7 @@
         .section {
             padding: 80px 0;
             display: none;
+            animation: fadeIn 0.5s ease;
         }
 
         .section.active {
@@ -136,23 +197,38 @@
         }
 
         .section h2 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 5vw, 2.5rem);
             margin-bottom: 3rem;
             text-align: center;
-            color: #2c3e50;
+            color: var(--text-primary);
             font-weight: 300;
             letter-spacing: -1px;
         }
 
-        /* Home Section */
+        /* Hero Section - Optimized */
         .hero {
-            background: #fefdfb;
-            color: #2c3e50;
+            background: var(--primary-bg);
+            color: var(--text-primary);
             padding: 80px 0 100px;
             margin-top: -80px;
             min-height: 100vh;
             display: flex;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle background pattern */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(200, 168, 130, 0.05) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 50%, rgba(200, 168, 130, 0.03) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .hero-content {
@@ -162,10 +238,11 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
         }
 
         .hero-left {
-            animation: fadeInLeft 1s ease-out;
+            animation: slideInLeft 1s ease-out;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -173,7 +250,7 @@
         }
 
         .hero-left h1 {
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 7vw, 4rem);
             margin-bottom: 1rem;
             font-weight: 500;
             letter-spacing: -1px;
@@ -181,21 +258,67 @@
         }
 
         .hero-left .subtitle {
-            font-size: 1.2rem;
-            color: #6c757d;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
             font-weight: 500;
             line-height: 1.6;
         }
 
-        /* Visitor Counter style */
-        #visitor-counter {
-            margin-top: 1em;
-            font-size: 1em;
-            color: #888;
+        /* Special Quote Styling - Nghệ thuật và tối ưu */
+        .special-quote {
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            position: relative;
+            animation: fadeInUp 1.2s ease-out 0.5s both;
+        }
+
+        .special-quote p {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-style: italic;
+            font-weight: 400;
+            color: transparent;
+            text-align: center;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+            background: linear-gradient(135deg, #c8a882 0%, #8b7355 50%, #c8a882 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+            position: relative;
+            padding: 0 2rem;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% center; }
+            100% { background-position: -200% center; }
+        }
+
+        .special-quote::before,
+        .special-quote::after {
+            content: '"';
+            position: absolute;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.15;
+            font-weight: 600;
+        }
+
+        .special-quote::before {
+            top: 10px;
+            left: 0;
+        }
+
+        .special-quote::after {
+            bottom: 10px;
+            right: 0;
+            transform: rotate(180deg);
         }
 
         .hero-right {
-            animation: fadeInRight 1s ease-out;
+            animation: slideInRight 1s ease-out;
             text-align: center;
         }
 
@@ -205,12 +328,15 @@
             height: auto;
             display: block;
             margin: 0 auto;
+            border-radius: 8px;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
         }
 
-        @keyframes fadeInLeft {
+        /* Animations - Optimized */
+        @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-50px);
+                transform: translateX(-30px);
             }
             to {
                 opacity: 1;
@@ -218,10 +344,10 @@
             }
         }
 
-        @keyframes fadeInRight {
+        @keyframes slideInRight {
             from {
                 opacity: 0;
-                transform: translateX(50px);
+                transform: translateX(30px);
             }
             to {
                 opacity: 1;
@@ -229,7 +355,23 @@
             }
         }
 
-        /* Coming Soon Message */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Coming Soon - Simplified */
         .coming-soon {
             text-align: center;
             padding: 100px 20px;
@@ -238,23 +380,29 @@
         .coming-soon-icon {
             font-size: 4rem;
             margin-bottom: 1.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .coming-soon h3 {
             font-size: 2rem;
-            color: #2c3e50;
+            color: var(--text-primary);
             margin-bottom: 1rem;
             font-weight: 600;
         }
 
         .coming-soon p {
             font-size: 1.1rem;
-            color: #6c757d;
+            color: var(--text-secondary);
             max-width: 500px;
             margin: 0 auto;
         }
 
-        /* Blog Section */
+        /* Blog Section - Optimized */
         .blog-filters {
             display: flex;
             justify-content: center;
@@ -265,23 +413,26 @@
 
         .filter-btn {
             padding: 0.6rem 1.5rem;
-            background: #fefefe;
-            border: 2px solid #f0ede7;
-            color: #6c757d;
+            background: white;
+            border: 2px solid var(--border-light);
+            color: var(--text-secondary);
             border-radius: 25px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .filter-btn:hover {
-            background: #f0ede6;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
         }
 
+        /* Category-specific colors - Using CSS custom properties for efficiency */
         .filter-btn.active[data-filter="all"] {
-            background: #c8a882;
+            background: var(--accent);
             color: white;
-            border-color: #c8a882;
+            border-color: var(--accent);
         }
 
         .filter-btn.active[data-filter="economics"] {
@@ -322,24 +473,25 @@
         }
 
         .blog-card {
-            background: #fefefe;
+            background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            border: 1px solid #f5f2eb;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--secondary-bg);
+            transition: var(--transition);
+            animation: fadeInUp 0.6s ease-out;
         }
 
         .blog-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
 
         .blog-card-header {
-            background: #f5f2eb;
-            color: #2c3e50;
+            background: var(--secondary-bg);
+            color: var(--text-primary);
             padding: 1.5rem;
-            border-bottom: 1px solid #f0ede7;
+            border-bottom: 1px solid var(--border-light);
         }
 
         .blog-category {
@@ -353,31 +505,12 @@
             letter-spacing: 0.5px;
         }
 
-        /* Category Colors */
-        .category-economics {
-            background: #d4e8d4;
-            color: #2d5a2d;
-        }
-
-        .category-psychology {
-            background: #e8d4e8;
-            color: #6b4a6b;
-        }
-
-        .category-society {
-            background: #f0e7d6;
-            color: #b8956b;
-        }
-
-        .category-science-tech {
-            background: #d4e4f0;
-            color: #2d5a7a;
-        }
-
-        .category-others {
-            background: #e8e8e8;
-            color: #5a5a5a;
-        }
+        /* Category Colors - Optimized */
+        .category-economics { background: #d4e8d4; color: #2d5a2d; }
+        .category-psychology { background: #e8d4e8; color: #6b4a6b; }
+        .category-society { background: #f0e7d6; color: #b8956b; }
+        .category-science-tech { background: #d4e4f0; color: #2d5a7a; }
+        .category-others { background: #e8e8e8; color: #5a5a5a; }
 
         .blog-title {
             font-size: 1.2rem;
@@ -387,7 +520,7 @@
         }
 
         .blog-date {
-            color: #6c757d;
+            color: var(--text-secondary);
             font-size: 0.9rem;
             font-weight: 500;
         }
@@ -403,17 +536,21 @@
         }
 
         .read-more {
-            color: #d4a574;
+            color: var(--accent);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
         }
 
         .read-more:hover {
-            color: #c19660;
+            color: var(--accent-hover);
+            gap: 0.5rem;
         }
 
-        /* Responsive */
+        /* Responsive Design - Mobile First Approach */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -424,12 +561,12 @@
                 left: -100%;
                 top: 80px;
                 flex-direction: column;
-                background: #fefdfb;
+                background: var(--primary-bg);
                 width: 100%;
                 text-align: center;
                 transition: 0.3s;
                 padding: 2rem 0;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+                box-shadow: var(--shadow-sm);
             }
 
             .nav-menu.active {
@@ -443,23 +580,20 @@
 
             .hero-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 3rem;
             }
 
             .hero-right img {
                 max-width: 350px;
             }
 
-            .hero-left h1 {
+            .special-quote {
+                padding: 1rem;
+            }
+
+            .special-quote::before,
+            .special-quote::after {
                 font-size: 2.5rem;
-            }
-
-            .hero-left .subtitle {
-                font-size: 1rem;
-            }
-
-            .section h2 {
-                font-size: 2rem;
             }
 
             .blog-grid {
@@ -472,18 +606,47 @@
                 max-width: 280px;
             }
 
-            .hero-left h1 {
-                font-size: 2rem;
+            .special-quote p {
+                padding: 0 1rem;
             }
 
-            .section h2 {
-                font-size: 1.8rem;
+            .special-quote::before,
+            .special-quote::after {
+                font-size: 2rem;
             }
 
             .blog-filters {
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .filter-btn {
+                width: 200px;
+            }
+        }
+
+        /* Performance Optimization */
+        img {
+            loading: lazy;
+            decoding: async;
+        }
+
+        /* Accessibility */
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
     </style>
 </head>
@@ -491,17 +654,17 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo name-font">Huỳnh Phú Xuân</a>
-            <ul class="nav-menu">
+            <ul class="nav-menu" role="navigation">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#cv" class="nav-link">Resume</a></li>
                 <li><a href="#blog" class="nav-link">Blogs</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="language-switcher">
-                <a href="#" class="lang-btn active" data-lang="vi">🇻🇳 VI</a>
-                <a href="#" class="lang-btn" data-lang="en">🇺🇸 EN</a>
+                <a href="#" class="lang-btn active" data-lang="vi" aria-label="Chuyển sang tiếng Việt">🇻🇳 VI</a>
+                <a href="#" class="lang-btn" data-lang="en" aria-label="Switch to English">🇺🇸 EN</a>
             </div>
-            <div class="hamburger">
+            <div class="hamburger" aria-label="Menu" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -521,14 +684,18 @@
                             <p class="subtitle" data-vi="Behavioral Economist | Market Research | Social Analyst" data-en="Behavioral Economist | Market Research | Social Analyst">
                                 Behavioral Economist | Market Research | Social Analyst
                             </p>
-                            <!-- Visitor Counter Start -->
-                            <div id="visitor-counter">
-                                <span id="visitor-count">Đang tải số lượt truy cập...</span>
+                            <div class="special-quote">
+                                <p data-vi="Chúc bạn ngày nắng yêu nắng, ngày mưa yêu mưa" data-en="May you love sunny days when it's sunny, rainy days when it rains">
+                                    Chúc bạn ngày nắng yêu nắng, ngày mưa yêu mưa
+                                </p>
                             </div>
-                            <!-- Visitor Counter End -->
                         </div>
                         <div class="hero-right">
-                            <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/324b6d1ffd6c035028fc9f9bda8c0c09f872a239/fav-artwork.jpg" alt="Illustration" />
+                            <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/324b6d1ffd6c035028fc9f9bda8c0c09f872a239/fav-artwork.jpg" 
+                                 alt="Huỳnh Phú Xuân - Behavioral Economist Illustration" 
+                                 width="500"
+                                 height="500"
+                                 loading="eager" />
                         </div>
                     </div>
                 </div>
@@ -553,38 +720,37 @@
                 <h2 data-vi="Blog & Chia sẻ" data-en="Blog & Sharing">Blog & Chia sẻ</h2>
                 
                 <div class="blog-filters">
-                    <button class="filter-btn active" data-filter="all" data-vi="Tất cả" data-en="All">Tất cả</button>
-                    <button class="filter-btn" data-filter="economics" data-vi="Kinh tế học" data-en="Economics">Kinh tế học</button>
-                    <button class="filter-btn" data-filter="psychology" data-vi="Tâm lý học" data-en="Psychology">Tâm lý học</button>
-                    <button class="filter-btn" data-filter="society" data-vi="Xã hội" data-en="Society">Xã hội</button>
-                    <button class="filter-btn" data-filter="science-tech" data-vi="Khoa học Công nghệ" data-en="Science & Technology">Khoa học Công nghệ</button>
-                    <button class="filter-btn" data-filter="others" data-vi="Khác" data-en="Others">Khác</button>
+                    <button class="filter-btn active" data-filter="all" data-vi="Tất cả" data-en="All" aria-label="Hiển thị tất cả bài viết">Tất cả</button>
+                    <button class="filter-btn" data-filter="economics" data-vi="Kinh tế học" data-en="Economics" aria-label="Lọc bài viết Kinh tế học">Kinh tế học</button>
+                    <button class="filter-btn" data-filter="psychology" data-vi="Tâm lý học" data-en="Psychology" aria-label="Lọc bài viết Tâm lý học">Tâm lý học</button>
+                    <button class="filter-btn" data-filter="society" data-vi="Xã hội" data-en="Society" aria-label="Lọc bài viết Xã hội">Xã hội</button>
+                    <button class="filter-btn" data-filter="science-tech" data-vi="Khoa học Công nghệ" data-en="Science & Technology" aria-label="Lọc bài viết Khoa học Công nghệ">Khoa học Công nghệ</button>
+                    <button class="filter-btn" data-filter="others" data-vi="Khác" data-en="Others" aria-label="Lọc bài viết khác">Khác</button>
                 </div>
                 
-<div class="blog-grid">
-    {% for post in site.posts %}
-    <article class="blog-card" data-category="{{ post.category }}">
-        <div class="blog-card-header">
-            <span class="blog-category category-{{ post.category }}">
-                {% if post.category == 'economics' %}Kinh tế học
-                {% elsif post.category == 'psychology' %}Tâm lý học
-                {% elsif post.category == 'society' %}Xã hội
-                {% elsif post.category == 'science-tech' %}Khoa học Công nghệ
-                {% else %}Khác
-                {% endif %}
-            </span>
-            <h3 class="blog-title">{{ post.title }}</h3>
-            <p class="blog-date">{{ post.date | date: "%d tháng %m, %Y" }}</p>
-        </div>
-        <div class="blog-card-body">
-            <p class="blog-excerpt">{{ post.excerpt }}</p>
-            <a href="{{ post.url }}" class="read-more">Đọc tiếp →</a>
-        </div>
-    </article>
-    {% endfor %}
-</div>
-               
-           
+                <div class="blog-grid">
+                    {% for post in site.posts %}
+                    <article class="blog-card" data-category="{{ post.category }}">
+                        <div class="blog-card-header">
+                            <span class="blog-category category-{{ post.category }}">
+                                {% if post.category == 'economics' %}Kinh tế học
+                                {% elsif post.category == 'psychology' %}Tâm lý học
+                                {% elsif post.category == 'society' %}Xã hội
+                                {% elsif post.category == 'science-tech' %}Khoa học Công nghệ
+                                {% else %}Khác
+                                {% endif %}
+                            </span>
+                            <h3 class="blog-title">{{ post.title }}</h3>
+                            <p class="blog-date">{{ post.date | date: "%d tháng %m, %Y" }}</p>
+                        </div>
+                        <div class="blog-card-body">
+                            <p class="blog-excerpt">{{ post.excerpt }}</p>
+                            <a href="{{ post.url }}" class="read-more">Đọc tiếp →</a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
         </section>
 
         <section id="contact" class="section">
@@ -602,6 +768,7 @@
     </main>
 
     <script>
+        // Navigation functionality
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('.section');
         const hamburger = document.querySelector('.hamburger');
@@ -619,10 +786,20 @@
             });
         });
 
+        // Mobile menu toggle
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
 
+        // Keyboard accessibility for hamburger menu
+        hamburger.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                navMenu.classList.toggle('active');
+            }
+        });
+
+        // Blog filter functionality
         const filterBtns = document.querySelectorAll('.filter-btn');
         const blogCards = document.querySelectorAll('.blog-card');
 
@@ -631,9 +808,11 @@
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 const filter = btn.getAttribute('data-filter');
+                
                 blogCards.forEach(card => {
                     if (filter === 'all' || card.getAttribute('data-category') === filter) {
                         card.style.display = 'block';
+                        card.style.animation = 'fadeInUp 0.6s ease-out';
                     } else {
                         card.style.display = 'none';
                     }
@@ -641,6 +820,7 @@
             });
         });
 
+        // Language switcher
         const langButtons = document.querySelectorAll('.lang-btn');
         const elementsWithTranslations = document.querySelectorAll('[data-vi][data-en]');
         let currentLanguage = 'vi';
@@ -652,16 +832,21 @@
                 btn.classList.add('active');
                 const selectedLang = btn.getAttribute('data-lang');
                 currentLanguage = selectedLang;
+                
                 elementsWithTranslations.forEach(element => {
                     const translation = element.getAttribute(`data-${selectedLang}`);
                     if (translation) {
-                        element.textContent = translation;
+                        if (element.tagName === 'BUTTON' || element.textContent) {
+                            element.textContent = translation;
+                        }
                     }
                 });
+                
                 localStorage.setItem('preferred-language', selectedLang);
             });
         });
 
+        // Load saved language preference
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferred-language');
             if (savedLang && savedLang !== 'vi') {
@@ -670,18 +855,24 @@
                     targetBtn.click();
                 }
             }
-            // Visitor Counter fetch
-            fetch('https://api.countapi.xyz/hit/xuanhvl-learning.github.io/visits')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('visitor-count').innerText =
-                        'Số lượt truy cập: ' + data.value;
-                })
-                .catch(() => {
-                    document.getElementById('visitor-count').innerText =
-                        'Không thể tải số lượt truy cập!';
-                });
         });
+
+        // Optimize image loading with IntersectionObserver
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
     </script>
 </body>
 </html>
