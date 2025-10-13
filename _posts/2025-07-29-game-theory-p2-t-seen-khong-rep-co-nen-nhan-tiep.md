@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Game Theory- P2]:"SEEN KHÔNG REP – Có nên nhắn tiếp?"
+title: "[Game Theory- P2]: SEEN KHÔNG REP – Có nên nhắn tiếp?"
 date: 2025-07-29
 category: economics
 excerpt: "Phân tích câu chuyện Tình yêu, Kinh doanh dưới góc nhìn Lý thuyết trò chơi (Game Theory): Loại trò chơi, Ma trận lợi ích, Cân bằng Nash (1950), Thống kê Bayses."
