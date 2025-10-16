@@ -6,6 +6,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huỳnh Phú Xuân - Portfolio & Blogs</title>
+    
+    <!-- Favicon - Behavioral Economics Theme -->
+    <!-- Option 1: 💡 Bóng đèn - Insight về hành vi con người -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>">
+    
+    <!-- Các lựa chọn khác (uncomment để dùng):
+    
+    Option 2: 🧠 Não bộ - Tâm lý & Hành vi
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    
+    Option 3: 🎯 Mục tiêu - Hành vi có chủ đích
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+    
+    Option 4: 🔍 Kính lúp - Nghiên cứu & Phân tích
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔍</text></svg>">
+    
+    Option 5: 📊 Biểu đồ - Kinh tế & Thị trường
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    
+    Option 6: 🤝 Bắt tay - Xã hội & Tương tác
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤝</text></svg>">
+    
+    Option 7: 👥 Con người - Xã hội & Cộng đồng
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👥</text></svg>">
+    
+    Option 8: 💭 Suy nghĩ - Tâm lý & Nhận thức
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💭</text></svg>">
+    -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -497,7 +526,7 @@
         <div class="nav-container">
             <a href="#" class="logo name-font">Huỳnh Phú Xuân</a>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#cv" class="nav-link">Resume</a></li>
                 <li><a href="#blog" class="nav-link">Blogs</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -515,7 +544,7 @@
     </nav>
 
     <main>
-        <section id="home" class="section active">
+        <section id="home" class="section">
             <div class="hero">
                 <div class="container">
                     <div class="hero-content">
@@ -612,16 +641,50 @@
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
 
+        // Function to switch sections
+        function showSection(sectionId) {
+            // Remove active from all
+            navLinks.forEach(l => l.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active'));
+            
+            // Add active to target
+            const targetSection = document.getElementById(sectionId);
+            const targetLink = document.querySelector(`a[href="#${sectionId}"]`);
+            
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            if (targetLink) {
+                targetLink.classList.add('active');
+            }
+            
+            // Save current section to localStorage
+            localStorage.setItem('current-section', sectionId);
+        }
+
+        // Handle nav link clicks
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                navLinks.forEach(l => l.classList.remove('active'));
-                sections.forEach(s => s.classList.remove('active'));
-                link.classList.add('active');
                 const targetId = link.getAttribute('href').substring(1);
-                document.getElementById(targetId).classList.add('active');
+                showSection(targetId);
                 navMenu.classList.remove('active');
             });
+        });
+
+        // Handle page load/refresh - restore last section
+        window.addEventListener('load', () => {
+            const savedSection = localStorage.getItem('current-section');
+            const hash = window.location.hash.substring(1);
+            
+            // Priority: URL hash > localStorage > default (home)
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            } else if (savedSection && document.getElementById(savedSection)) {
+                showSection(savedSection);
+            } else {
+                showSection('home');
+            }
         });
 
         hamburger.addEventListener('click', () => {
@@ -630,6 +693,34 @@
 
         const filterBtns = document.querySelectorAll('.filter-btn');
         const blogCards = document.querySelectorAll('.blog-card');
+
+        // Function to count and update filter button labels with counts
+        function updateFilterCounts() {
+            filterBtns.forEach(btn => {
+                const filter = btn.getAttribute('data-filter');
+                let count = 0;
+                
+                if (filter === 'all') {
+                    count = blogCards.length;
+                } else {
+                    blogCards.forEach(card => {
+                        if (card.getAttribute('data-category') === filter) {
+                            count++;
+                        }
+                    });
+                }
+                
+                // Get current language
+                const currentLang = document.querySelector('.lang-btn.active').getAttribute('data-lang') || 'vi';
+                const baseText = btn.getAttribute(`data-${currentLang}`);
+                
+                // Update button text with count
+                btn.textContent = `${baseText} (${count})`;
+            });
+        }
+
+        // Initialize counts on page load
+        updateFilterCounts();
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -663,6 +754,8 @@
                         element.textContent = translation;
                     }
                 });
+                // Update filter counts with new language
+                updateFilterCounts();
                 localStorage.setItem('preferred-language', selectedLang);
             });
         });
