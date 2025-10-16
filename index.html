@@ -187,11 +187,16 @@
             line-height: 1.6;
         }
 
-        /* Visitor Counter style */
-        #visitor-counter {
-            margin-top: 1em;
-            font-size: 1em;
-            color: #888;
+        /* Tagline style */
+        .tagline {
+            margin-top: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #b8956b;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            line-height: 1.8;
+            letter-spacing: 0.3px;
         }
 
         .hero-right {
@@ -521,11 +526,11 @@
                             <p class="subtitle" data-vi="Behavioral Economist | Market Research | Social Analyst" data-en="Behavioral Economist | Market Research | Social Analyst">
                                 Behavioral Economist | Market Research | Social Analyst
                             </p>
-                            <!-- Visitor Counter Start -->
-                            <div id="visitor-counter">
-                                <span id="visitor-count">Đang tải số lượt truy cập...</span>
+                            <!-- Tagline -->
+                            <div class="tagline">
+                                Chúc bạn - Ngày nắng yêu nắng, Ngày mưa yêu mưa
                             </div>
-                            <!-- Visitor Counter End -->
+                            <!-- End Tagline -->
                         </div>
                         <div class="hero-right">
                             <img src="https://raw.githubusercontent.com/xuanhvl-learning/portfolio-images/324b6d1ffd6c035028fc9f9bda8c0c09f872a239/fav-artwork.jpg" alt="Illustration" />
@@ -670,17 +675,6 @@
                     targetBtn.click();
                 }
             }
-            // Visitor Counter fetch
-            fetch('https://api.countapi.xyz/hit/xuanhvl-learning.github.io/visits')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('visitor-count').innerText =
-                        'Số lượt truy cập: ' + data.value;
-                })
-                .catch(() => {
-                    document.getElementById('visitor-count').innerText =
-                        'Không thể tải số lượt truy cập!';
-                });
         });
     </script>
 </body>
