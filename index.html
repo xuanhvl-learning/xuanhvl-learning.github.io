@@ -525,6 +525,250 @@
                 align-items: center;
             }
         }
+/* ==================== CV SECTION STYLES ==================== */
+
+.cv-section {
+    margin-bottom: 3rem;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cv-section-title {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #c8a882;
+    font-family: 'Playfair Display', serif;
+}
+
+/* About Section */
+.cv-about {
+    background: #fefefe;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #c8a882;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.cv-about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+}
+
+/* CV Items (Experience & Education) */
+.cv-item {
+    background: #fefefe;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #c8a882;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+}
+
+.cv-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.cv-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.cv-item-title {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+}
+
+.cv-item-period {
+    color: #c8a882;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.cv-item-company {
+    color: #6c757d;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.cv-item-description {
+    color: #495057;
+    margin-bottom: 1rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.cv-item-meta {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.cv-item-thesis {
+    color: #495057;
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: #f8f6f1;
+    border-radius: 6px;
+    font-style: italic;
+}
+
+/* Achievements List */
+.cv-achievements {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.cv-achievements li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.75rem;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.cv-achievements li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #c8a882;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: #fefefe;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.skill-category-title {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f0ede6;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: #f0ede6;
+    color: #2c3e50;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.skill-tag:hover {
+    background: #c8a882;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(200,168,130,0.3);
+}
+
+/* Certifications */
+.cert-item {
+    background: #fefefe;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #c8a882;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.cert-item strong {
+    color: #2c3e50;
+    font-size: 1.05rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .cv-section-title {
+        font-size: 1.5rem;
+    }
+    
+    .cv-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .cv-item-period {
+        margin-top: 0.5rem;
+    }
+    
+    .cv-item-title {
+        font-size: 1.1rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .cv-about,
+    .cv-item,
+    .skill-category {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cv-section {
+        margin-bottom: 2rem;
+    }
+    
+    .cv-about-text {
+        font-size: 1rem;
+    }
+    
+    .cv-achievements li {
+        font-size: 0.95rem;
+    }
+}
+        
     </style>
 </head>
 <body>
@@ -576,17 +820,14 @@
         </section>
 
         <section id="cv" class="section">
-            <div class="container">
-                <h2 data-vi="Hồ Sơ & Kinh Nghiệm" data-en="Profile & Experience">Hồ Sơ & Kinh Nghiệm</h2>
-                <div class="coming-soon">
-                    <div class="coming-soon-icon">🚧</div>
-                    <h3 data-vi="Đang cập nhật" data-en="Under Construction">Đang cập nhật</h3>
-                    <p data-vi="Thông tin hồ sơ và kinh nghiệm đang được hoàn thiện. Vui lòng quay lại sau!" data-en="Profile and experience information is being updated. Please come back later!">
-                        Thông tin hồ sơ và kinh nghiệm đang được hoàn thiện. Vui lòng quay lại sau!
-                    </p>
-                </div>
-            </div>
-        </section>
+    <div class="container">
+        <h2 data-vi="Hồ Sơ & Kinh Nghiệm" data-en="Profile & Experience">Hồ Sơ & Kinh Nghiệm</h2>
+        
+        <div id="cv-content">
+            <!-- CV content will be rendered here by JavaScript -->
+        </div>
+    </div>
+</section>
 
         <section id="blog" class="section">
             <div class="container">
@@ -773,7 +1014,291 @@
                 localStorage.setItem('preferred-language', selectedLang);
             });
         });
+// ==================== CV DATA & RENDER FUNCTION ====================
 
+const cvData = {
+    vi: {
+        about: {
+            title: "Giới thiệu",
+            content: "Nhà kinh tế hành vi với 5+ năm kinh nghiệm trong nghiên cứu hành vi tiêu dùng và phân tích thị trường. Chuyên về ứng dụng tâm lý học vào quyết định kinh tế, với focus vào consumer behavior, decision-making biases, và market research methodology."
+        },
+        experience: [
+            {
+                title: "Nghiên cứu viên cao cấp - Kinh tế hành vi",
+                company: "ABC Research Institute",
+                location: "TP. Hồ Chí Minh, Việt Nam",
+                period: "2020 - Hiện tại",
+                description: "Dẫn dắt các dự án nghiên cứu quy mô lớn về hành vi người tiêu dùng và ra quyết định kinh tế",
+                achievements: [
+                    "Quản lý team nghiên cứu 5 người, hoàn thành 15+ dự án cho clients lớn trong lĩnh vực FMCG, Banking, và E-commerce",
+                    "Phát triển framework phân tích hành vi tiêu dùng mới, tăng độ chính xác dự đoán lên 30%",
+                    "Công bố 3 bài nghiên cứu trên tạp chí quốc tế về behavioral economics và consumer psychology",
+                    "Tư vấn chiến lược marketing dựa trên insights hành vi cho 20+ brands"
+                ]
+            },
+            {
+                title: "Chuyên viên phân tích thị trường",
+                company: "XYZ Corporation",
+                location: "TP. Hồ Chí Minh, Việt Nam",
+                period: "2018 - 2020",
+                description: "Phân tích xu hướng thị trường, hành vi khách hàng và insights cho strategic decision-making",
+                achievements: [
+                    "Thực hiện 20+ báo cáo phân tích thị trường chuyên sâu cho các ngành hàng khác nhau",
+                    "Phát triển customer segmentation model giúp tăng targeting effectiveness 25%",
+                    "Lead focus group discussions và in-depth interviews với 500+ respondents"
+                ]
+            }
+        ],
+        education: [
+            {
+                degree: "Thạc sĩ Kinh tế học",
+                major: "Kinh tế hành vi (Behavioral Economics)",
+                school: "Đại học Kinh tế TP.HCM",
+                period: "2015 - 2018",
+                gpa: "3.8/4.0",
+                thesis: "Ứng dụng Behavioral Economics trong Consumer Decision-Making: Nghiên cứu thực nghiệm tại thị trường Việt Nam"
+            },
+            {
+                degree: "Cử nhân Kinh tế",
+                major: "Kinh tế vi mô & Thống kê",
+                school: "Đại học Kinh tế TP.HCM",
+                period: "2011 - 2015",
+                gpa: "3.6/4.0"
+            }
+        ],
+        skills: {
+            research: [
+                "Survey Design & Implementation",
+                "Focus Group Moderation",
+                "In-depth Interviews",
+                "A/B Testing",
+                "Conjoint Analysis",
+                "Statistical Analysis"
+            ],
+            technical: [
+                "SPSS",
+                "R Programming",
+                "Python (pandas, matplotlib)",
+                "Excel Advanced (VBA, Pivot)",
+                "Tableau",
+                "MAXQDA"
+            ],
+            soft: [
+                "Team Leadership",
+                "Client Presentation",
+                "Research Report Writing",
+                "Strategic Thinking",
+                "Cross-functional Collaboration",
+                "Stakeholder Management"
+            ]
+        },
+        certifications: [
+            {
+                name: "Certified Market Research Analyst (CMRA)",
+                org: "Market Research Society",
+                year: "2021"
+            },
+            {
+                name: "Advanced Statistical Analysis",
+                org: "Coursera - Johns Hopkins University",
+                year: "2020"
+            }
+        ]
+    },
+    en: {
+        about: {
+            title: "About Me",
+            content: "Behavioral Economist with 5+ years of experience in consumer behavior research and market analysis. Specialized in applying psychology to economic decision-making, with focus on consumer behavior, decision-making biases, and market research methodology."
+        },
+        experience: [
+            {
+                title: "Senior Behavioral Economics Researcher",
+                company: "ABC Research Institute",
+                location: "Ho Chi Minh City, Vietnam",
+                period: "2020 - Present",
+                description: "Leading large-scale research projects on consumer behavior and economic decision-making",
+                achievements: [
+                    "Managed research team of 5, completed 15+ projects for major clients in FMCG, Banking, and E-commerce sectors",
+                    "Developed new consumer behavior analysis framework, increased prediction accuracy by 30%",
+                    "Published 3 papers in international journals on behavioral economics and consumer psychology",
+                    "Provided behavioral insights-based marketing strategy consulting for 20+ brands"
+                ]
+            },
+            {
+                title: "Market Analyst",
+                company: "XYZ Corporation",
+                location: "Ho Chi Minh City, Vietnam",
+                period: "2018 - 2020",
+                description: "Analyzed market trends, customer behavior and insights for strategic decision-making",
+                achievements: [
+                    "Conducted 20+ in-depth market analysis reports across various industries",
+                    "Developed customer segmentation model that increased targeting effectiveness by 25%",
+                    "Led focus group discussions and in-depth interviews with 500+ respondents"
+                ]
+            }
+        ],
+        education: [
+            {
+                degree: "Master of Economics",
+                major: "Behavioral Economics",
+                school: "University of Economics Ho Chi Minh City",
+                period: "2015 - 2018",
+                gpa: "3.8/4.0",
+                thesis: "Application of Behavioral Economics in Consumer Decision-Making: An Empirical Study in Vietnamese Market"
+            },
+            {
+                degree: "Bachelor of Economics",
+                major: "Microeconomics & Statistics",
+                school: "University of Economics Ho Chi Minh City",
+                period: "2011 - 2015",
+                gpa: "3.6/4.0"
+            }
+        ],
+        skills: {
+            research: [
+                "Survey Design & Implementation",
+                "Focus Group Moderation",
+                "In-depth Interviews",
+                "A/B Testing",
+                "Conjoint Analysis",
+                "Statistical Analysis"
+            ],
+            technical: [
+                "SPSS",
+                "R Programming",
+                "Python (pandas, matplotlib)",
+                "Excel Advanced (VBA, Pivot)",
+                "Tableau",
+                "MAXQDA"
+            ],
+            soft: [
+                "Team Leadership",
+                "Client Presentation",
+                "Research Report Writing",
+                "Strategic Thinking",
+                "Cross-functional Collaboration",
+                "Stakeholder Management"
+            ]
+        },
+        certifications: [
+            {
+                name: "Certified Market Research Analyst (CMRA)",
+                org: "Market Research Society",
+                year: "2021"
+            },
+            {
+                name: "Advanced Statistical Analysis",
+                org: "Coursera - Johns Hopkins University",
+                year: "2020"
+            }
+        ]
+    }
+};
+
+// Render CV Function
+function renderCV(lang = 'vi') {
+    const data = cvData[lang];
+    const container = document.getElementById('cv-content');
+    
+    if (!container) return;
+    
+    container.innerHTML = `
+        <!-- About Section -->
+        <div class="cv-section cv-about">
+            <h3 class="cv-section-title">${data.about.title}</h3>
+            <p class="cv-about-text">${data.about.content}</p>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="cv-section cv-experience">
+            <h3 class="cv-section-title">${lang === 'vi' ? 'Kinh nghiệm làm việc' : 'Work Experience'}</h3>
+            ${data.experience.map(job => `
+                <div class="cv-item experience-item">
+                    <div class="cv-item-header">
+                        <h4 class="cv-item-title">${job.title}</h4>
+                        <span class="cv-item-period">${job.period}</span>
+                    </div>
+                    <p class="cv-item-company">${job.company} • ${job.location}</p>
+                    <p class="cv-item-description">${job.description}</p>
+                    <ul class="cv-achievements">
+                        ${job.achievements.map(a => `<li>${a}</li>`).join('')}
+                    </ul>
+                </div>
+            `).join('')}
+        </div>
+
+        <!-- Education Section -->
+        <div class="cv-section cv-education">
+            <h3 class="cv-section-title">${lang === 'vi' ? 'Học vấn' : 'Education'}</h3>
+            ${data.education.map(edu => `
+                <div class="cv-item education-item">
+                    <div class="cv-item-header">
+                        <h4 class="cv-item-title">${edu.degree}</h4>
+                        <span class="cv-item-period">${edu.period}</span>
+                    </div>
+                    <p class="cv-item-company">${edu.school}</p>
+                    <p class="cv-item-meta"><strong>${lang === 'vi' ? 'Chuyên ngành' : 'Major'}:</strong> ${edu.major} | <strong>GPA:</strong> ${edu.gpa}</p>
+                    ${edu.thesis ? `<p class="cv-item-thesis"><strong>${lang === 'vi' ? '📚 Luận văn' : '📚 Thesis'}:</strong> ${edu.thesis}</p>` : ''}
+                </div>
+            `).join('')}
+        </div>
+
+        <!-- Skills Section -->
+        <div class="cv-section cv-skills">
+            <h3 class="cv-section-title">${lang === 'vi' ? 'Kỹ năng chuyên môn' : 'Professional Skills'}</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4 class="skill-category-title">${lang === 'vi' ? '🔬 Nghiên cứu' : '🔬 Research'}</h4>
+                    <div class="skill-tags">
+                        ${data.skills.research.map(s => `<span class="skill-tag">${s}</span>`).join('')}
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4 class="skill-category-title">${lang === 'vi' ? '💻 Công nghệ' : '💻 Technical'}</h4>
+                    <div class="skill-tags">
+                        ${data.skills.technical.map(s => `<span class="skill-tag">${s}</span>`).join('')}
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4 class="skill-category-title">${lang === 'vi' ? '🤝 Kỹ năng mềm' : '🤝 Soft Skills'}</h4>
+                    <div class="skill-tags">
+                        ${data.skills.soft.map(s => `<span class="skill-tag">${s}</span>`).join('')}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications Section -->
+        ${data.certifications.length > 0 ? `
+            <div class="cv-section cv-certifications">
+                <h3 class="cv-section-title">${lang === 'vi' ? 'Chứng chỉ & Đào tạo' : 'Certifications & Training'}</h3>
+                ${data.certifications.map(cert => `
+                    <div class="cert-item">
+                        <strong>🏆 ${cert.name}</strong><br>
+                        ${cert.org} • ${cert.year}
+                    </div>
+                `).join('')}
+            </div>
+        ` : ''}
+    `;
+}
+
+// Initialize CV on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Initial render based on current language
+    const currentLang = localStorage.getItem('preferred-language') || 'vi';
+    renderCV(currentLang);
+});
+
+// Update CV when language changes (integrate with existing language switcher)
+const originalLangSwitcher = document.querySelectorAll('.lang-btn');
+originalLangSwitcher.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const selectedLang = btn.getAttribute('data-lang');
+        // Delay render to ensure language has switched
+        setTimeout(() => renderCV(selectedLang), 100);
+    });
+});
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferred-language');
             if (savedLang && savedLang !== 'vi') {
