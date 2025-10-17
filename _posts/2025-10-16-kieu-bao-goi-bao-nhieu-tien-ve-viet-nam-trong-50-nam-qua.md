@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Kiều bào gởi bao nhiêu tiền về Việt Nam trong 50 năm qua?"
+title: "Kiều bào gởi bao nhiêu tiền về Việt Nam trong 50 năm qua?[Sưu tầm] "
 date: 2025-10-16
 category: society
-excerpt: "[Sưu tầm] Tôi thấy câu hỏi này chưa được trả lời, nên trong cái note này tôi mạo muội đưa ra một ước tính. Con số này sẽ làm cho các bạn ngạc nhiên.   Không phải ngẫu nhiên mà ngày nay Chánh phủ Việt Nam tổ chức những buổi meeting hàng năm để ghi nhận những đóng góp lớn lao của kiều bào hải ngoại cho đất nước."
+excerpt: "Tôi thấy câu hỏi này chưa được trả lời, nên trong cái note này tôi mạo muội đưa ra một ước tính. Con số này sẽ làm cho các bạn ngạc nhiên.   Không phải ngẫu nhiên mà ngày nay Chánh phủ Việt Nam tổ chức những buổi meeting hàng năm để ghi nhận những đóng góp lớn lao của kiều bào hải ngoại cho đất nước."
 ---
 Nguồn: https://nguyenvantuan.info/2025/10/02/kieu-bao-goi-bao-nhieu-tien-ve-viet-nam-trong-50-nam-qua/
 
