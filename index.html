@@ -768,6 +768,134 @@
         font-size: 0.95rem;
     }
 }
+        /* ==================== CONTACT SECTION STYLES ==================== */
+
+.contact-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contact-card {
+    background: #fefefe;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #f0ede6;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    border-color: #c8a882;
+}
+
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contact-title {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.contact-link {
+    display: block;
+    color: #c8a882;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #b8956b;
+    text-decoration: underline;
+}
+
+.contact-desc {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0ede6;
+    color: #2c3e50;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: #c8a882;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(200,168,130,0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contact-intro p {
+        font-size: 1rem;
+    }
+    
+    .contact-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact-card {
+        padding: 1.5rem;
+    }
+    
+    .social-links {
+        gap: 1rem;
+    }
+    
+    .social-link {
+        width: 45px;
+        height: 45px;
+    }
+}
     </style>
 </head>
 <body>
@@ -866,19 +994,70 @@
                
            
         </section>
+<section id="contact" class="section">
+    <div class="container">
+        <h2 data-vi="Liên hệ với tôi" data-en="Contact Me">Liên hệ với tôi</h2>
+        
+        <div class="contact-content">
+            <div class="contact-intro">
+                <p data-vi="Tôi luôn sẵn sàng kết nối và trao đổi về các chủ đề nghiên cứu, cơ hội hợp tác, hoặc bất kỳ câu hỏi nào liên quan đến kinh tế hành vi và nghiên cứu thị trường." 
+                   data-en="I'm always open to connecting and discussing research topics, collaboration opportunities, or any questions related to behavioral economics and market research.">
+                    Tôi luôn sẵn sàng kết nối và trao đổi về các chủ đề nghiên cứu, cơ hội hợp tác, hoặc bất kỳ câu hỏi nào liên quan đến kinh tế hành vi và nghiên cứu thị trường.
+                </p>
+            </div>
 
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 data-vi="Liên hệ với tôi" data-en="Contact Me">Liên hệ với tôi</h2>
-                <div class="coming-soon">
-                    <div class="coming-soon-icon">📧</div>
-                    <h3 data-vi="Đang cập nhật" data-en="Under Construction">Đang cập nhật</h3>
-                    <p data-vi="Thông tin liên hệ đang được hoàn thiện. Vui lòng quay lại sau!" data-en="Contact information is being updated. Please come back later!">
-                        Thông tin liên hệ đang được hoàn thiện. Vui lòng quay lại sau!
+            <div class="contact-cards">
+                <!-- Email Card -->
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3 class="contact-title">Email</h3>
+                    <a href="mailto:hpxuan.khtn@gmail.com" class="contact-link">
+                       hpxuan.khtn@gmail.com
+                    </a>
+                    <p class="contact-desc" data-vi="Phản hồi trong vòng 24 giờ" data-en="Response within 24 hours">
+                        Phản hồi trong vòng 24 giờ
+                    </p>
+                </div>
+
+                <!-- LinkedIn Card -->
+                <div class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <h3 class="contact-title">LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/xu%C3%A2n-hu%E1%BB%B3nh-ph%C3%BA-8179a3a5/" target="_blank" class="contact-link">
+                        linkedin.com/in/xu%C3%A2n-hu%E1%BB%B3nh-ph%C3%BA-8179a3a5/
+                    </a>
+                    <p class="contact-desc" data-vi="Kết nối chuyên nghiệp" data-en="Professional networking">
+                        Kết nối chuyên nghiệp
+                    </p>
+                </div>
+
+                <!-- Location Card -->
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3 class="contact-title" data-vi="Vị trí" data-en="Location">Vị trí</h3>
+                    <p class="contact-link">
+                        TP. Hồ Chí Minh, Việt Nam
+                    </p>
+                    <p class="contact-desc" data-vi="Sẵn sàng làm việc remote" data-en="Available for remote work">
+                        Sẵn sàng làm việc remote
                     </p>
                 </div>
             </div>
-        </section>
+
+          <div class="contact-card">
+    <div class="contact-icon">📱</div>
+    <h3 class="contact-title" data-vi="Điện thoại" data-en="Phone">Điện thoại</h3>
+    <a href="tel:+84093882XXXX" class="contact-link">
+        +84 938 82X XXX
+    </a>
+    <p class="contact-desc" data-vi="8:00 - 17:00 (GMT+7)" data-en="8:00 AM - 5:00 PM (GMT+7)">
+        8:00 - 17:00 (GMT+7)
+    </p>
+</div>
+        </div>
+    </div>
+</section>
+
     </main>
 
     <script>
