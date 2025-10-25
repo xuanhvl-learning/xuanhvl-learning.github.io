@@ -1,103 +1,96 @@
-// ==================== DAKA MODULAR CHATBOT ====================
-// Architecture: Plugin-based for easy API addition
-// Current: DAKA + DeepSeek
-// Future: Add any AI provider in 5 minutes!
-
-// ==================== BASE AI PROVIDER CLASS ====================
+// ==================== DAKA KNOWLEDGE BASE ====================
 /**
- * Abstract base class for AI providers
- * Extend this to add new AI services easily
+ * DAKA Knowledge Base - Rule-based responses
+ * Add more Q&A here to increase DAKA hit rate and reduce AI costs
  */
-class AIProvider {
-    constructor(name, config = {}) {
-        this.name = name;
-        this.config = config;
-        this.enabled = true;
-        this.stats = {
-            totalCalls: 0,
-            successCalls: 0,
-            failedCalls: 0,
-            totalCost: 0
-        };
-    }
-    
-    /**
-     * Check if provider is available (has tokens, not rate-limited, etc.)
-     * Override in subclass
-     */
-    async isAvailable() {
-        return this.enabled;
-    }
-    
-    /**
-     * Main method to get AI response
-     * MUST be implemented in subclass
-     */
-    async ask(question, context = []) {
-        throw new Error(`${this.name}: ask() method must be implemented`);
-    }
-    
-    /**
-     * Estimate cost for a query
-     * Override in subclass
-     */
-    estimateCost(question, response) {
-        return 0;
-    }
-    
-    /**
-     * Handle errors gracefully
-     */
-    handleError(error) {
-        console.error(`${this.name} Error:`, error);
-        this.stats.failedCalls++;
-        return null;
-    }
-    
-    /**
-     * Track successful call
-     */
-    trackSuccess(cost = 0) {
-        this.stats.totalCalls++;
-        this.stats.successCalls++;
-        this.stats.totalCost += cost;
-    }
-    
-    /**
-     * Get provider statistics
-     */
-    getStats() {
-        return {
-            name: this.name,
-            ...this.stats,
-            successRate: this.stats.totalCalls > 0 
-                ? (this.stats.successCalls / this.stats.totalCalls * 100).toFixed(1) + '%'
-                : 'N/A',
-            avgCost: this.stats.successCalls > 0
-                ? (this.stats.totalCost / this.stats.successCalls).toFixed(6)
-                : '$0'
-        };
-    }
-}
 
-// ==================== DEEPSEEK PROVIDER ====================
-/**
- * DeepSeek AI Provider
- * Cost: $0.14/$0.28 per 1M tokens
- * Free tier: $10 credit
- */
-class DeepSeekProvider extends AIProvider {
-    constructor(apiKey, config = {}) {
-        super('DeepSeek', config);
-        this.apiKey = apiKey;
-        this.endpoint = 'https://api.deepseek.com/v1/chat/completions';
-        this.model = config.model || 'deepseek-chat';
-        this.maxTokens = config.maxTokens || 500;
-        this.temperature = config.temperature || 0.7;
+const chatbotKnowledgeBase = {
+    vi: {
+        greetings: [
+            "👋 Xin chào! Tôi là DAKA, trợ lý ảo của Huỳnh Phú Xuân.\n\nTôi có thể giúp bạn:\n• Hiểu về Kinh tế Hành vi\n• Tìm hiểu nội dung blog\n• Trả lời câu hỏi về website\n\nHãy thử các câu hỏi nhanh bên dưới! 😊",
+            "Chào bạn! 👋 Tôi là DAKA, trợ lý AI của Xuân.\n\nBạn muốn biết gì về:\n🎯 Kinh tế Hành vi\n📝 Blog & Bài viết\n👤 Thông tin cá nhân\n\nHỏi tôi bất cứ điều gì nhé!",
+            "Hello! 🧠 Tôi là DAKA.\n\nTôi có thể trả lời các câu hỏi về:\n✨ Behavioral Economics\n✨ Blog posts và insights\n✨ Website này\n\nBạn cần giúp gì?"
+        ],
         
-        // Token tracking
-        this.tokenLimit = config.tokenLimit || 10_000_000; // $10 = ~10M tokens
-        this.tokensUsed = this.loadTokensUsed();
+        intro: "🌟 **Về Website này:**\n\nĐây là portfolio cá nhân của **Huỳnh Phú Xuân** - một Behavioral Economist chuyên về Market Research và Social Analysis.\n\n📍 **Nội dung:**\n• Blog về Kinh tế Hành vi & Tâm lý học\n• Phân tích xã hội & Insights thị trường\n• Nghiên cứu về hành vi tiêu dùng\n\n🎯 **Mục đích:** Chia sẻ kiến thức và quan điểm về cách con người ra quyết định trong kinh tế và đời sống.",
+        
+        behavioral: "🧠 **Kinh tế Hành vi (Behavioral Economics) là gì?**\n\nLà lĩnh vực nghiên cứu cách con người **THỰC SỰ** ra quyết định kinh tế, không phải cách họ **NÊN** ra quyết định (như kinh tế học cổ điển cho rằng).\n\n💡 **Ví dụ thực tế:**\n• Tại sao bạn mua thứ không cần khi sale?\n• Vì sao giá $9.99 hấp dẫn hơn $10?\n• Tại sao người ta sợ mất hơn ham được?\n\n🎓 **Ứng dụng:**\nMarketing, Chính sách công, UX Design, Đầu tư tài chính...\n\n📚 Khám phá thêm trong phần Blog!",
+        
+        latestBlogs: "📝 **Blog mới nhất:**\n\nCác bài viết được cập nhật thường xuyên về:\n\n🎯 **Kinh tế học:**\nHiệu ứng Neo, Loss Aversion, Anchoring...\n\n🧠 **Tâm lý học:**\nFOMO, Confirmation Bias, Decision-making...\n\n🌍 **Xã hội:**\nVăn hóa tiêu dùng, Gen Z, Social trends...\n\n📊 **Khoa học & Công nghệ:**\nAI, Data analysis, Future trends...\n\n👉 Xem tất cả tại phần **Blogs** trên menu!",
+        
+        contact: "📬 **Liên hệ với Xuân:**\n\n📧 Email: [Xem phần Contact]\n💼 LinkedIn: [Xem phần Contact]\n🐦 Social: [Xem phần Contact]\n\n💡 Bạn cũng có thể để lại comment trên các bài blog!\n\n⏰ **Response time:** Thường trong 24-48 giờ.",
+        
+        cv: "📄 **Hồ sơ & Kinh nghiệm:**\n\nXuân có background về:\n• Behavioral Economics\n• Market Research\n• Consumer Psychology\n• Social Analysis\n\n🎓 **Chuyên môn:**\n• Phân tích hành vi tiêu dùng\n• Nghiên cứu thị trường\n• Data-driven insights\n• Strategic consulting\n\n👉 Xem chi tiết tại phần **Resume** trên menu!",
+        
+        notUnderstood: [
+            "🤔 Xin lỗi, tôi chưa hiểu câu hỏi của bạn.\n\nBạn có thể:\n• Thử các câu hỏi nhanh bên dưới\n• Hỏi về Kinh tế Hành vi\n• Hỏi về nội dung Blog\n• Hỏi về thông tin liên hệ",
+            "💭 Hmm, tôi chưa có câu trả lời cho điều này.\n\nThử hỏi tôi về:\n✨ Behavioral Economics\n✨ Blog & Articles\n✨ Contact info\n\nHoặc dùng các gợi ý bên dưới!",
+            "🔍 Tôi đang học hỏi thêm mỗi ngày!\n\nHiện tại tôi có thể giúp bạn về:\n📚 Kinh tế Hành vi\n📝 Nội dung blog\n👤 Thông tin website\n\nHãy thử hỏi các chủ đề này nhé!"
+        ],
+        
+        goodbye: [
+            "👋 Tạm biệt! Hẹn gặp lại bạn sớm!\n\n💡 Đừng quên ghé thăm phần Blog để đọc những insights mới nhất nhé!",
+            "🌟 Bye bye! Cảm ơn bạn đã ghé thăm!\n\nNếu có câu hỏi gì, quay lại chat với tôi bất cứ lúc nào! 😊",
+            "👋 See you! Have a great day!\n\n📚 Explore more articles in the Blog section!"
+        ]
+    },
+    
+    en: {
+        greetings: [
+            "👋 Hi! I'm DAKA, Xuan's AI assistant.\n\nI can help you with:\n• Understanding Behavioral Economics\n• Exploring blog content\n• Navigating this website\n\nTry the quick questions below! 😊",
+            "Hello! 👋 I'm DAKA, your virtual assistant.\n\nAsk me about:\n🎯 Behavioral Economics\n📝 Blog posts & insights\n👤 About Xuan\n\nHow can I help?",
+            "Hey there! 🧠 I'm DAKA.\n\nI can answer questions about:\n✨ Behavioral Economics\n✨ Blog articles\n✨ This website\n\nWhat would you like to know?"
+        ],
+        
+        intro: "🌟 **About This Website:**\n\nThis is the personal portfolio of **Huynh Phu Xuan** - a Behavioral Economist specializing in Market Research and Social Analysis.\n\n📍 **Content:**\n• Blog about Behavioral Economics & Psychology\n• Social analysis & Market insights\n• Consumer behavior research\n\n🎯 **Purpose:** Sharing knowledge and perspectives on how people make decisions in economics and life.",
+        
+        behavioral: "🧠 **What is Behavioral Economics?**\n\nIt studies how people **ACTUALLY** make economic decisions, not how they **SHOULD** make them (as classical economics assumes).\n\n💡 **Real-world examples:**\n• Why do you buy unnecessary things on sale?\n• Why is $9.99 more attractive than $10?\n• Why do people fear losses more than desire gains?\n\n🎓 **Applications:**\nMarketing, Public Policy, UX Design, Investment...\n\n📚 Explore more in the Blog section!",
+        
+        latestBlogs: "📝 **Latest Blogs:**\n\nRegularly updated articles about:\n\n🎯 **Economics:**\nAnchoring Effect, Loss Aversion, Pricing...\n\n🧠 **Psychology:**\nFOMO, Cognitive Biases, Decision-making...\n\n🌍 **Society:**\nConsumer culture, Gen Z, Social trends...\n\n📊 **Science & Tech:**\nAI, Data analysis, Future trends...\n\n👉 See all in the **Blogs** menu section!",
+        
+        contact: "📬 **Contact Xuan:**\n\n📧 Email: [See Contact section]\n💼 LinkedIn: [See Contact section]\n🐦 Social: [See Contact section]\n\n💡 You can also comment on blog posts!\n\n⏰ **Response time:** Usually within 24-48 hours.",
+        
+        cv: "📄 **Profile & Experience:**\n\nXuan's background includes:\n• Behavioral Economics\n• Market Research\n• Consumer Psychology\n• Social Analysis\n\n🎓 **Expertise:**\n• Consumer behavior analysis\n• Market research\n• Data-driven insights\n• Strategic consulting\n\n👉 See details in the **Resume** menu section!",
+        
+        notUnderstood: [
+            "🤔 Sorry, I don't understand that question yet.\n\nYou can:\n• Try quick questions below\n• Ask about Behavioral Economics\n• Ask about Blog content\n• Ask about contact info",
+            "💭 Hmm, I don't have an answer for that yet.\n\nTry asking about:\n✨ Behavioral Economics\n✨ Blog & Articles\n✨ Contact information\n\nOr use the suggestions below!",
+            "🔍 I'm learning more every day!\n\nCurrently I can help with:\n📚 Behavioral Economics\n📝 Blog content\n👤 Website info\n\nTry asking about these topics!"
+        ],
+        
+        goodbye: [
+            "👋 Goodbye! See you soon!\n\n💡 Don't forget to check the Blog for latest insights!",
+            "🌟 Bye! Thanks for visiting!\n\nCome back and chat anytime! 😊",
+            "👋 See you! Have a great day!\n\n📚 Explore more in the Blog section!"
+        ]
+    }
+};
+
+// Keyword patterns for matching (case-insensitive)
+const keywordResponses = {
+    vi: {
+        'xin chào|chào|hello|hi|hey': 'greetings',
+        'giới thiệu|about|website|trang web': 'intro',
+        'kinh tế hành vi|behavioral econ|be là gì|be|hành vi': 'behavioral',
+        'blog|bài viết|article|post|mới nhất|latest': 'latestBlogs',
+        'liên hệ|contact|email': 'contact',
+        'cv|resume|hồ sơ|kinh nghiệm|experience': 'cv',
+        'tạm biệt|bye|goodbye|see you': 'goodbye'
+    },
+    en: {
+        'hello|hi|hey|greetings': 'greetings',
+        'about|intro|website|what is this': 'intro',
+        'behavioral econ|be|what is be': 'behavioral',
+        'blog|article|post|latest|recent': 'latestBlogs',
+        'contact|email|reach': 'contact',
+        'cv|resume|profile|experience': 'cv',
+        'bye|goodbye|see you|later': 'goodbye'
+    }
+};
+
+// ==================== REST OF CHATBOT CODE ====================
+// (The AIProvider class and DakaBot class code from previous file)
+
     }
     
     async isAvailable() {
