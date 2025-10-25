@@ -3,7 +3,7 @@ layout: post
 title: "Sống Thú Vị Là Một Năng Lực Hiếm Có Đối Với Người Hiện Đại"
 date: 2025-10-25
 category: society
-excerpt: ""Sống thú vị là một năng lực hiếm có đối với người hiện đại" - không phải là một lời phê phán, mà là một lời nhắc nhở đầy thương cảm. Chúng ta sống trong thời đại có nhiều điều kiện vật chất nhất trong lịch sử, nhưng lại có ít người hạnh phúc nhất. Chúng ta có smartphone, có Internet, có cả thế giới trong tay, nhưng lại cảm thấy trống rỗng. Tại sao? Bởi vì chúng ta đã đánh mất năng lực sống thú vị. Chúng ta sống theo template của người khác, chạy theo những tiêu chuẩn do xã hội đặt ra, quên mất rằng cuộc sống này là của chính mình."
+excerpt: "Sống thú vị là một năng lực hiếm có đối với người hiện đại" - không phải là một lời phê phán, mà là một lời nhắc nhở đầy thương cảm. Chúng ta sống trong thời đại có nhiều điều kiện vật chất nhất trong lịch sử, nhưng lại có ít người hạnh phúc nhất. Chúng ta có smartphone, có Internet, có cả thế giới trong tay, nhưng lại cảm thấy trống rỗng. Tại sao? Bởi vì chúng ta đã đánh mất năng lực sống thú vị. Chúng ta sống theo template của người khác, chạy theo những tiêu chuẩn do xã hội đặt ra, quên mất rằng cuộc sống này là của chính mình."
 ---
 
 ## Mở Đầu: Khi Một Đại Văn Hào Tìm Thấy Ánh Sáng
