@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Markdown Chuyên Nghiệp - Huỳnh Phú Xuân</title>
+    <meta name="description" content="Hướng dẫn đầy đủ về Markdown từ cơ bản đến nâng cao với 14 chương và 6 templates chuyên nghiệp">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f5f2eb;
+        }
+
+        .name-font {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        /* Navbar - Same as main site */
+        .navbar {
+            background: #fefdfb;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-bottom: 1px solid #ebe8e1;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .back-home {
+            padding: 0.6rem 1.5rem;
+            background: #c8a882;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid #c8a882;
+        }
+
+        .back-home:hover {
+            background: #b8956b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(200, 168, 130, 0.3);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            border-bottom: 2px solid #ebe8e1;
+            margin-bottom: 3rem;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: #d4e4f0;
+            color: #2d5a7a;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .article-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: #6c757d;
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: #fefdfb;
+            border: 2px solid #ebe8e1;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .toc h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #c8a882;
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+            padding-left: 0;
+        }
+
+        .toc ol li {
+            counter-increment: toc-counter;
+            margin: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .toc ol li::before {
+            content: counter(toc-counter) ".";
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+            color: #c8a882;
+        }
+
+        .toc ol li a {
+            color: #2c3e50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .toc ol li a:hover {
+            color: #c8a882;
+        }
+
+        /* Content Sections */
+        .content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #2c3e50;
+            margin: 3rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ebe8e1;
+        }
+
+        .content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+        }
+
+        .content h4 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .content p {
+            margin: 1rem 0;
+            line-height: 1.8;
+        }
+
+        .content ul, .content ol {
+            margin: 1rem 0 1rem 2rem;
+            line-height: 1.8;
+        }
+
+        .content li {
+            margin: 0.5rem 0;
+        }
+
+        .content strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .content em {
+            font-style: italic;
+            color: #495057;
+        }
+
+        /* Code Blocks */
+        .content code {
+            font-family: 'Fira Code', 'Courier New', monospace;
+            background: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #e83e8c;
+        }
+
+        .content pre {
+            background: #2c3e50;
+            color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-left: 4px solid #c8a882;
+        }
+
+        .content pre code {
+            background: transparent;
+            color: #f8f9fa;
+            padding: 0;
+        }
+
+        /* Blockquotes */
+        .content blockquote {
+            border-left: 4px solid #c8a882;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            color: #495057;
+            font-style: italic;
+            background: #fefdfb;
+            padding: 1rem 1rem 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Tables */
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: #fefdfb;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .content table th {
+            background: #c8a882;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .content table td {
+            padding: 1rem;
+            border-bottom: 1px solid #ebe8e1;
+        }
+
+        .content table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .content table tr:hover {
+            background: #f5f2eb;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: #d4e4f0;
+            border-left: 4px solid #2d5a7a;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box strong {
+            color: #2d5a7a;
+        }
+
+        .warning-box {
+            background: #ffe5e5;
+            border-left: 4px solid #dc3545;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .success-box {
+            background: #d4f4dd;
+            border-left: 4px solid #28a745;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #c8a882;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+
+        .back-to-top:hover {
+            background: #b8956b;
+            transform: translateY(-3px);
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2rem;
+            }
+
+            .content h2 {
+                font-size: 1.6rem;
+            }
+
+            .content h3 {
+                font-size: 1.3rem;
+            }
+
+            .toc {
+                padding: 1.5rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .content pre {
+                padding: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo name-font">Huỳnh Phú Xuân</a>
+            <a href="index.html#blog" class="back-home">← Quay lại Blog</a>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <header class="article-header">
+                <span class="category-badge">Khoa học Công nghệ</span>
+                <h1>📝 Hướng Dẫn Markdown Chuyên Nghiệp<br>Từ Cơ Bản Đến Nâng Cao</h1>
+                <div class="article-meta">
+                    <span>📅 31 tháng 10, 2025</span>
+                    <span>⏱️ 30 phút đọc</span>
+                    <span>✍️ Huỳnh Phú Xuân</span>
+                </div>
+            </header>
+
+            <!-- Table of Contents -->
+            <nav class="toc">
+                <h2>📚 Mục Lục</h2>
+                <ol>
+                    <li><a href="#basic-syntax">Cú Pháp Cơ Bản</a></li>
+                    <li><a href="#formatting">Định Dạng Text</a></li>
+                    <li><a href="#lists">Danh Sách</a></li>
+                    <li><a href="#links-images">Links & Images</a></li>
+                    <li><a href="#code-blocks">Code Blocks</a></li>
+                    <li><a href="#tables">Bảng</a></li>
+                    <li><a href="#blockquotes">Blockquotes</a></li>
+                    <li><a href="#horizontal-rules">Horizontal Rules</a></li>
+                    <li><a href="#task-lists">Task Lists</a></li>
+                    <li><a href="#emojis">Emojis</a></li>
+                    <li><a href="#html">HTML trong Markdown</a></li>
+                    <li><a href="#metadata">Metadata (Front Matter)</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                    <li><a href="#templates">Templates Chuyên Nghiệp</a></li>
+                </ol>
+            </nav>
+
+            <div class="content">
+                <!-- Introduction -->
+                <section>
+                    <p><strong>Markdown</strong> là một ngôn ngữ đánh dấu nhẹ (lightweight markup language) được tạo ra bởi John Gruber vào năm 2004. Mục đích của Markdown là giúp viết văn bản có cấu trúc một cách dễ đọc và dễ viết, sau đó có thể chuyển đổi sang HTML hoặc các format khác.</p>
+
+                    <div class="info-box">
+                        <strong>💡 Tại sao nên học Markdown?</strong>
+                        <ul>
+                            <li>✅ Đơn giản, dễ học (học trong 15 phút)</li>
+                            <li>✅ Được sử dụng rộng rãi (GitHub, Reddit, Discord, Notion...)</li>
+                            <li>✅ Tập trung vào nội dung, không phải định dạng</li>
+                            <li>✅ Có thể convert sang PDF, HTML, DOCX...</li>
+                            <li>✅ Version control friendly (dùng được với Git)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 1. Basic Syntax -->
+                <section id="basic-syntax">
+                    <h2>1️⃣ Cú Pháp Cơ Bản</h2>
+                    
+                    <h3>Tiêu Đề (Headers)</h3>
+                    <p>Markdown hỗ trợ 6 cấp độ tiêu đề, từ H1 (lớn nhất) đến H6 (nhỏ nhất):</p>
+                    
+                    <pre><code># H1 - Tiêu đề cấp 1 (Lớn nhất)
+## H2 - Tiêu đề cấp 2
+### H3 - Tiêu đề cấp 3
+#### H4 - Tiêu đề cấp 4
+##### H5 - Tiêu đề cấp 5
+###### H6 - Tiêu đề cấp 6 (Nhỏ nhất)</code></pre>
+
+                    <div class="success-box">
+                        <strong>💡 Best Practice:</strong>
+                        <ul>
+                            <li>Chỉ dùng <strong>1 H1 duy nhất</strong> cho cả document (tiêu đề chính)</li>
+                            <li>H2 cho các sections lớn</li>
+                            <li>H3, H4 cho subsections</li>
+                            <li>Luôn có khoảng trống sau dấu <code>#</code></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 2. Formatting -->
+                <section id="formatting">
+                    <h2>2️⃣ Định Dạng Text</h2>
+                    
+                    <h3>Basic Formatting</h3>
+                    <pre><code>**Bold text** hoặc __Bold text__
+*Italic text* hoặc _Italic text_
+***Bold và Italic*** hoặc ___Bold và Italic___
+~~Strikethrough~~ (Gạch ngang)
+`Inline code` (Code ngắn)</code></pre>
+
+                    <p><strong>Kết quả:</strong></p>
+                    <ul>
+                        <li><strong>Bold text</strong></li>
+                        <li><em>Italic text</em></li>
+                        <li><strong><em>Bold và Italic</em></strong></li>
+                        <li><del>Strikethrough</del></li>
+                        <li><code>Inline code</code></li>
+                    </ul>
+
+                    <h3>Advanced Formatting</h3>
+                    <pre><code>&lt;u&gt;Underline text&lt;/u&gt; (Dùng HTML)
+&lt;mark&gt;Highlighted text&lt;/mark&gt;
+H&lt;sub&gt;2&lt;/sub&gt;O (Subscript)
+X&lt;sup&gt;2&lt;/sup&gt; (Superscript)</code></pre>
+
+                    <div class="info-box">
+                        <strong>💡 Pro Tips:</strong>
+                        <ul>
+                            <li>Dùng <code>**bold**</code> cho từ khóa quan trọng</li>
+                            <li>Dùng <code>*italic*</code> cho nhấn mạnh nhẹ hoặc thuật ngữ nước ngoài</li>
+                            <li>Dùng <code>~~strikethrough~~</code> cho nội dung đã cũ/deprecated</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 3. Lists -->
+                <section id="lists">
+                    <h2>3️⃣ Danh Sách</h2>
+                    
+                    <h3>Unordered List (Danh sách không thứ tự)</h3>
+                    <pre><code>- Item 1
+- Item 2
+  - Sub-item 2.1
+  - Sub-item 2.2
+    - Sub-sub-item 2.2.1
+- Item 3</code></pre>
+
+                    <p><strong>Kết quả:</strong></p>
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2
+                            <ul>
+                                <li>Sub-item 2.1</li>
+                                <li>Sub-item 2.2</li>
+                            </ul>
+                        </li>
+                        <li>Item 3</li>
+                    </ul>
+
+                    <h3>Ordered List (Danh sách có thứ tự)</h3>
+                    <pre><code>1. Bước 1
+2. Bước 2
+   1. Bước 2.1
+   2. Bước 2.2
+3. Bước 3</code></pre>
+
+                    <p><strong>Kết quả:</strong></p>
+                    <ol>
+                        <li>Bước 1</li>
+                        <li>Bước 2
+                            <ol>
+                                <li>Bước 2.1</li>
+                                <li>Bước 2.2</li>
+                            </ol>
+                        </li>
+                        <li>Bước 3</li>
+                    </ol>
+
+                    <div class="success-box">
+                        <strong>💡 Best Practice:</strong>
+                        <ul>
+                            <li>Indent sub-items bằng 2 hoặc 4 spaces</li>
+                            <li>Dùng ordered list cho các bước tuần tự</li>
+                            <li>Dùng unordered list cho các items không theo thứ tự</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 4. Links & Images -->
+                <section id="links-images">
+                    <h2>4️⃣ Links & Images</h2>
+                    
+                    <h3>Links</h3>
+                    <pre><code>[Text hiển thị](https://example.com)
+[Link với title](https://example.com "Title khi hover")
+[Reference link][1]
+
+[1]: https://example.com "Định nghĩa reference ở cuối"
+
+&lt;https://auto-link.com&gt; (Tự động tạo link)</code></pre>
+
+                    <h3>Images</h3>
+                    <pre><code>![Alt text](https://via.placeholder.com/300)
+![Image với title](https://via.placeholder.com/300 "Title")
+
+Hoặc dùng reference:
+![Alt text][logo]
+
+[logo]: https://via.placeholder.com/150 "Logo"</code></pre>
+
+                    <h3>Images với Link</h3>
+                    <pre><code>[![Alt text](image-url)](link-url)</code></pre>
+
+                    <div class="info-box">
+                        <strong>💡 Pro Tips:</strong>
+                        <ul>
+                            <li>Luôn có alt text cho accessibility</li>
+                            <li>Dùng reference links cho links lặp lại nhiều lần</li>
+                            <li>Dùng relative paths cho images trong cùng repository</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 5. Code Blocks -->
+                <section id="code-blocks">
+                    <h2>5️⃣ Code Blocks</h2>
+                    
+                    <h3>Inline Code</h3>
+                    <pre><code>Dùng `console.log()` để debug code.</code></pre>
+                    <p><strong>Kết quả:</strong> Dùng <code>console.log()</code> để debug code.</p>
+
+                    <h3>Code Block với Syntax Highlighting</h3>
+                    <pre><code>```javascript
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+greet("World");
+```
+
+```python
+def greet(name):
+    print(f"Hello, {name}!")
+    
+greet("World")
+```
+
+```css
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+```</code></pre>
+
+                    <div class="success-box">
+                        <strong>💡 Pro Tips:</strong>
+                        <ul>
+                            <li>Luôn chỉ rõ ngôn ngữ để có syntax highlighting</li>
+                            <li>Supported languages: javascript, python, java, css, html, bash, sql, json, yaml, markdown...</li>
+                            <li>Dùng 3 backticks (```) không 4 để tránh lỗi</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 6. Tables -->
+                <section id="tables">
+                    <h2>6️⃣ Bảng</h2>
+                    
+                    <h3>Basic Table</h3>
+                    <pre><code>| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1    | Data     | Data     |
+| Row 2    | Data     | Data     |</code></pre>
+
+                    <p><strong>Kết quả:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Header 1</th>
+                                <th>Header 2</th>
+                                <th>Header 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Row 1</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                            </tr>
+                            <tr>
+                                <td>Row 2</td>
+                                <td>Data</td>
+                                <td>Data</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Table với Alignment</h3>
+                    <pre><code>| Left Align | Center Align | Right Align |
+|:-----------|:------------:|------------:|
+| Left       | Center       | Right       |
+| Text       | Text         | 1000        |</code></pre>
+
+                    <p><strong>Kết quả:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align:left">Left Align</th>
+                                <th style="text-align:center">Center Align</th>
+                                <th style="text-align:right">Right Align</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left">Left</td>
+                                <td style="text-align:center">Center</td>
+                                <td style="text-align:right">Right</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left">Text</td>
+                                <td style="text-align:center">Text</td>
+                                <td style="text-align:right">1000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="success-box">
+                        <strong>💡 Best Practice:</strong>
+                        <ul>
+                            <li><code>:---</code> = Left align (default)</li>
+                            <li><code>:---:</code> = Center align</li>
+                            <li><code>---:</code> = Right align</li>
+                            <li>Dùng emojis để table dễ đọc hơn</li>
+                            <li>Align numbers về bên phải</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 7. Blockquotes -->
+                <section id="blockquotes">
+                    <h2>7️⃣ Blockquotes</h2>
+                    
+                    <h3>Basic Quote</h3>
+                    <pre><code>&gt; This is a blockquote.
+&gt; It can span multiple lines.</code></pre>
+
+                    <p><strong>Kết quả:</strong></p>
+                    <blockquote>
+                        This is a blockquote.<br>
+                        It can span multiple lines.
+                    </blockquote>
+
+                    <h3>Nested Quotes</h3>
+                    <pre><code>&gt; Level 1 quote
+&gt;&gt; Level 2 nested quote
+&gt;&gt;&gt; Level 3 nested quote</code></pre>
+
+                    <div class="info-box">
+                        <strong>💡 Use Cases:</strong>
+                        <ul>
+                            <li>Trích dẫn từ nguồn khác</li>
+                            <li>Highlight notes quan trọng</li>
+                            <li>Warnings, tips, errors</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 8. Horizontal Rules -->
+                <section id="horizontal-rules">
+                    <h2>8️⃣ Horizontal Rules</h2>
+                    
+                    <pre><code>---
+(3 dashes)
+
+***
+(3 asterisks)
+
+___
+(3 underscores)</code></pre>
+
+                    <p><strong>Kết quả:</strong></p>
+                    <hr style="border: 1px solid #ebe8e1; margin: 1rem 0;">
+
+                    <div class="success-box">
+                        <strong>💡 Best Practice:</strong>
+                        <ul>
+                            <li>Dùng <code>---</code> (consistent và dễ nhìn nhất)</li>
+                            <li>Thêm dòng trống trước và sau horizontal rule</li>
+                            <li>Dùng để phân tách sections lớn</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 9. Task Lists -->
+                <section id="task-lists">
+                    <h2>9️⃣ Task Lists</h2>
+                    
+                    <pre><code>- [x] Task đã hoàn thành
+- [x] Task đã done
+- [ ] Task đang làm
+- [ ] Task chưa làm
+  - [ ] Sub-task 1
+  - [x] Sub-task 2 (done)</code></pre>
+
+                    <p><strong>Kết quả:</strong></p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li>✅ Task đã hoàn thành</li>
+                        <li>✅ Task đã done</li>
+                        <li>☐ Task đang làm</li>
+                        <li>☐ Task chưa làm</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <strong>💡 Use Cases:</strong>
+                        <ul>
+                            <li>Project roadmap</li>
+                            <li>Todo lists</li>
+                            <li>Checklist trong documentation</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 10. Emojis -->
+                <section id="emojis">
+                    <h2>🔟 Emojis</h2>
+                    
+                    <h3>Cách 1: Unicode Emoji</h3>
+                    <pre><code>😀 😃 😄 😁 🎉 🚀 ⚡ ✅ ❌ 💡 📝 🔥</code></pre>
+                    <p><strong>Kết quả:</strong> 😀 😃 😄 😁 🎉 🚀 ⚡ ✅ ❌ 💡 📝 🔥</p>
+
+                    <h3>Emoji cho Status</h3>
+                    <ul>
+                        <li>✅ Done</li>
+                        <li>⏳ In Progress</li>
+                        <li>❌ Cancelled</li>
+                        <li>🔴 High Priority</li>
+                        <li>🟡 Medium Priority</li>
+                        <li>🟢 Low Priority</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <strong>💡 Emoji Resources:</strong>
+                        <ul>
+                            <li>👉 <a href="https://emojipedia.org" target="_blank">Emojipedia</a></li>
+                            <li>👉 <a href="https://github.com/ikatyang/emoji-cheat-sheet" target="_blank">GitHub Emoji Cheat Sheet</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 11. HTML -->
+                <section id="html">
+                    <h2>1️⃣1️⃣ HTML trong Markdown</h2>
+                    
+                    <p>Markdown hỗ trợ HTML nếu cần thêm customization:</p>
+                    
+                    <pre><code>&lt;div align="center"&gt;
+  &lt;h1&gt;Centered Title&lt;/h1&gt;
+  &lt;p&gt;This paragraph is centered&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Click to expand&lt;/summary&gt;
+
+Hidden content here!
+- Item 1
+- Item 2
+
+&lt;/details&gt;
+
+&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt; (Keyboard keys)
+
+&lt;mark&gt;Highlighted text&lt;/mark&gt;</code></pre>
+
+                    <div class="info-box">
+                        <strong>💡 Use Cases:</strong>
+                        <ul>
+                            <li>Collapsible sections với <code>&lt;details&gt;</code></li>
+                            <li>Center content với <code>&lt;div align="center"&gt;</code></li>
+                            <li>Keyboard shortcuts với <code>&lt;kbd&gt;</code></li>
+                            <li>Complex layouts</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 12. Metadata -->
+                <section id="metadata">
+                    <h2>1️⃣2️⃣ Metadata (Front Matter)</h2>
+                    
+                    <p>Dùng cho static site generators (Jekyll, Hugo, etc.):</p>
+                    
+                    <pre><code>---
+title: "Document Title"
+author: "Your Name"
+date: 2025-10-31
+tags: [markdown, guide, tutorial]
+category: documentation
+description: "A comprehensive guide to Markdown"
+---
+
+# Content starts here...</code></pre>
+
+                    <div class="info-box">
+                        <strong>💡 Use Cases:</strong>
+                        <ul>
+                            <li>Blog posts</li>
+                            <li>Documentation sites</li>
+                            <li>GitHub Pages</li>
+                            <li>Static site generators</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 13. Best Practices -->
+                <section id="best-practices">
+                    <h2>1️⃣3️⃣ Best Practices</h2>
+                    
+                    <h3>✅ Structure</h3>
+                    <ol>
+                        <li><strong>Một H1 duy nhất</strong> (tiêu đề chính)</li>
+                        <li><strong>Hierarchy rõ ràng:</strong> H1 → H2 → H3 (không skip levels)</li>
+                        <li><strong>Dòng trống:</strong> Thêm dòng trống giữa các sections</li>
+                        <li><strong>80-100 characters/line</strong> cho readability</li>
+                    </ol>
+
+                    <h3>✅ Formatting</h3>
+                    <div class="success-box">
+                        <strong>✅ GOOD:</strong>
+                        <ul>
+                            <li>Clear spacing</li>
+                            <li>Consistent formatting</li>
+                            <li>Proper hierarchy</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <strong>❌ BAD:</strong>
+                        <ul>
+                            <li>No spacing</li>
+                            <li>Inconsistent style</li>
+                            <li>Poor hierarchy</li>
+                        </ul>
+                    </div>
+
+                    <h3>✅ Links</h3>
+                    <pre><code>✅ GOOD:
+[Descriptive Link Text](url)
+
+❌ BAD:
+[Click here](url)
+[Link](url)</code></pre>
+
+                    <h3>✅ Tables</h3>
+                    <pre><code>✅ GOOD:
+| Name | Age | City |
+|------|----:|------|
+| John |  25 | NYC  |
+
+❌ BAD:
+|Name|Age|City|
+|---|---|---|
+|John|25|NYC|
+(Khó đọc, không alignment)</code></pre>
+                </section>
+
+                <!-- 14. Templates -->
+                <section id="templates">
+                    <h2>1️⃣4️⃣ Templates Chuyên Nghiệp</h2>
+                    
+                    <p>Dưới đây là 6 templates thực tế bạn có thể copy-paste và sử dụng ngay:</p>
+
+                    <h3>📄 Template 1: README.md Project</h3>
+                    <pre><code># Project Name
+
+&gt; Short description of your project
+
+[![Build Status](badge-url)](link)
+[![License](badge-url)](link)
+
+## 🚀 Features
+
+- Feature 1
+- Feature 2
+- Feature 3
+
+## 📦 Installation
+
+```bash
+npm install your-package
+```
+
+## 🎯 Quick Start
+
+```javascript
+const example = require('your-package');
+example.doSomething();
+```
+
+## 📖 Documentation
+
+Full documentation available at [link](url)
+
+## 🤝 Contributing
+
+Contributions welcome! Please read [CONTRIBUTING.md](link)
+
+## 📝 License
+
+MIT © [Your Name](link)</code></pre>
+
+                    <h3>📝 Template 2: Blog Post</h3>
+                    <pre><code>---
+title: "Article Title"
+date: 2025-10-31
+author: "Your Name"
+tags: [tag1, tag2]
+---
+
+# Article Title
+
+&gt; TL;DR: Brief summary of the article
+
+## Introduction
+
+Opening paragraph...
+
+## Main Content
+
+### Section 1
+
+Content...
+
+### Section 2
+
+Content...
+
+## Conclusion
+
+Closing thoughts...
+
+---
+
+**References:**
+1. [Source 1](url)
+2. [Source 2](url)</code></pre>
+
+                    <h3>📋 Template 3: Meeting Notes</h3>
+                    <pre><code># Meeting Notes - [Date]
+
+**Attendees:** Name1, Name2, Name3
+**Duration:** 60 minutes
+**Location:** Office / Zoom
+
+## 🎯 Agenda
+
+1. Topic 1
+2. Topic 2
+3. Topic 3
+
+## 📝 Discussion
+
+### Topic 1
+- Point 1
+- Point 2
+
+### Topic 2
+- Decision made: ...
+- Action items:
+  - [ ] Task 1 (@Person1, Due: Date)
+  - [ ] Task 2 (@Person2, Due: Date)
+
+## ✅ Action Items Summary
+
+| Task | Owner | Due Date | Status |
+|------|-------|----------|--------|
+| Task 1 | @Person1 | 2025-11-01 | ⏳ In Progress |
+| Task 2 | @Person2 | 2025-11-05 | ❌ Not Started |
+
+## 📅 Next Meeting
+
+**Date:** [Next meeting date]
+**Topics:** [Topics to discuss]</code></pre>
+
+                    <h3>📊 Template 4: API Documentation</h3>
+                    <pre><code># API Documentation
+
+## Overview
+
+Brief description of the API.
+
+## Authentication
+
+```bash
+curl -H "Authorization: Bearer YOUR_TOKEN" \
+  https://api.example.com/endpoint
+```
+
+## Endpoints
+
+### GET /users
+
+**Description:** Retrieve list of users
+
+**Parameters:**
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| page | integer | No | Page number |
+| limit | integer | No | Items per page |
+
+**Response:**
+```json
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com"
+    }
+  ],
+  "total": 100
+}
+```
+
+**Example:**
+```bash
+curl https://api.example.com/users?page=1&limit=10
+```</code></pre>
+
+                    <h3>🎓 Template 5: Tutorial/Guide</h3>
+                    <pre><code># How to [Do Something] - Complete Guide
+
+&gt; **Level:** Beginner | **Time:** 30 minutes
+
+## 📋 Prerequisites
+
+Before starting, you need:
+- [ ] Requirement 1
+- [ ] Requirement 2
+- [ ] Requirement 3
+
+## 🎯 What You'll Learn
+
+By the end of this tutorial, you will:
+- ✅ Skill 1
+- ✅ Skill 2
+- ✅ Skill 3
+
+## 🚀 Step-by-Step Guide
+
+### Step 1: Setup
+
+First, do this...
+
+```bash
+command here
+```
+
+**Expected output:**
+```
+output here
+```
+
+### Step 2: Implementation
+
+Next, implement...
+
+```javascript
+code here
+```
+
+**Explanation:** This code does...
+
+## 💡 Tips & Tricks
+
+- **Tip 1:** Explanation
+- **Tip 2:** Explanation
+
+## ⚠️ Common Issues
+
+### Issue 1: Error Message
+
+**Cause:** Explanation
+
+**Solution:**
+```bash
+fix command
+```
+
+## 🎉 Conclusion
+
+Congratulations! You've learned...
+
+## 📚 Further Reading
+
+- [Resource 1](url)
+- [Resource 2](url)</code></pre>
+
+                    <h3>💼 Template 6: Project Proposal</h3>
+                    <pre><code># Project Proposal: [Project Name]
+
+**Date:** 2025-10-31
+**Prepared by:** Your Name
+**Status:** 🟡 Draft / 🟢 Approved
+
+## 📋 Executive Summary
+
+Brief overview (2-3 sentences) of what this project is about.
+
+## 🎯 Objectives
+
+1. Objective 1
+2. Objective 2
+3. Objective 3
+
+## 📊 Current Situation
+
+### Problem Statement
+
+Describe the problem...
+
+### Impact
+
+- Impact 1
+- Impact 2
+
+## 💡 Proposed Solution
+
+### Approach
+
+Detailed explanation of the solution...
+
+### Key Features
+
+1. **Feature 1:** Description
+2. **Feature 2:** Description
+3. **Feature 3:** Description
+
+## 📅 Timeline
+
+| Phase | Duration | Deliverables |
+|-------|----------|--------------|
+| Planning | 2 weeks | Requirements doc |
+| Development | 6 weeks | Working prototype |
+| Testing | 2 weeks | Test reports |
+| Launch | 1 week | Production release |
+
+**Total Duration:** 11 weeks
+
+## 💰 Budget Estimate
+
+| Item | Cost |
+|------|-----:|
+| Development | $XX,XXX |
+| Infrastructure | $X,XXX |
+| Marketing | $X,XXX |
+| **Total** | **$XX,XXX** |
+
+## ✅ Success Metrics
+
+- KPI 1: Target
+- KPI 2: Target
+- KPI 3: Target</code></pre>
+                </section>
+
+                <!-- Conclusion -->
+                <section style="margin-top: 4rem; padding: 2rem; background: #fefdfb; border-radius: 12px; border: 2px solid #ebe8e1;">
+                    <h2>🎉 Kết Luận</h2>
+                    <p>Markdown là một công cụ mạnh mẽ và đơn giản để tạo nội dung có cấu trúc. Với 14 sections và 6 templates chuyên nghiệp trong guide này, bạn đã có đủ kiến thức để:</p>
+                    <ul>
+                        <li>✅ Viết documentation chuyên nghiệp</li>
+                        <li>✅ Tạo README files đẹp cho GitHub projects</li>
+                        <li>✅ Viết blog posts có cấu trúc tốt</li>
+                        <li>✅ Tạo meeting notes và technical docs</li>
+                        <li>✅ Làm việc hiệu quả với text-based content</li>
+                    </ul>
+
+                    <div class="info-box" style="margin-top: 1.5rem;">
+                        <strong>📚 Tài Nguyên Bổ Sung:</strong>
+                        <ul>
+                            <li><a href="https://www.markdownguide.org" target="_blank">Markdown Guide</a> - Documentation đầy đủ</li>
+                            <li><a href="https://guides.github.com/features/mastering-markdown/" target="_blank">GitHub Markdown</a> - GitHub-flavored Markdown</li>
+                            <li><a href="https://dillinger.io" target="_blank">Dillinger</a> - Online Markdown Editor</li>
+                            <li><a href="markdown-editor.html" target="_blank">Markdown Editor Tool</a> - Tool của tôi</li>
+                        </ul>
+                    </div>
+
+                    <p style="margin-top: 1.5rem; text-align: center; font-size: 1.1rem;">
+                        <strong>Happy Writing! 📝</strong>
+                    </p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for TOC links
+        document.querySelectorAll('.toc a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
