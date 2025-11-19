@@ -6,13 +6,6 @@ category: psychology
 excerpt: "Cuốn sách được viết dựa trên kinh nghiệm lâm sàng của tác giả khi làm việc với bệnh nhân trong quá trình tâm lý trị liệu. Scott Peck không thuộc trường phái nào cụ thể (không phải Freudian, Jungian hay behaviorist), mà tin rằng sự phát triển tâm linh và tâm lý là một quá trình phức tạp, gian khổ và kéo dài suốt đời"
 ---
 
-# TÓM TẮT HAI QUYỂN SÁCH CỦA M. SCOTT PECK
-
-# The Journey Through Darkness and Light
-## An Essay on M. Scott Peck's "The Road Less Traveled" and "People of the Lie"
-
----
-
 ## Opening: The Two Books That Changed How We Understand the Human Soul
 
 In 1978, M. Scott Peck published a book that would spend over a decade on the New York Times bestseller list. "The Road Less Traveled" opened with perhaps one of the most arresting sentences in modern psychology: "Life is difficult." Three words that would resonate with millions of readers across the world. But what many don't know is that five years later, Peck would write a far darker companion—"People of the Lie"—a book he himself called "dangerous," a book about the very thing that makes the road less traveled so treacherous: human evil.
