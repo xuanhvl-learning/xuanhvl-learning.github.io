@@ -1245,7 +1245,13 @@
        <section id="cv" class="section">
     <div class="container">
         <h2 data-vi="Hồ Sơ & Kinh Nghiệm" data-en="Profile & Experience">Hồ Sơ & Kinh Nghiệm</h2>
-        
+
+        <div style="margin-bottom:20px;">
+            <a href="cv.html" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:var(--accent,#2563eb);color:#fff;border-radius:6px;font-weight:600;font-size:14px;text-decoration:none;transition:opacity .18s;">
+                📄 <span data-vi="Xem CV đầy đủ" data-en="View Full CV">Xem CV đầy đủ</span>
+            </a>
+        </div>
+
         <div id="cv-content">
             <!-- CV content will be rendered here by JavaScript -->
         </div>
@@ -1320,8 +1326,8 @@
                 <div class="contact-card">
                     <div class="contact-icon">💼</div>
                     <h3 class="contact-title">LinkedIn</h3>
-                    <a href="https://www.linkedin.com/in/xu%C3%A2n-hu%E1%BB%B3nh-ph%C3%BA-8179a3a5/" target="_blank" class="contact-link">
-                        linkedin.com/in/xu%C3%A2n-hu%E1%BB%B3nh-ph%C3%BA-8179a3a5/
+                    <a href="https://www.linkedin.com/in/XuanHPworking" target="_blank" class="contact-link">
+                        linkedin.com/in/XuanHPworking
                     </a>
                     <p class="contact-desc" data-vi="Kết nối chuyên nghiệp" data-en="Professional networking">
                         Kết nối chuyên nghiệp
@@ -1344,8 +1350,8 @@
           <div class="contact-card">
     <div class="contact-icon">📱</div>
     <h3 class="contact-title" data-vi="Điện thoại" data-en="Phone">Điện thoại</h3>
-    <a href="tel:+84093882XXXX" class="contact-link">
-        +84 938 82X XXX
+    <a href="tel:+84938820528" class="contact-link">
+        0938 820 528
     </a>
     <p class="contact-desc" data-vi="8:00 - 17:00 (GMT+7)" data-en="8:00 AM - 5:00 PM (GMT+7)">
         8:00 - 17:00 (GMT+7)
@@ -1504,86 +1510,190 @@
 const cvData = {
     vi: {
         about: {
-            title: "Giới thiệu",
-            content: "Viết 2-3 câu giới thiệu về bản thân, chuyên môn và kinh nghiệm của bạn tại đây."
+            title: "Định hướng phát triển",
+            content: "Tôi tin vào sức mạnh của việc kết hợp <strong>Behavioral and Sensory Science & Advanced Analytics</strong> để giải mã những tầng nhu cầu sâu kín nhất của con người. Tầm nhìn của tôi là xây dựng <em>một hệ sinh thái nghiên cứu</em> nơi dữ liệu hành vi không chỉ phục vụ lợi nhuận, mà được chuyển hóa thành những sản phẩm mang giá trị nhân văn thực thụ. Qua đó, tôi hướng tới việc nâng tầm chất lượng sống và kiến tạo một nền <strong>tiêu dùng bền vững</strong>, khởi đầu từ Việt Nam và vươn tầm khu vực."
         },
         experience: [
             {
-                title: "Tên vị trí công việc",
-                company: "Tên công ty",
-                location: "Thành phố, Quốc gia",
-                period: "2020 - Hiện tại",
-                description: "Mô tả ngắn gọn về công việc chính",
+                title: "Assistant Manager · Consumer & Technical Insights",
+                company: "Masan Consumer Holdings · R&D / CTI",
+                location: "TP. Hồ Chí Minh",
+                period: "2021 — 2025",
+                description: "Một trong những Công ty FMCG lớn nhất Việt Nam · 3 ngành hàng · 10+ thương hiệu: Omachi, Kokomi, MeatDeli, Ponnie, Vinacafe, Phúc Long, Chinsu, Nam Ngư...",
                 achievements: [
-                    "Thành tích hoặc trách nhiệm số 1",
-                    "Thành tích hoặc trách nhiệm số 2",
-                    "Thành tích hoặc trách nhiệm số 3"
+                    "Thiết lập và vận hành hệ thống nghiên cứu hành vi NTD — xây dựng Behavioral & Sensory Pipeline chuẩn hóa quy trình đổi mới sản phẩm.",
+                    "🏆 <strong>Đề xuất & xây dựng Consumer Innovation Center (CIC) từ con số 0</strong> — trung tâm nghiên cứu hành vi NTD đầu tiên của Masan (2024–2025).",
+                    "Dẫn dắt 30+ dự án liên ngành/năm — hỗ trợ launch thành công các SKU thuộc Omachi, Kokomi, MeatDeli, Ponnie, Wake-up, Phúc Long, Chinsu Story...",
+                    "Tối ưu ngân sách ngành Thịt <strong>−80%</strong> (từ 1.5–3.0 tỷ xuống 300–800 triệu VND/năm) không giảm chất lượng insight.",
+                    "🏆 <strong>Tấm Séc Triệu Đô 2024</strong> — giải thưởng cao nhất Masan Consumer Holdings.",
+                    "Thỉnh giảng tại HCMUT, IUH, HUST · Hướng dẫn luận văn MBA, ThS, đồ án tốt nghiệp."
+                ]
+            },
+            {
+                title: "Project Manager",
+                company: "TESTSGN",
+                location: "TP. Hồ Chí Minh",
+                period: "2025 — Hiện tại",
+                description: "Phòng khám chuyển đổi từ NGO → Social Enterprise · Tài trợ bởi Elton John AIDS Foundation · Hỗ trợ cộng đồng LGBT và người nhiễm HIV.",
+                achievements: [
+                    "Dẫn dắt chuyển đổi mô hình tổ chức phi chính phủ → doanh nghiệp xã hội.",
+                    "Triển khai nghiên cứu hành vi và thay đổi nhận thức cho nhóm yếu thế (LGBT, HIV, người sử dụng chất)."
+                ]
+            },
+            {
+                title: "Associate Manager · Quantitative & Qualitative Research",
+                company: "Intage Vietnam LLC.",
+                location: "TP. Hồ Chí Minh",
+                period: "2017 — 2020",
+                description: "Chi nhánh Intage Inc. — công ty nghiên cứu thị trường lớn nhất Nhật Bản · 13 quốc gia châu Á · Khách hàng: Masan, Acecook, Honda, Toyota, Ajinomoto...",
+                achievements: [
+                    "Điều phối danh mục dự án đa ngành (FMCG, Ô tô, Y tế) — kiểm soát chuỗi giá trị nghiên cứu từ fieldwork, QC đến insight delivery.",
+                    "Thành thạo spectrum từ nghiên cứu định tính (IDI, FGD) đến định lượng quy mô lớn (U&A, Tracking, Mobile Panel).",
+                    "Tiên phong số hóa phương pháp nghiên cứu trong đại dịch (In-home test, Limo, Online CLT/HPT).",
+                    "🏆 <strong>Neghisi Award \"Deliver the Best\"</strong>"
+                ]
+            },
+            {
+                title: "Project Assistant",
+                company: "CARMAH — Center for Applied Research for Men & Community Health",
+                location: "TP. Hồ Chí Minh",
+                period: "2014 — 2017",
+                description: "Đối tác quốc tế: Elton John Foundation · NYU · UNAIDS · Global Fund · USAID · PATH · APCOM.",
+                achievements: [
+                    "Triển khai tiếp cận, tư vấn và hỗ trợ cộng đồng LGBT và người nhiễm HIV — ứng dụng motivational interviewing.",
+                    "Phân tích dữ liệu lâm sàng và báo cáo cho đối tác quốc tế (NYU, UNAIDS)."
                 ]
             }
         ],
         education: [
             {
-                degree: "Bằng cấp",
-                major: "Chuyên ngành",
-                school: "Tên trường",
-                period: "2015 - 2018",
-                gpa: "3.8/4.0",
-                thesis: "Tên luận văn (xóa dòng này nếu không có)"
+                degree: "Cử nhân Toán & Tin",
+                major: "Tài chính định lượng",
+                school: "ĐH Khoa học Tự nhiên TP.HCM (HCMUS)",
+                period: "2008 — 2012",
+                gpa: "",
+                thesis: ""
+            },
+            {
+                degree: "Applied Statistics in Biology",
+                major: "Applied Statistics",
+                school: "University of Wisconsin–Madison",
+                period: "2012",
+                gpa: "",
+                thesis: ""
+            },
+            {
+                degree: "Data Analysis in R · Machine Learning",
+                major: "Data Science",
+                school: "ĐH Tôn Đức Thắng",
+                period: "2015, 2017",
+                gpa: "",
+                thesis: ""
             }
         ],
         skills: {
-            research: ["Kỹ năng 1", "Kỹ năng 2", "Kỹ năng 3"],
-            technical: ["Kỹ năng 1", "Kỹ năng 2", "Kỹ năng 3"],
-            soft: ["Kỹ năng 1", "Kỹ năng 2", "Kỹ năng 3"]
+            research: ["Sensory Evaluation Systems", "Consumer Behavioral Research", "NPD Scientific Validation", "Behavioral Psychology Measurement", "U&A / Tracking / CLT / FGD / IDI", "Product Testing"],
+            technical: ["Statistical Computing: R / SPSS / XLSTAT", "Behavioral Data Modeling", "Quantitative Instrument Design", "Machine Learning"],
+            soft: ["Systems Thinking & Architecture", "Multi-stakeholder Management", "Capability Building & Mentorship", "Strategic Communication", "Crisis Management"]
         },
         certifications: [
-            {
-                name: "Tên chứng chỉ",
-                org: "Tổ chức cấp",
-                year: "2021"
-            }
+            { name: "Tấm Séc Triệu Đô 2024", org: "Masan Consumer Holdings", year: "2024" },
+            { name: "Neghisi Award \"Deliver the Best\"", org: "Intage Vietnam", year: "2019" },
+            { name: "1st Prize \"I am a Mathnasium Instructor\"", org: "Aplus Math Co., Ltd", year: "2013" }
         ]
     },
     en: {
         about: {
-            title: "About Me",
-            content: "Write 2-3 sentences introducing yourself, your expertise and experience here."
+            title: "Vision",
+            content: "I integrate <strong>Behavioral and Sensory Science & Advanced Analytics</strong> to uncover the drivers behind consumer choice. I build <em>scalable research systems</em> that turn multi-layer evidence into clear product and innovation decisions. My goal is to help create products with genuine human value — enhancing quality of life and pioneering a <strong>sustainable consumption</strong> landscape, starting from Vietnam and expanding across the region."
         },
         experience: [
             {
-                title: "Job Title",
-                company: "Company Name",
-                location: "City, Country",
-                period: "2020 - Present",
-                description: "Brief description of main responsibilities",
+                title: "Assistant Manager · Consumer & Technical Insights",
+                company: "Masan Consumer Holdings · R&D / CTI",
+                location: "Ho Chi Minh City",
+                period: "2021 — 2025",
+                description: "One of Vietnam's largest FMCG corporations · 3 key categories · 10+ brands: Omachi, Kokomi, MeatDeli, Ponnie, Vinacafe, Phúc Long, Chinsu, Nam Ngư...",
                 achievements: [
-                    "Achievement or responsibility #1",
-                    "Achievement or responsibility #2",
-                    "Achievement or responsibility #3"
+                    "Established and operated a consumer behavioral research system — built Behavioral & Sensory Pipeline to standardize the product innovation process.",
+                    "🏆 <strong>Proposed, designed & built the Consumer Innovation Center (CIC) from scratch</strong> — Masan's first dedicated consumer behavioral research facility (2024–2025).",
+                    "Led 30+ cross-functional research projects/year — supporting successful launches of Omachi, Kokomi, MeatDeli, Ponnie, Wake-up, Phúc Long, Chinsu Story SKUs.",
+                    "Restructured Meat category research budget <strong>−80%</strong> (from VND 1.5–3.0B to 300–800M/year) with no degradation in insight quality.",
+                    "🏆 <strong>Million-Dollar Check Award 2024</strong> — Masan Consumer Holdings' highest corporate award.",
+                    "Guest Lecturer at HCMUT, IUH, HUST · Thesis Advisor for MBA, Master's, and undergraduate dissertations."
+                ]
+            },
+            {
+                title: "Project Manager",
+                company: "TESTSGN",
+                location: "Ho Chi Minh City",
+                period: "2025 — Present",
+                description: "Clinic transitioning from NGO to Social Enterprise · Funded by Elton John AIDS Foundation · Supporting LGBT community and people living with HIV in HCMC.",
+                achievements: [
+                    "Leading NGO → social enterprise model transformation — ensuring financial sustainability while maintaining social mission.",
+                    "Executing behavioral and awareness-change research for vulnerable populations (LGBT community, people living with HIV, substance users)."
+                ]
+            },
+            {
+                title: "Associate Manager · Quantitative & Qualitative Research",
+                company: "Intage Vietnam LLC.",
+                location: "Ho Chi Minh City",
+                period: "2017 — 2020",
+                description: "Subsidiary of Intage Inc. — Japan's largest market research firm · 13 Asian markets · Clients: Masan, Acecook, Honda, Toyota, Ajinomoto...",
+                achievements: [
+                    "Steering multi-sector project portfolios (FMCG, Automotive, Healthcare) — overseeing end-to-end research value chain from fieldwork and QC to insight delivery.",
+                    "Full-spectrum research methodologies: qualitative (IDI, FGD) to large-scale quantitative (U&A, Tracking, Mobile Panel).",
+                    "Pioneered digital transformation of research during COVID-19 (In-home, Limo, Online CLT/HPT platforms).",
+                    "🏆 <strong>Neghisi Award \"Deliver the Best\"</strong>"
+                ]
+            },
+            {
+                title: "Project Assistant",
+                company: "CARMAH — Center for Applied Research for Men & Community Health",
+                location: "Ho Chi Minh City",
+                period: "2014 — 2017",
+                description: "International partners: Elton John Foundation · NYU · UNAIDS · Global Fund · USAID · PATH · APCOM.",
+                achievements: [
+                    "Executed community outreach, counseling, and support for LGBT community and people living with HIV — applying motivational interviewing.",
+                    "Analyzed clinical data and reported to international partners (NYU, UNAIDS)."
                 ]
             }
         ],
         education: [
             {
-                degree: "Degree",
-                major: "Major",
-                school: "School Name",
-                period: "2015 - 2018",
-                gpa: "3.8/4.0",
-                thesis: "Thesis title (remove this line if not applicable)"
+                degree: "Bachelor of Mathematics & Computer Science",
+                major: "Quantitative Finance",
+                school: "Ho Chi Minh City University of Science (HCMUS)",
+                period: "2008 — 2012",
+                gpa: "",
+                thesis: ""
+            },
+            {
+                degree: "Applied Statistics in Biology",
+                major: "Applied Statistics",
+                school: "University of Wisconsin–Madison",
+                period: "2012",
+                gpa: "",
+                thesis: ""
+            },
+            {
+                degree: "Data Analysis in R · Machine Learning",
+                major: "Data Science",
+                school: "Ton Duc Thang University",
+                period: "2015, 2017",
+                gpa: "",
+                thesis: ""
             }
         ],
         skills: {
-            research: ["Skill 1", "Skill 2", "Skill 3"],
-            technical: ["Skill 1", "Skill 2", "Skill 3"],
-            soft: ["Skill 1", "Skill 2", "Skill 3"]
+            research: ["Sensory Evaluation Systems", "Consumer Behavioral Research", "NPD Scientific Validation", "Behavioral Psychology Measurement", "U&A / Tracking / CLT / FGD / IDI", "Product Testing"],
+            technical: ["Statistical Computing: R / SPSS / XLSTAT", "Behavioral Data Modeling", "Quantitative Instrument Design", "Machine Learning"],
+            soft: ["Systems Thinking & Architecture", "Multi-stakeholder Management", "Capability Building & Mentorship", "Strategic Communication", "Crisis Management"]
         },
         certifications: [
-            {
-                name: "Certification Name",
-                org: "Issuing Organization",
-                year: "2021"
-            }
+            { name: "Million-Dollar Check Award 2024", org: "Masan Consumer Holdings", year: "2024" },
+            { name: "Neghisi Award \"Deliver the Best\"", org: "Intage Vietnam", year: "2019" },
+            { name: "1st Prize \"I am a Mathnasium Instructor\"", org: "Aplus Math Co., Ltd", year: "2013" }
         ]
     }
 };
@@ -1630,7 +1740,7 @@ function renderCV(lang = 'vi') {
                         <span class="cv-item-period">${edu.period}</span>
                     </div>
                     <p class="cv-item-company">${edu.school}</p>
-                    <p class="cv-item-meta"><strong>${lang === 'vi' ? 'Chuyên ngành' : 'Major'}:</strong> ${edu.major} | <strong>GPA:</strong> ${edu.gpa}</p>
+                    ${edu.major ? `<p class="cv-item-meta"><strong>${lang === 'vi' ? 'Chuyên ngành' : 'Major'}:</strong> ${edu.major}${edu.gpa ? ` | <strong>GPA:</strong> ${edu.gpa}` : ''}</p>` : ''}
                     ${edu.thesis ? `<p class="cv-item-thesis"><strong>${lang === 'vi' ? '📚 Luận văn' : '📚 Thesis'}:</strong> ${edu.thesis}</p>` : ''}
                 </div>
             `).join('')}

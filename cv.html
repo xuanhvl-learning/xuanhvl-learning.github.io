@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026- Curriculum Vitae — Huỳnh Phú Xuân</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════════
+   TOKENS
+══════════════════════════════════════════════ */
+:root {
+  --gold:       #8a6e08;
+  --gold-faint: rgba(138,110,8,0.08);
+  --gold-line:  rgba(138,110,8,0.25);
+
+  --bg:         #f2ede4;
+  --bg1:        #ede7dc;
+  --bg2:        #e6dfd3;
+  --bg3:        #ddd5c7;
+  --border:     rgba(120,96,20,0.18);
+  --border-h:   rgba(120,96,20,0.45);
+  --ink:        #1a1512;
+  --ink2:       #5a5040;
+  --ink3:       #9a9080;
+
+  --f-display: 'Cormorant Garamond', Georgia, serif;
+  --f-mono:    'Montserrat', sans-serif;
+  --tr: 0.18s ease;
+}
+
+/* ══════════════════════════════════════════════
+   RESET
+══════════════════════════════════════════════ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:14px; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-mono);
+  font-weight: 400;
+  line-height: 1.72;
+  min-height: 100vh;
+  transition: background var(--tr), color var(--tr);
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+a { color:inherit; text-decoration:none; }
+
+/* ══════════════════════════════════════════════
+   LANGUAGE
+══════════════════════════════════════════════ */
+[data-lang="vi"] .en { display:none !important; }
+[data-lang="en"] .vi { display:none !important; }
+span.vi, span.en { display:inline; }
+p.vi, p.en, li.vi, li.en, div.vi, div.en { display:block; }
+
+/* ══════════════════════════════════════════════
+   CONTROLS
+══════════════════════════════════════════════ */
+.controls {
+  position: fixed;
+  top: 22px; right: 26px;
+  z-index: 8000;
+  display: flex; gap: 6px;
+}
+
+.ctl {
+  font-family: var(--f-mono);
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--ink2);
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all var(--tr);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.ctl:hover {
+  color: var(--gold);
+  border-color: var(--gold-line);
+  background: var(--gold-faint);
+}
+
+/* ══════════════════════════════════════════════
+   LAYOUT
+══════════════════════════════════════════════ */
+.page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 44px 44px 64px;
+  position: relative;
+}
+
+/* left margin rule — research paper feel */
+.page::before {
+  content: '';
+  position: fixed;
+  left: calc(50% - 410px);
+  top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    var(--border) 12%,
+    var(--border) 88%,
+    transparent 100%);
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════════════
+   SECTION UTIL
+══════════════════════════════════════════════ */
+.sec { margin-bottom: 36px; }
+
+.sec-head {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  align-items: baseline;
+  gap: 14px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 18px;
+}
+.sec-n {
+  font-family: var(--f-mono);
+  font-size: 15px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold);
+}
+.sec-t {
+  font-family: var(--f-display);
+  font-size: 1.55rem; font-weight: 600;
+  font-style: italic;
+  color: var(--ink);
+  letter-spacing: .2px;
+}
+
+/* ══════════════════════════════════════════════
+   ① HEADER
+══════════════════════════════════════════════ */
+header {
+  padding-bottom: 24px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid var(--border);
+  animation: up .65s ease both;
+}
+
+.h-eyebrow {
+  font-size: 10px; letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--gold); font-weight: 600;
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 12px;
+}
+.h-eyebrow::after {
+  content:''; flex:1; height:1px;
+  background: linear-gradient(90deg, var(--gold-line), transparent);
+}
+
+/* EDIT: tên */
+.h-name {
+  font-family: var(--f-display);
+  font-size: clamp(3rem, 6.5vw, 5.2rem);
+  font-weight: 300; line-height: 1.0;
+  letter-spacing: -1px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.h-name em { font-style:italic; color:var(--gold); font-weight:600; }
+
+/* EDIT: value proposition */
+.h-vp {
+  font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink2); font-weight: 600;
+  margin-bottom: 16px;
+  display: flex; align-items: center;
+  flex-wrap: wrap; gap: 8px;
+}
+.h-dot { color:var(--gold); opacity:.5; }
+
+/* EDIT: contact chips */
+.h-contact { display:flex; flex-wrap:wrap; gap:7px; }
+.chip {
+  font-size: 11px; letter-spacing: .3px;
+  color: var(--ink2); font-weight: 500;
+  border: 1px solid var(--border);
+  background: var(--bg1);
+  padding: 5px 14px;
+  display: flex; align-items: center; gap: 7px;
+  transition: all var(--tr);
+}
+.chip:hover { color:var(--gold); border-color:var(--gold-line); }
+.chip-dot { width:4px; height:4px; border-radius:50%; background:var(--gold); opacity:.6; flex-shrink:0; }
+
+/* ══════════════════════════════════════════════
+   ② IMPACT NUMBERS
+══════════════════════════════════════════════ */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 0;
+}
+.ic {
+  background: var(--bg1);
+  padding: 14px 14px;
+  text-align: center;
+  transition: background var(--tr);
+}
+.ic:hover { background: var(--bg2); }
+.in {
+  display: block;
+  font-family: var(--f-display);
+  font-size: 2.6rem; font-weight: 500;
+  color: var(--gold); line-height: 1;
+  letter-spacing: -1px;
+  margin-bottom: 5px;
+}
+.il {
+  font-size: 10px; letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--ink2); line-height: 1.45;
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════════════════
+   ③ SUMMARY
+══════════════════════════════════════════════ */
+.summary-box {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--gold);
+  padding: 16px 22px;
+  font-size: 12.5px; font-weight: 400;
+  color: var(--ink);
+  line-height: 1.75;
+}
+.summary-box strong { font-weight:700; color:var(--ink); }
+.summary-box em { font-style:italic; color:var(--gold); font-family:var(--f-mono); font-weight:600; }
+
+/* ══════════════════════════════════════════════
+   ④ EXPERIENCE — job cards
+══════════════════════════════════════════════ */
+.job-list { display:flex; flex-direction:column; gap:16px; }
+
+.job {
+  border: 1px solid var(--border);
+  background: var(--bg1);
+  position: relative;
+  transition: border-color var(--tr), background var(--tr);
+  overflow: hidden;
+}
+.job::before {
+  content:''; position:absolute;
+  left:0; top:0; bottom:0; width:2px;
+  background:var(--gold); opacity:0;
+  transition: opacity var(--tr);
+}
+.job:hover { border-color:var(--border-h); background:var(--bg2); }
+.job:hover::before { opacity:1; }
+
+/* featured job (Masan) */
+.job.featured { border-color: var(--gold-line); }
+.job.featured::before { opacity:.4; }
+.job.featured:hover::before { opacity:1; }
+
+.job-head {
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px; align-items: start;
+}
+.job-org {
+  font-family: var(--f-display);
+  font-size: 1.2rem; font-weight: 500;
+  color: var(--ink); line-height: 1.15;
+  margin-bottom: 3px;
+}
+.job-role {
+  font-size: 10px; letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold); font-weight: 700;
+}
+.job-period {
+  font-size: 10px; letter-spacing: 1px;
+  color: var(--ink3); font-weight: 600;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 4px 11px;
+  white-space: nowrap; align-self:start;
+}
+
+.job-ctx {
+  padding: 7px 18px;
+  font-size: 12px; letter-spacing:.2px;
+  color: var(--ink2); font-weight: 500;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+}
+
+.job-body { padding: 15px 20px 17px; }
+
+/* CAR bullets */
+.car { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.car li {
+  font-size: 12.5px; font-weight: 400;
+  color: var(--ink2);
+  padding-left: 18px; position:relative;
+  line-height: 1.72;
+}
+.car li::before {
+  content:'›'; position:absolute; left:3px; top:0;
+  color:var(--gold); font-size:14px;
+  font-family:var(--f-mono);
+}
+.car li strong { color:var(--ink); font-weight:700; }
+.r { color:var(--gold); font-weight:600; }  /* outcome highlight */
+
+/* CIC featured bullet */
+.car li.cic-bullet {
+  background: var(--gold-faint);
+  border: 1px solid var(--gold-line);
+  border-left: 2px solid var(--gold);
+  padding: 10px 14px 10px 16px;
+  color: var(--ink);
+  font-size: 12.5px;
+}
+.car li.cic-bullet::before { display:none; }
+.cic-label {
+  font-size: 9px; letter-spacing:3px;
+  text-transform:uppercase; color:var(--gold);
+  font-weight:700;
+  display:block; margin-bottom:5px;
+}
+
+/* SKU launch list inside bullet */
+.sku-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 10px;
+  margin-top: 8px;
+  font-size: 11.5px;
+}
+.sku-cat {
+  font-size: 9px; letter-spacing:2px;
+  text-transform:uppercase; color:var(--gold);
+  padding-top: 2px; white-space:nowrap;
+  font-weight:700;
+}
+.sku-items { color:var(--ink2); font-weight:400; }
+
+/* budget table */
+.budget-table {
+  margin-top: 8px;
+  display:grid;
+  grid-template-columns: auto 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  font-size: 11.5px;
+}
+.bt-cat {
+  background: var(--bg);
+  padding: 6px 13px;
+  font-size: 10px; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--gold);
+  display:flex; align-items:center;
+  font-weight:700; white-space:nowrap;
+}
+.bt-val {
+  background: var(--bg1);
+  padding: 6px 13px;
+  color: var(--ink2); font-weight:400;
+  font-size: 11.5px;
+}
+.bt-val .r { font-weight:600; }
+
+/* job tags */
+.job-tags {
+  padding: 10px 20px 12px;
+  border-top: 1px solid var(--border);
+  display:flex; flex-wrap:wrap; gap:5px;
+}
+.tag {
+  font-size: 10px; letter-spacing:.8px;
+  text-transform:uppercase;
+  color: var(--ink2); font-weight:600;
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  transition: all var(--tr);
+}
+.tag:hover { color:var(--gold); border-color:var(--gold-line); }
+
+/* job sub-section headers */
+.sub-head {
+  font-size: 9px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--gold);
+  font-weight: 700; margin: 14px 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--gold-line);
+  display: flex; align-items: center; gap: 10px;
+}
+.sub-head::after {
+  content:''; flex:1; height:1px;
+  background: linear-gradient(90deg, var(--gold-line), transparent);
+}
+.job-body .car { gap: 8px; }
+.job-body .car:first-child { margin-top: 0; }
+
+/* spacing calibration */
+.sec { margin-bottom: 36px; }
+.job-list { gap: 12px; }
+.job-body { padding: 12px 18px 14px; }
+.job-head { padding: 13px 18px 11px; }
+
+.ac-block {
+  margin: 10px 0 4px;
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--gold);
+  background: var(--bg2);
+  padding: 12px 16px;
+}
+.ac-label {
+  font-size: 9px; letter-spacing:2.5px;
+  text-transform:uppercase; color:var(--gold);
+  font-weight:700; margin-bottom:9px;
+}
+.ac-list { list-style:none; display:flex; flex-direction:column; gap:6px; }
+.ac-list li {
+  font-size: 12.5px; font-weight:400;
+  color: var(--ink2);
+  padding-left: 14px; position:relative; line-height:1.65;
+}
+.ac-list li::before {
+  content:'◦'; position:absolute; left:1px;
+  color:var(--gold); font-size:11px; top:1px;
+}
+.ac-list li strong { color:var(--ink); font-weight:700; }
+
+/* ══════════════════════════════════════════════
+   ⑤ METHODOLOGY STACK
+══════════════════════════════════════════════ */
+.tier-stack { display:flex; flex-direction:column; gap:2px; }
+.tier {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0;
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  transition: border-color var(--tr);
+}
+.tier:hover { border-color: var(--border-h); }
+.tier-label {
+  padding: 12px 15px;
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+  font-size: 9px; letter-spacing:2px;
+  text-transform:uppercase; color:var(--gold);
+  display:flex; flex-direction:column;
+  justify-content:center; line-height:1.6;
+  font-weight:700;
+}
+.tier-items {
+  padding: 11px 15px;
+  display:flex; flex-wrap:wrap; gap:6px; align-items:center;
+}
+.mtag {
+  font-size: 10.5px; letter-spacing:.3px;
+  color: var(--ink2); font-weight:500;
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  transition:all var(--tr);
+}
+.mtag:hover { color:var(--ink); border-color:var(--border-h); }
+.mtag.core {
+  color: var(--ink); font-weight:600;
+  border-color: rgba(184,150,12,0.30);
+}
+
+/* ══════════════════════════════════════════════
+   ⑥ SELECTED OUTPUTS
+══════════════════════════════════════════════ */
+.output-list { display:flex; flex-direction:column; gap:10px; }
+.output {
+  display:grid;
+  grid-template-columns: 2px 1fr;
+  gap: 16px;
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  transition: border-color var(--tr);
+  overflow:hidden;
+}
+.output:hover { border-color: var(--border-h); }
+.output-stripe { background:var(--gold); opacity:.4; transition:opacity var(--tr); }
+.output:hover .output-stripe { opacity:1; }
+.output-body { padding:14px 16px 14px 0; }
+.o-title {
+  font-family: var(--f-display);
+  font-size: 1.2rem; font-weight:500;
+  color:var(--ink); line-height:1.3;
+  margin-bottom:4px;
+}
+.o-venue { font-size:10.5px; letter-spacing:.8px; color:var(--gold); margin-bottom:3px; font-weight:600; }
+.o-authors { font-size:10.5px; color:var(--ink2); font-weight:400; margin-bottom:8px; }
+.o-badge {
+  display:inline-block;
+  font-size: 9px; letter-spacing:1.5px;
+  text-transform:uppercase;
+  padding: 2px 9px; border:1px solid;
+  font-weight:600;
+}
+.ob-conf { border-color:var(--gold-line); color:var(--gold); }
+.ob-adv  { border-color:var(--border-h);  color:var(--ink2); }
+.ob-lec  { border-color:var(--border);    color:var(--ink3); }
+
+/* ══════════════════════════════════════════════
+   ⑦ EDUCATION
+══════════════════════════════════════════════ */
+.edu-list { display:flex; flex-direction:column; gap:8px; }
+.edu-row {
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap:14px; align-items:center;
+  background:var(--bg1); border:1px solid var(--border);
+  padding:13px 18px;
+  transition:border-color var(--tr);
+}
+.edu-row:hover { border-color:var(--border-h); }
+.edu-inst {
+  font-family:var(--f-display);
+  font-size:1.2rem; font-weight:500;
+  color:var(--ink); margin-bottom:2px;
+}
+.edu-deg { font-size: 10px; color:var(--ink2); font-weight:400; }
+.edu-yr {
+  font-size:10px; letter-spacing:1.2px;
+  color:var(--gold); white-space:nowrap;
+  text-align:right; font-weight:700;
+}
+
+/* quant foundation callout */
+.quant-note {
+  margin-top:10px;
+  background:var(--gold-faint);
+  border:1px solid var(--gold-line);
+  padding:12px 16px;
+  font-size:12.5px; color:var(--ink2);
+  font-weight:400; line-height:1.72;
+}
+.quant-note strong { color:var(--gold); font-weight:700; }
+
+/* ══════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════ */
+.cv-footer {
+  margin-top:52px; padding-top:18px;
+  border-top:1px solid var(--border);
+  display:flex; justify-content:space-between;
+  align-items:center; flex-wrap:wrap; gap:10px;
+}
+.foot-l { font-size:12px; color:var(--ink2); font-weight:400; }
+.foot-r { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--ink3); font-weight:600; }
+
+/* ══════════════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════════════ */
+@keyframes up {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.sec { animation: up .55s ease both; }
+.sec:nth-child(2) { animation-delay:.07s; }
+.sec:nth-child(3) { animation-delay:.13s; }
+.sec:nth-child(4) { animation-delay:.18s; }
+.sec:nth-child(5) { animation-delay:.23s; }
+.sec:nth-child(6) { animation-delay:.28s; }
+.sec:nth-child(7) { animation-delay:.33s; }
+
+/* ══════════════════════════════════════════════
+   PRINT
+══════════════════════════════════════════════ */
+@media print {
+  .controls { display:none !important; }
+  .page::before { display:none; }
+  .job, .edu-row, .output, .tier { break-inside:avoid; border:1px solid #ddd !important; background:#fff !important; }
+  header { padding-top:0; }
+}
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════ */
+@media (max-width:680px) {
+  .page { padding:60px 18px 80px; }
+  .page::before { display:none; }
+  .impact-grid { grid-template-columns:repeat(2,1fr); }
+  .tier { grid-template-columns:1fr; }
+  .tier-label { border-right:none; border-bottom:1px solid var(--border); }
+  .job-head { grid-template-columns:1fr; }
+  .controls { top:14px; right:14px; gap:5px; }
+  .ctl { padding:4px 9px; font-size:8.5px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ CONTROLS ═══ -->
+<div class="controls">
+  <button class="ctl" onclick="toggleLang()" id="lang-btn">VI</button>
+  <a      class="ctl" href="javascript:window.print()">PDF</a>
+</div>
+
+<div class="page">
+
+<!-- ══════════════════════════════════════════
+     ① IDENTITY HEADER
+══════════════════════════════════════════ -->
+<header>
+  <div class="h-eyebrow">
+    <span class="vi">Curriculum Vitae — 2026</span>
+    <span class="en">Curriculum Vitae — 2026</span>
+  </div>
+
+  <!-- EDIT: tên — <em> = nghiêng màu vàng -->
+  <div class="h-name">Huỳnh Phú <em>Xuân</em></div>
+
+  <!-- EDIT: value proposition -->
+  <div class="h-vp">
+    <span class="vi">Behavioral Research</span>
+    <span class="en">Behavioral Research</span>
+    <span class="h-dot">·</span>
+    <span class="vi">Consumer Insights</span>
+    <span class="en">Consumer Insights</span>
+    <span class="h-dot">·</span>
+   Social Impact
+  </div>
+
+  <!-- EDIT: thay email / phone / linkedin nếu cần -->
+  <div class="h-contact">
+    <a class="chip" href="mailto:hpxuan.khtn@gmail.com">
+      <span class="chip-dot"></span>hpxuan.khtn@gmail.com
+    </a>
+    <a class="chip" href="tel:+84938820528">
+      <span class="chip-dot"></span>0938 820 528
+    </a>
+    <a class="chip" href="https://www.linkedin.com/in/XuanHPworking" target="_blank">
+      <span class="chip-dot"></span>linkedin /XuanHPworking
+    </a>
+    <span class="chip">
+      <span class="chip-dot"></span>
+      <span class="vi">Hồ Chí Minh, Việt Nam</span>
+      <span class="en">Ho Chi Minh City, Vietnam</span>
+    </span>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════════════════
+     ③ PROFESSIONAL SUMMARY
+══════════════════════════════════════════ -->
+<section class="sec" id="summary">
+  <div class="sec-head">
+    <span class="sec-n">01</span>
+    <span class="sec-t">
+      <span class="vi">Định hướng phát triển</span>
+      <span class="en">Vision</span>
+    </span>
+  </div>
+
+  <!-- EDIT: đoạn định vị -->
+  <div class="summary-box">
+    <p class="vi">
+Tôi tin vào sức mạnh của việc kết hợp <em>Behavioral and Sensory Science & Advanced Analytics</em> để giải mã những tầng nhu cầu sâu kín nhất của con người. Tầm nhìn của tôi là xây dựng <strong>một hệ sinh thái nghiên cứu </strong> nơi dữ liệu hành vi không chỉ phục vụ lợi nhuận, mà được chuyển hóa thành những sản phẩm mang giá trị nhân văn thực thụ. Qua đó, tôi hướng tới việc nâng tầm chất lượng sống và kiến tạo một nền <strong>tiêu dùng bền vững</strong>, khởi đầu từ Việt Nam và vươn tầm khu vực.
+    </p>
+    <p class="en">
+I integrate <em>Behavioral and Sensory Science & Advanced Analytics</em> to uncover the drivers behind consumer choice. I build <strong>scalable research systems</strong> that turn multi-layer evidence into clear product and innovation decisions. My goal is to help create products with genuine human value.  Through this, I aim to enhance quality of life and pioneer a <strong>sustainable consumption</strong> landscape, starting from Vietnam and expanding across the region.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     ② PROOF OF IMPACT
+══════════════════════════════════════════ -->
+<section class="sec" id="impact">
+  <div class="sec-head">
+    <span class="sec-n">02</span>
+    <span class="sec-t">
+      <span class="vi">Dấu ấn đo được</span>
+      <span class="en">Proof of Impact</span>
+    </span>
+  </div>
+
+  <!-- EDIT: 4 con số anchor — thay số và label -->
+  <div class="impact-grid">
+    <div class="ic">
+      <span class="in">12+</span>
+      <span class="il">
+        <span class="vi">Năm<br>kinh nghiệm</span>
+        <span class="en">Years of<br>experience</span>
+      </span>
+    </div>
+    <div class="ic">
+      <span class="in">30+</span>
+      <span class="il">
+        <span class="vi">Dự án liên ngành<br>/ năm</span>
+        <span class="en">Cross-functional<br>projects / year</span>
+      </span>
+    </div>
+    <div class="ic">
+      <span class="in">−80%</span>
+      <span class="il">
+        <span class="vi">Tối ưu ngân sách<br>(ngành Thịt)</span>
+        <span class="en">Budget reduction<br>(Meat category)</span>
+      </span>
+    </div>
+    <div class="ic">
+      <span class="in">CIC</span>
+      <span class="il">
+        <span class="vi">Consumer Innovation<br>Center</span>
+        <span class="en">Consumer Innovation<br>Center</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     ④ EXPERIENCE
+══════════════════════════════════════════ -->
+<section class="sec" id="experience">
+  <div class="sec-head">
+    <span class="sec-n">03</span>
+    <span class="sec-t">
+      <span class="vi">Kinh nghiệm</span>
+      <span class="en">Experience</span>
+    </span>
+  </div>
+
+  <div class="job-list">
+
+    <!-- ─── MASAN — featured ────────────────────── -->
+    <article class="job featured">
+      <div class="job-head">
+        <div>
+          <!-- EDIT: tên tổ chức -->
+          <div class="job-org">Masan Consumer Holdings · R&amp;D / CTI</div>
+          <!-- EDIT: chức danh -->
+          <div class="job-role">Assistant Manager · Consumer & Technical Insights</div>
+        </div>
+        <!-- EDIT: thời gian -->
+        <div class="job-period">2021 — 2025</div>
+      </div>
+
+      <!-- EDIT: context 1 dòng -->
+      <div class="job-ctx">
+        <span class="vi">Một trong những <strong>Công ty sản xuất hàng tiêu dùng nhanh</strong> lớn nhất Việt Nam · Masan Consumer Holding, Masan Jinju, Masan MeatLife, Vinacafé, Phúc Long Heritage, Wincommerce · 3 ngành hàng · 10+ thương hiệu: Omachi, Kokomi, MeatDeli, Ponnie, Heo Cao Bồi, Vinacafe, Wake-up, Phúc Long, Chinsu, Nam Ngư, Olala.</span>
+        <span class="en">One of Vietnam's largest <strong>FMCG corporations</strong> · Masan Consumer Holding, Masan Jinju, Masan MeatLife, Vinacafé, Phúc Long Heritage, Wincommerce · 3 key categories · 10+ brands: Omachi, Kokomi, MeatDeli, Ponnie, Heo Cao Bồi, Vinacafe, Wake-up, Phúc Long, Chinsu, Nam Ngư, Olala.</span>
+      </div>
+
+      <div class="job-body">
+
+        <!-- ── SUB 1: SCOPE OF WORK ── -->
+        <div class="sub-head">
+          <span class="vi">Phạm vi công việc</span>
+          <span class="en">Scope of Work</span>
+        </div>
+        <ul class="car">
+          <li class="vi"><strong>Strategic R&D Architecting</strong> — Thiết lập và vận hành hệ thống nghiên cứu hành vi người tiêu dùng. Xây dựng các mô hình <strong>Behavioral &amp; Sensory Pipeline</strong> nhằm chuẩn hóa quy trình đổi mới sản phẩm, chuyển hóa dữ liệu đa tầng thành chiến lược kinh doanh thực thụ.</li>
+          <li class="en"><strong>Strategic R&D Architecting</strong> — Established and operated a consumer behavioral research system. Built <strong>Behavioral &amp; Sensory Pipeline</strong> models to standardize the product innovation process, translating multi-layer data into actionable business strategy.</li>
+
+          <li class="vi"><strong>Ứng dụng và điều chỉnh phương pháp khoa học hành vi vào R&amp;D</strong> — tích hợp behavioral science, sensory science và data analytics thành pipeline nghiên cứu thống nhất, triển khai xuyên suốt vòng đời sản phẩm từ ideation đến post-launch.</li>
+          <li class="en"><strong>Applied and adapted behavioral science methodologies to R&amp;D practice</strong> — integrated behavioral science, sensory science, and data analytics into a unified research pipeline deployed across the full product lifecycle from ideation to post-launch.</li>
+
+          <!-- CIC — featured bullet -->
+          <li class="vi cic-bullet">
+            <span class="cic-label">Dự án đáng tự hào nhất</span>
+            <strong>Đề xuất, thiết kế và xây dựng Consumer Innovation Center (CIC) từ con số 0</strong> — trung tâm nghiên cứu hành vi NTD đầu tiên của Masan Consumer Holdings (2024–2025). Toàn quyền sở hữu: concept → business case → thiết kế không gian &amp; quy trình → vận hành thực tế, phục vụ toàn bộ dự án Brand &amp; Product Innovation cấp tập đoàn.
+          </li>
+          <li class="en cic-bullet">
+            <span class="cic-label">Flagship achievement</span>
+            <strong>Proposed, designed, and built the Consumer Innovation Center (CIC) from the ground up</strong> — Masan Consumer Holdings' first dedicated consumer behavioral research facility (2024–2025). End-to-end ownership: concept → business case → space &amp; process design → live operations, serving all Brand &amp; Product Innovation projects at group level.
+          </li>
+
+          <!-- Launches -->
+          <li class="vi">
+            <strong>Dẫn dắt 30+ dự án nghiên cứu liên ngành/năm</strong>, trực tiếp hỗ trợ launch thành công:
+            <div class="sku-grid">
+              <span class="sku-cat">Mì & Ready-to-Meal</span>
+              <span class="sku-items"><strong>Omachi</strong>: Ready-to-Meal (Lẩu tự sôi, Cơm tự chín), Quán xá châu Á, Lẩu Cầm Tay, Mì ăn liền · <strong>Kokomi:</strong> 90g-75g-65g · <strong>Chinsu Story:</strong> Phở &amp; Hủ tiếu</span>
+              <span class="sku-cat">Thịt &amp; TP</span>
+              <span class="sku-items"><strong>Ponnie:</strong> Thịt hộp, Xúc xích tiệt trùng, Xúc xích thanh trùng, HotDog · <strong>Heo Cao Bồi:</strong> Xúc xích lắc, Thịt viên · <strong>MeatDeli:</strong> thịt mát (heo-gà), Giò chả, Ready-to-Cook.</span>
+              <span class="sku-cat">Cà phê &amp; Trà</span>
+              <span class="sku-items"><strong>Wake-up (3in1):</strong> Nâu Đá, Mekong · <strong>Phúc Long:</strong> Coffee · <strong>Búp Non:</strong> RTD Tea</span>
+              <span class="sku-cat">Owned-label</span>
+              <span class="sku-items"><strong>Olala:</strong> Thịt chế biến — Wincommerce</span>
+            </div>
+          </li>
+          <li class="en">
+            <strong>Led 30+ cross-functional research projects/year</strong>, directly supporting successful launches:
+            <div class="sku-grid">
+              <span class="sku-cat">Noodles & Ready-to-Meal</span>
+              <span class="sku-items"><strong>Omachi:</strong> Ready-to-Meal (Hot Pot, Rice), Asian Street Food, Hot Pot Cup, Instant Noodles · <strong>Kokomi:</strong> 90g-75g-65g · <strong>Chinsu Story:</strong> Phở &amp; Hủ tiếu</span>
+              <span class="sku-cat">Meat &amp; Food</span>
+              <span class="sku-items"><strong>Ponnie:</strong> Canned meat, Sterilized & Pasteurized sausages · <strong>Heo Cao Bồi:</strong> shaker sausage &amp; meatballs · <strong>MeatDeli:</strong> (chilled, Vietnamese sausages, smoked sausage, RTC)</span>
+              <span class="sku-cat">Coffee &amp; Tea</span>
+              <span class="sku-items"><strong>Wake-up(3in1):</strong> Nâu đá, Mekong · <strong>Phúc Long:</strong> Coffee · <strong>Búp Non:</strong> RTD Tea</span>
+              <span class="sku-cat">Owned-label</span>
+              <span class="sku-items"><strong>Olala:</strong> Processed Meat — Wincommerce</span>
+            </div>
+          </li>
+
+          <!-- Budget -->
+          <li class="vi">
+            <strong>Quản lý và tối ưu ngân sách nghiên cứu đa ngành hàng:</strong>
+            <div class="budget-table">
+              <span class="bt-cat">Mì</span>
+              <span class="bt-val">3.0 – 5.0 tỷ VND / năm</span>
+              <span class="bt-cat">Cà phê</span>
+              <span class="bt-val">1.5 – 3.0 tỷ VND / năm</span>
+              <span class="bt-cat">Thịt</span>
+              <span class="bt-val">Tái cơ cấu phương pháp (consumer + sensory + analytics) → <span class="r">giảm từ 1.5–3.0 tỷ xuống 300–800 triệu VND/năm (−80%)</span> mà không giảm chất lượng insight.</span>
+            </div>
+          </li>
+          <li class="en">
+            <strong>Managed and optimized research budgets across categories:</strong>
+            <div class="budget-table">
+              <span class="bt-cat">Noodle</span>
+              <span class="bt-val">VND 3.0 – 5.0B / year</span>
+              <span class="bt-cat">Coffee</span>
+              <span class="bt-val">VND 1.5 – 3.0B / year</span>
+              <span class="bt-cat">Meat</span>
+              <span class="bt-val">Restructured methodology (consumer + sensory + analytics) → <span class="r">reduced from VND 1.5–3.0B to 300–800M/year (−80%)</span> with no degradation in insight quality.</span>
+            </div>
+          </li>
+
+          <li class="vi"><strong>Mở rộng phạm vi ngoài R&amp;D core</strong> — consumer behavior studies cho: Gia vị Chinsu, Nam Ngư (nước mắm, tương ớt, cooking sauce), Owned-label Wincommerce (Olala), Phúc Long (Coffee &amp; Tea).</li>
+          <li class="en"><strong>Extended research scope beyond R&amp;D core</strong> — consumer behavior studies for: Chinsu Seasoning, Nam Ngư (fish sauce, chili sauce, cooking sauce), Wincommerce Owned-label (Olala), Phúc Long (Coffee &amp; Tea).</li>
+        </ul>
+
+        <!-- ── SUB 2: AWARDS ── -->
+        <div class="sub-head">
+          <span class="vi">Giải thưởng</span>
+          <span class="en">Awards</span>
+        </div>
+        <ul class="car">
+          <li class="vi">🏆 <strong>Tấm Séc Triệu Đô 2024</strong> — giải thưởng cao nhất Masan Consumer Holdings, trao cho tập thể ngành Thực phẩm tiện lợi có đóng góp xuất sắc vào tăng trưởng công ty.</li>
+          <li class="en">🏆 <strong>Million-Dollar Check Award 2024</strong> — Masan Consumer Holdings' highest corporate award, conferred to the Convenient Food team for outstanding contribution to company growth.</li>
+        </ul>
+
+        <!-- ── SUB 3: RESEARCH & TEACHING ── -->
+        <div class="sub-head">
+          <span class="vi">Hoạt động nghiên cứu &amp; thỉnh giảng</span>
+          <span class="en">Research &amp; Academic Activities</span>
+        </div>
+        <ul class="ac-list">
+          <li class="vi"><strong>Thỉnh giảng</strong> — Nghiên cứu định lượng trong hành vi NTD · ĐH Bách Khoa TP.HCM (HCMUT) · ĐH Công Nghiệp TP.HCM (IUH) · ĐH Bách Khoa Hà Nội (HUST)</li>
+          <li class="en"><strong>Guest Lecturer</strong> — Quantitative Consumer Behavior Research · HCMUT · IUH · HUST</li>
+          <li class="vi"><strong>Đào tạo nội bộ</strong> — Phương pháp nghiên cứu hành vi, nghiên cứu thị trường, phân tích dữ liệu đa chiều cho phòng CTI &amp; R&amp;D, Masan Consumer Holdings</li>
+          <li class="en"><strong>Internal Training</strong> — Behavioral research methodology, market research, multivariate data analysis · Masan Consumer Holdings CTI &amp; R&amp;D</li>
+          <li class="vi"><strong>Giám khảo &amp; Mentor</strong> — R&amp;D Talents Competition (Masan Consumer Holdings) · Innovation Contest (ĐH Công Thương TP.HCM)</li>
+          <li class="en"><strong>Judge &amp; Mentor</strong> — R&amp;D Talents Competition (Masan Consumer Holdings) · Innovation Contest (HUIT)</li>
+          <li class="vi"><strong>Hướng dẫn luận văn / NCKH</strong> — Luận văn MBA (UEH, 2023) · ThS Tâm lý lâm sàng (USSH, 2022) · Đồ án TN published tại SPISE 2022 (IUH) · ThS "Khẩu vị vùng miền — Nước mắm truyền thống" (HCMUT, ongoing) · Nghiên cứu NTD trẻ với đồ uống giảm đường (HCMUT, ongoing) · Tác động âm nhạc lên cảm quan cà phê (HCMUT, ongoing)</li>
+          <li class="en"><strong>Thesis Advisor</strong> — MBA dissertation (UEH, 2023) · Clinical Psychology Master's (USSH, 2022) · Undergraduate thesis published at SPISE 2022 (IUH) · Master's "Regional Taste Profiles — Traditional Fish Sauce" (HCMUT, ongoing) · Young consumer behavior with reduced-sugar beverages (HCMUT, ongoing) · Music impact on coffee sensory evaluation (HCMUT, ongoing)</li>
+        </ul>
+
+      </div>
+
+      <div class="job-tags">
+        <span class="tag">CIC Build</span>
+        <span class="tag">Behavioral Science</span>
+        <span class="tag">Sensory Science</span>
+        <span class="tag">NPD Research</span>
+        <span class="tag">Budget Optimization</span>
+        <span class="tag">Implicit Measurement</span>
+        <span class="tag">Cross-category</span>
+        <span class="tag">Guest Lecturer</span>
+        <span class="tag">Thesis Advisor</span>
+      </div>
+    </article>
+
+    <!-- ─── TESTSGN ──────────────────────────────── -->
+    <article class="job">
+      <div class="job-head">
+        <div>
+          <div class="job-org">TESTSGN</div>
+          <div class="job-role">Project Manager</div>
+        </div>
+        <div class="job-period">2025 — Present</div>
+      </div>
+      <div class="job-ctx">
+        <span class="vi">Phòng khám chuyển đổi từ NGO (Non-Government Organization) sang Social Enterprise · Tài trợ bởi Elton John AIDS Foundation · Hỗ trợ cộng đồng LGBT và người nhiễm HIV tại TP.HCM.</span>
+        <span class="en">Clinic transitioning from NGO (Non-Government Organization) to Social Enterprise · Funded by Elton John AIDS Foundation · Supporting LGBT community and people living with HIV in HCMC.</span>
+      </div>
+      <div class="job-body">
+        <ul class="car">
+          <li class="vi"><strong>Dẫn dắt chuyển đổi mô hình tổ chức phi chính phủ → doanh nghiệp xã hội</strong> — đảm bảo tính bền vững tài chính trong khi duy trì sứ mệnh xã hội và các cam kết với nhà tài trợ quốc tế.</li>
+          <li class="en"><strong>Leading NGO → social enterprise model transformation</strong> — ensuring financial sustainability while maintaining social mission and commitments to international funders.</li>
+          <li class="vi"><strong>Triển khai nghiên cứu hành vi và thay đổi nhận thức </strong> cho nhóm yếu thế (LGBT, người nhiễm HIV, người sử dụng chất).</li>
+          <li class="en"><strong>Executing behavioral and awareness-change research</strong> for vulnerable populations (LGBT community, people living with HIV, substance users).</li>
+        </ul>
+      </div>
+      <div class="job-tags">
+        <span class="tag">Social Impact</span>
+        <span class="tag">Behavioral Change</span>
+        <span class="tag">NGO-to-SE Transition</span>
+        <span class="tag">Elton John Foundation</span>
+      </div>
+    </article>
+
+    <!-- ─── INTAGE ───────────────────────────────── -->
+    <article class="job">
+      <div class="job-head">
+        <div>
+          <div class="job-org">Intage Vietnam LLC.</div>
+          <div class="job-role">Associate Manager · Quantitative &amp; Qualitative Research</div>
+        </div>
+        <div class="job-period">2017 — 2020</div>
+      </div>
+      <div class="job-ctx">
+        <span class="vi">Chi nhánh Intage Inc. — công ty nghiên cứu thị trường lớn nhất Nhật Bản · 13 quốc gia châu Á · Khách hàng: Masan, Acecook, Honda, Toyota, Ajinomoto, Rohto, Wipro Unza, Kido, Viettel, Dentsu, Hakuhodo.</span>
+        <span class="en">Subsidiary of Intage Inc. — Japan's largest market research firm · 13 Asian markets · Clients: Masan, Acecook, Honda, Toyota, Ajinomoto, Rohto, Wipro Unza, Kido, Viettel, Dentsu, Hakuhodo.</span>
+      </div>
+      <div class="job-body">
+        <ul class="car">
+        <li class="vi"><strong>Điều phối danh mục dự án đa ngành</strong> (FMCG, Ô tô, Y tế): Trực tiếp kiểm soát chuỗi giá trị nghiên cứu khép kín từ vận hành thực địa (Fieldwork), kiểm soát chất lượng (QC) đến xử lý dữ liệu nâng cao và chuyển hóa Insight.</li>
+        <li class="en"><strong>Steering Multi-sector Project Portfolios</strong> (FMCG, Automotive, Healthcare): Overseeing the end-to-end research value chain—from complex fieldwork and QC to advanced data processing and strategic insight delivery.</li>
+        <li class="vi"><strong>Làm chủ hệ thống kỹ thuật nghiên cứu đa dạng</strong> Thành thạo toàn bộ spectrum từ nghiên cứu định tính (IDI, FGD) đến định lượng quy mô lớn (U&A, Tracking, Mobile Panel).</li>
+        <li class="en"><strong>Mastery of Full-Spectrum Research Methodologies</strong> Expertly navigating from qualitative (IDI, FGD) to large-scale quantitative frameworks (U&A, Tracking, Mobile Panel).</li>
+        <li class="vi"><strong>Tiên phong số hóa và linh hoạt hóa phương pháp nghiên cứu trong đại dịch</strong>:  Thiết lập hệ thống thử nghiệm sản phẩm tại gia (In-home test), Limo test và nền tảng khảo sát trực tuyến (CLT, HPT) nhằm duy trì dòng chảy dữ liệu khi các phương pháp truyền thống bị gián đoạn hoàn toàn.</li>
+        <li class="en"><strong>Pioneering Digital Transformation & Methodological Agility during COVID-19</strong>: Re-engineered product testing frameworks (In-home, Limo, Online CLT/HPT platforms) to ensure research continuity and data integrity amid the suspension of traditional fieldwork.</li>
+        <li class="vi"><strong>Xây dựng năng lực đội ngũ thông qua đào tạo nội bộ</strong>: Thiết lập các chương trình huấn luyện chuyên sâu về thiết kế bộ công cụ khảo sát định lượng (Survey Design) và ứng dụng các mô hình phân tích dữ liệu nâng cao trong nghiên cứu hành vi & tiếp thị</li>
+        <li class="en"><strong>Internal Capability Building & Mentorship</strong>: Designing and delivering specialized training programs on quantitative instrument design and advanced data analytics frameworks tailored for behavioral and marketing research initiatives.</li>
+        </ul>
+      </div>
+      <div class="job-tags">
+        <span class="tag">🏆 Neghisi Award "Deliver the Best"</span>
+        <span class="tag">Quantitative Research</span>
+        <span class="tag">Idea to Market</span>
+        <span class="tag">Brand Health Tracking</span>
+        <span class="tag">FMCG</span>
+        <span class="tag">Qualitative Research</span>
+        <span class="tag">Data Analytics</span>
+      </div>
+    </article>
+
+        <!-- ─── CARMAH ───────────────────────────────── -->
+    <article class="job">
+      <div class="job-head">
+        <div>
+          <div class="job-org">CARMAH — Center for Applied Research for Men &amp; Community Health</div>
+          <div class="job-role">Project Assistant</div>
+        </div>
+        <div class="job-period">2014 — 2017</div>
+      </div>
+      <div class="job-ctx">
+        <span class="vi">Đối tác quốc tế: Elton John Foundation · New York University · UNAIDS · Global Fund · USAID·  PATH · APCOM .</span>
+        <span class="en">International partners: Elton John Foundation · New York University · UNAIDS · Global Fund · USAID · PATH · APCOM.</span>
+      </div>
+      <div class="job-body">
+        <ul class="car">
+          <li class="vi"><strong>Triển khai tiếp cận, tư vấn và hỗ trợ </strong> cộng đồng LGBT và người nhiễm HIV — áp dụng <strong>motivational interviewing</strong> cho nhóm dễ bị tổn thương. <strong>Phân tích dữ liệu lâm sàng</strong>, báo cáo cho đối tác quốc tế (NYU, UNAIDS). Thực hiện các dự án liên quan đến <strong>vận động quyền con người, thay đổi nhận thức và hành vi</strong> ở cộng đồng yếu thế.</li>
+          <li class="en"><strong>Executed community outreach, counseling, and support </strong> for LGBT community and people living with HIV — applying <strong>motivational interviewing</strong> for vulnerable populations. <strong>Analyzed clinical data </strong> and reported to international partners (NYU, UNAIDS). Executed projects dedicated to <strong>human rights advocacy and the transformation of perceptions and behaviors </strong> among vulnerable populations.</li>
+        </ul>
+      </div>
+      <div class="job-tags">
+        <span class="tag">Motivational Interviewing</span>
+        <span class="tag">Clinical Data</span>
+        <span class="tag">INGO Network</span>
+        <span class="tag">Motivational Interview</span>
+        <span class="tag">Sexual Health Promotions</span>
+      </div>
+    </article>
+
+    <!-- ─── APLUS (compact) ──────────────────────── -->
+    <article class="job">
+      <div class="job-head">
+        <div>
+          <div class="job-org">Aplus Math Co., Ltd</div>
+          <div class="job-role">Head Teacher</div>
+        </div>
+        <div class="job-period">2012 — 2014</div>
+      </div>
+      <div class="job-body" style="padding:12px 20px 13px">
+        <ul class="car">
+          <li class="vi">Thiết kế & Hệ thống hóa giáo trình · Tối ưu hóa hiệu suất đào tạo ·  🏆 <strong>1st Prize "I am a Mathnasium Instructor"</strong></li>
+          <li class="en">Curriculum Architecture · Operational Growth & Student Engagement. 🏆 <strong>1st Prize "I am a Mathnasium Instructor"</strong></li>
+        </ul>
+      </div>
+    </article>
+
+  </div><!-- /job-list -->
+</section>
+
+<!-- ══════════════════════════════════════════
+     ⑤ METHODOLOGY STACK
+══════════════════════════════════════════ -->
+<section class="sec" id="methodology">
+  <div class="sec-head">
+    <span class="sec-n">04</span>
+    <span class="sec-t">
+      <span class="vi">Kĩ năng</span>
+      <span class="en">Skills</span>
+    </span>
+  </div>
+
+  <div class="tier-stack">
+      <div class="tier">
+      <div class="tier-label">
+        <span class="vi">Behavioral & Sensory Research</span>
+        <span class="en">Behavioral & Sensory Research</span>
+      </div>
+      <div class="tier-items">
+        <span class="mtag">Sensory Evaluation Systems Architecture</span>
+        <span class="mtag">Advanced Consumer Behavioral Research</span>
+        <span class="mtag">NPD Scientific Validation</span>
+        <span class="mtag">Behavioral Psychology Measurement</span>
+      </div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-label">
+        <span class="vi">Market Research Mastery</span>
+        <span class="en">Market Research Mastery</span>
+      </div>
+      <div class="tier-items">
+        <span class="mtag">Multi-sector Project Portfolio Management</span>
+        <span class="mtag">Full-Spectrum Research (U&A, Tracking, CLT, FGD, IDI)</span>
+        <span class="mtag">Deep Specialization in Product Testing</span>
+      </div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-label">
+        <span class="vi">Data Analytics & Methodology</span>
+        <span class="en">Data Analytics & Methodology</span>
+      </div>
+      <div class="tier-items">
+        <span class="mtag">Statistical Computing in R/ SPSS/ XLSTAT</span>
+        <span class="mtag">Behavioral Data Modeling</span>
+        <span class="mtag">Quantitative Instrument Design</span>
+      </div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-label">
+        <span class="vi">Strategic Leadership & Adaptive Management</span>
+        <span class="en">Strategic Leadership & Adaptive Management</span>
+      </div>
+      <div class="tier-items">
+        <span class="mtag">Crisis Management & Methodological Agility</span>
+        <span class="mtag">Systems Thinking & Architecture</span>
+        <span class="mtag">Capability Building & Mentorship</span>
+        <span class="mtag">Strategic Communication & Knowledge Outreach</span>
+        <span class="mtag">Multi-stakeholder Management</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     ⑥ Mentorship & Guidance
+══════════════════════════════════════════ -->
+<section class="sec" id="outputs">
+  <div class="sec-head">
+    <span class="sec-n">05</span>
+    <span class="sec-t">
+      <span class="vi">Đồng hành &amp; Hướng dẫn</span>
+      <span class="en">Mentorship & Guidance</span>
+    </span>
+  </div>
+
+  <div class="output-list">
+
+    <div class="output">
+      <div class="output-stripe"></div>
+      <div class="output-body">
+        <div class="o-title">
+          <span class="vi">Impact of Covid-19 Pandemic on Student Consumption Behavior</span>
+          <span class="en">Impact of Covid-19 Pandemic on Student Consumption Behavior</span>
+        </div>
+        <div class="o-venue">SPISE 2022 · Scientific Conference on Sensory Science · IUH / Hanoi University of Science &amp; Technology</div>
+        <div class="o-authors">
+          <span class="vi">Vai trò: Người hướng dẫn (Đồ án tốt nghiệp — IUH)</span>
+          <span class="en">Role: Thesis Advisor (Undergraduate — IUH)</span>
+        </div>
+        <span class="o-badge ob-conf">Conference Paper</span>
+      </div>
+    </div>
+
+    <div class="output">
+      <div class="output-stripe"></div>
+      <div class="output-body">
+        <div class="o-title">
+          <span class="vi">Luận văn MBA — Yếu tố mạng xã hội ảnh hưởng đến ý định mua hàng xanh (chăm sóc cá nhân &amp; nhà cửa, TP.HCM)</span>
+          <span class="en">MBA Dissertation — Social Media Factors Affecting Green Purchase Intention (Personal Care &amp; Home Products, HCMC)</span>
+        </div>
+        
+        <div class="o-venue">UEH — University of Economics Ho Chi Minh City · 2023</div>
+        <div class="o-authors">
+          <span class="vi">Vai trò: Người hướng dẫn</span>
+          <span class="en">Role: Thesis Advisor</span>
+        </div>
+        <span class="o-badge ob-adv">Thesis Advisor</span>
+      </div>
+    </div>
+
+    <div class="output">
+      <div class="output-stripe"></div>
+      <div class="output-body">
+        <div class="o-title">
+          <span class="vi">Nghiên cứu khẩu vị vùng miền trên sản phẩm nước mắm truyền thống</span>
+          <span class="en">Regional Taste Profiles in Traditional Vietnamese Fish Sauce</span>
+        </div>
+        <div class="o-venue">HCMUT — Ho Chi Minh City University of Technology · 2026 (ongoing)</div>
+        <div class="o-authors">
+          <span class="vi">Vai trò: Người hướng dẫn (Luận văn ThS)</span>
+          <span class="en">Role: Thesis Advisor (Master's)</span>
+        </div>
+        <span class="o-badge ob-adv">Thesis Advisor</span>
+      </div>
+    </div>
+
+    <div class="output">
+      <div class="output-stripe"></div>
+      <div class="output-body">
+        <div class="o-title">
+          <span class="vi">Thỉnh giảng: Nghiên cứu định lượng trong các nghiên cứu hành vi người tiêu dùng</span>
+          <span class="en">Guest Lectures: Quantitative research in Consumer Behavior studies</span>
+        </div>
+        <div class="o-venue">HCMUT · IUH · HUST</div>
+        <span class="o-badge ob-lec">Guest Lecture</span>
+      </div>
+    </div>
+
+        <div class="output">
+      <div class="output-stripe"></div>
+      <div class="output-body">
+        <div class="o-title">
+          <span class="vi">Luận văn Thạc sĩ — Mối liên hệ giữa trạng thái cô đơn với sự đánh giá tự thân và sự trắc ẩn tự thân ở cộng đồng LGBTQ+ tại Tp. Hồ Chí Minh.</span>
+          <span class="en">Master's Thesis — The Relationship Between Loneliness, Self-Esteem, and Self-Compassion in the LGBTQ+ Community in Ho Chi Minh City.</span>
+        </div>
+
+        <div class="o-venue">USSH — University of Social Sciences and Humanities Ho Chi Minh City · 2023</div>
+        <div class="o-authors">
+          <span class="vi">Vai trò: Người hướng dẫn</span>
+          <span class="en">Role: Thesis Advisor</span>
+        </div>
+        <span class="o-badge ob-adv">Thesis Advisor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     ⑦ EDUCATION
+══════════════════════════════════════════ -->
+<section class="sec" id="education">
+  <div class="sec-head">
+    <span class="sec-n">06</span>
+    <span class="sec-t">
+      <span class="vi">Học vấn &amp; Đào tạo</span>
+      <span class="en">Education &amp; Training</span>
+    </span>
+  </div>
+
+  <div class="edu-list">
+
+    <div class="edu-row">
+      <div>
+        <div class="edu-inst">
+          <span class="vi">ĐH Khoa học Tự nhiên TP.HCM</span>
+          <span class="en">Ho Chi Minh City University of Science (HCMUS)</span>
+        </div>
+        <div class="edu-deg">
+          <span class="vi">Cử nhân Toán &amp; Tin — Chuyên ngành Tài chính định lượng</span>
+          <span class="en">Bachelor of Mathematics &amp; Computer Science — Quantitative Finance</span>
+        </div>
+      </div>
+      <div class="edu-yr">2008 — 2012</div>
+    </div>
+
+    <div class="edu-row">
+      <div>
+        <div class="edu-inst">University of Wisconsin–Madison</div>
+        <div class="edu-deg">Applied Statistics in Biology</div>
+      </div>
+      <div class="edu-yr">2012</div>
+    </div>
+
+    <div class="edu-row">
+      <div>
+        <div class="edu-inst">
+          <span class="vi">ĐH Tôn Đức Thắng</span>
+          <span class="en">Ton Duc Thang University</span>
+        </div>
+        <div class="edu-deg">
+          <span class="vi">Phân tích dữ liệu bằng R · Machine Learning</span>
+          <span class="en">Data Analysis in R · Machine Learning</span>
+        </div>
+      </div>
+      <div class="edu-yr">2015, 2017</div>
+    </div>
+
+    <div class="edu-row">
+      <div>
+        <div class="edu-inst">International scientific conference SPISE (Summer Program in Sensory Evaluation)</div>
+        <div class="edu-deg">
+          <span class="vi">Data Analysis in Consumer Behavior &amp; Sensory Research</span>
+          <span class="en">Data Analysis in Consumer Behavior &amp; Sensory Research</span>
+        </div>
+      </div>
+      <div class="edu-yr">HUST 2020+2<br>HCMUT 2024</div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="cv-footer">
+  <span class="foot-r">
+    <span class="vi">Cập nhật · 2026</span>
+    <span class="en">Updated · 2026</span>
+  </span>
+</footer>
+
+</div><!-- /page -->
+
+<script>
+  function toggleLang() {
+    const h = document.documentElement;
+    const isEN = h.getAttribute('data-lang') === 'en';
+    h.setAttribute('data-lang', isEN ? 'vi' : 'en');
+    h.setAttribute('lang', isEN ? 'vi' : 'en');
+    document.getElementById('lang-btn').textContent = isEN ? 'EN' : 'VI';
+  }
+</script>
+</body>
+</html>
